@@ -1,0 +1,7 @@
+Classe Sconto
+
+Metodi:
+	setPercentualeSconto;
+	getPercentualeSconto;
+	
+Tipi di oggetti usati da questa classe:

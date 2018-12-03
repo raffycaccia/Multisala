@@ -1,9 +1,10 @@
-
 Classe Film
 
 Metodi:
 	getTitolo;
 	getDescrizione;
+	setTitolo;
+	setDescrizione;
 
 Tipi di oggetti usati da questa classe:
 	Metadati;

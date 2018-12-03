@@ -1,0 +1,7 @@
+Classe Programma
+
+Metodi:
+	addSpettacolo;
+	
+Tipi di oggetti usati da questa classe:
+	Spettacolo;

@@ -1,0 +1,6 @@
+Classe Cliente
+(contiene un enum con i tipi di cliente)
+
+Metodi:
+
+Tipi di oggetti usati da questa classe:
