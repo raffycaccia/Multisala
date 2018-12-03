@@ -4,13 +4,13 @@ Possibili classi:
 
 
     - cambia modalita (tasto)
-  - Cinema
-  - Sala
+  - Cinema //importante
+  - Sala //importante
   - Cliente
     - categorie
-  - Gestore
+  - Gestore //importante
   - Spettacolo
-  - Film
+  - Film //importante
   - Titolo
   - Programma (settimanale)
     - Visualizza programma complessivo settimanale
