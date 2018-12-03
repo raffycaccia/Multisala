@@ -5,3 +5,4 @@ Metodi:
 	
 Tipi di oggetti usati da questa classe:
 	Spettacolo;
+	Sala;

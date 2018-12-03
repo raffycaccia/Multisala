@@ -1,0 +1,9 @@
+Classe Sala
+
+Metodi:
+	//addPosto; (forse non serve)
+	setPosto; (prenotato, venduto ecc..)
+	getPosto;
+
+Tipi di oggetti usati da questa classe:
+	Posto;

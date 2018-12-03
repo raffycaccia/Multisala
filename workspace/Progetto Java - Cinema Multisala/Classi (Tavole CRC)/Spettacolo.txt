@@ -8,6 +8,9 @@ Metodi:
 	getPrezzo;
 	setSconto;
 	getSconto;
+	setSala;
+	getSala;
+	getPostiDisponibili;
 	
 
 Tipi di oggetti usati da questa classe:

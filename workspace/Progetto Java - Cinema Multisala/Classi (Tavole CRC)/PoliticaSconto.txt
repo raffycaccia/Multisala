@@ -1,0 +1,13 @@
+Classe PoliticaSconto
+
+
+Metodi:
+	setPoliticaSconto; (prende un bool e una percentuale)
+	getPoliticaSconto;
+	?setActive;
+	?setDisabled;
+	?setPercentualeSconto;
+	?getPercentualeSconto;
+	
+Tipi di oggetti usati da questa classe:
+	Cliente;

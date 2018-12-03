@@ -1,0 +1,7 @@
+Classe Posto
+
+Metodi:
+	setPosto;
+	getPosto;
+	
+Tipi di oggetti usati da questa classe:
