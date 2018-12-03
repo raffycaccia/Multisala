@@ -9,6 +9,7 @@ Possibili classi:
   - Cliente
     - categorie
   - Gestore
+  - Spettacolo
   - Film
   - Titolo
   - Programma (settimanale)
