@@ -1,0 +1,11 @@
+Interfaccia Metadati:
+
+
+Metodi:
+	getTitolo;
+	getDescrizione;
+	getCopertina;(Non richiesta nella traccia)
+	
+Tipi di oggetti usati da questa classe:
+	JImage?; (Non richiesta nella traccia)
+	

@@ -6,3 +6,4 @@ Metodi:
 	getDescrizione;
 
 Tipi di oggetti usati da questa classe:
+	Metadati;
