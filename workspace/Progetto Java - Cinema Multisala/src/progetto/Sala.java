@@ -15,6 +15,12 @@ public class Sala {
 		return posti.size();
 	}
 	
+	
+	/*
+	 * Metodo che ritorna un Posto in base ad un indice (numero del posto)
+	 * @param numero del posto da ritornare
+	 * @return ritorna un Posto (oggetto di tipo Posto)
+	 */
 	public Posto getPosto(int ind) {
 		return posti.get(ind);
 	}
