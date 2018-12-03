@@ -1,0 +1,10 @@
+Classe Spettacolo
+
+Metodi:
+	getData(giorno e ora);
+	getIncasso;
+
+
+
+Tipi di oggetti usati da questa classe:
+	Sconto;
