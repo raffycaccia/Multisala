@@ -1,0 +1,9 @@
+
+Classe Film
+
+Metodi:
+getNome;
+getDescrizione;
+
+
+Tipi di oggetti usati da questa classe:
