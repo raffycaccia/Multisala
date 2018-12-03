@@ -22,23 +22,28 @@ Struttura del codice base
 
 //condizioni:
 
-if (condizione)
-  //istruzione singola
-
-
-if(condizione){
+if (condizione) {
   //istruzione
   //istruzione
 }
 
-if(condizione){
+if (condizione) {
 
-}else if()
+} else if() {
   //istruzione
+  //istruzione
+}
 
-  if(condizione){
+// cicli:
 
-  }else if(){
-    //istruzione
-    //istruzione
-  }
+for (classico) {
+
+}
+
+while () {
+
+}
+
+do {
+
+} while();
