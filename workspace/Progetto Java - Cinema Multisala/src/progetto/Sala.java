@@ -11,7 +11,7 @@ public class Sala {
 	 * Metodo che ritorna il numero di posti della sala
 	 * @return ritorna il numero di posti della sala
 	 */
-	public int getNumPosti() {
+	public int getTotalePosti() {
 		return posti.size();
 	}
 	
