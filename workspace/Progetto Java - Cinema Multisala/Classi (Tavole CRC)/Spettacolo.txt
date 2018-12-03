@@ -7,4 +7,4 @@ Metodi:
 
 
 Tipi di oggetti usati da questa classe:
-	Sconto;
+	Sconto, Film Sala;
