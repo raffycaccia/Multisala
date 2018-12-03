@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>file_vari</name>
-			<type>2</type>
-			<location>C:/Users/Salvatore-PC/Documents/GitHub/Multisala/file_vari</location>
-		</link>
-	</linkedResources>
 </projectDescription>
