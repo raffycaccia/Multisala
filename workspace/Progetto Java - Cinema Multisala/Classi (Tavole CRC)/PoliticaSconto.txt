@@ -3,7 +3,8 @@ Classe PoliticaSconto
 
 Metodi:
 	setPoliticaSconto; (prende un bool e una percentuale)
-	?setActive;
-	?setDisabled;
-	?setPercentualeSconto;
-	?getPercentualeSconto;
+	setActive;
+	setDisabled;
+	setPercentualeSconto;
+	getPercentualeSconto;
+	getStato;
