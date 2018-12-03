@@ -4,8 +4,5 @@ Classe Film
 Metodi:
 	getTitolo;
 	getDescrizione;
-	getData(giorno e ora);
-	getIncasso;
 
 Tipi di oggetti usati da questa classe:
-	Sconto
