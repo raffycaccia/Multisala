@@ -4,6 +4,7 @@ Metodi:
 	//addPosto; (forse non serve)
 	setPosto; (prenotato, venduto ecc..)
 	getPosto;
+	getTotalePosti;
 
 Tipi di oggetti usati da questa classe:
 	Posto;

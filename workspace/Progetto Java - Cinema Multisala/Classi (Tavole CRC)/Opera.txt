@@ -1,4 +1,4 @@
-Interfaccia Metadati:
+Interfaccia Opera:
 
 Metodi:
 	getTitolo;

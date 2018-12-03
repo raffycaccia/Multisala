@@ -11,9 +11,11 @@ Metodi:
 	setSala;
 	getSala;
 	getPostiDisponibili;
+	setOpera;
+	getOpera;
 	
 
 Tipi di oggetti usati da questa classe:
 	Sconto;
-	Film;
+	Opera;
 	Sala;
