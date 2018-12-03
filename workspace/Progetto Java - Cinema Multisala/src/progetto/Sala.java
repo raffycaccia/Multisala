@@ -6,4 +6,17 @@ public class Sala {
 	ArrayList<Posto> posti = new ArrayList<Posto>();
 	int num_sala;
 	
+	
+	/*
+	 * Metodo che ritorna il numero di posti della sala
+	 * @return ritorna il numero di posti della sala
+	 */
+	public int getNumPosti() {
+		return posti.size();
+	}
+	
+	public Posto getPosto(int ind) {
+		return posti.get(ind);
+	}
+
 }
