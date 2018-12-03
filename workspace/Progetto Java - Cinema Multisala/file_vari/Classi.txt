@@ -1,0 +1,28 @@
+Software: CINEMA MULTISALA:
+
+Possibili classi:
+
+
+    - cambia modalita (tasto)
+  - Cinema
+  - Sala
+  - Cliente
+    - categorie
+  - Gestore
+  - Spettacolo
+  - Film
+  - Titolo
+  - Programma (settimanale)
+    - Visualizza programma complessivo settimanale
+    - Visualizza programma settimanale per sala
+  - Lista
+    - Visualizza Lista spettacoli non iniziati
+    - Visualizza informazioni su spettacolo
+  - Biglietto
+  - Prenotazione
+  - Prezzo
+  - Posto
+    - sagoma interfaccia grafica
+      - postoindisponibileexception
+  - Sconto
+  - Incasso
