@@ -2,5 +2,7 @@ Classe Cliente
 (contiene un enum con i tipi di cliente)
 
 Metodi:
+	addPoliticaSconto; (va qui o conviene associare ogni nuova politicaSconto direttamente a un cliente?)
 
 Tipi di oggetti usati da questa classe:
+	PoliticaSconto;

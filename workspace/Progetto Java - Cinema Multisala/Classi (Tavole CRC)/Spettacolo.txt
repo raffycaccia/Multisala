@@ -16,6 +16,6 @@ Metodi:
 	
 
 Tipi di oggetti usati da questa classe:
-	Sconto;
+	PoliticaSconto;
 	Opera;
 	Sala;
