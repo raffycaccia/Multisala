@@ -3,7 +3,7 @@ package progetto;
 public class Film {
 	String titolo, desc;
 	
-	/*
+	/**
 	 * Costruttore, inizializza le variabili del Film
 	 * @param titolo il titolo del film
 	 * @param desc descrizione del film
@@ -14,7 +14,7 @@ public class Film {
 	}
 	
 	
-	/*
+	/**
 	 * Questo metodo ritorna il titolo del film
 	 * @return String
 	 */
@@ -22,7 +22,7 @@ public class Film {
 		return titolo;
 	}
 	
-	/*
+	/**
 	 * Questo metodo ritorna la descrizione del film
 	 * @return String
 	 */
@@ -31,7 +31,7 @@ public class Film {
 	}
 	
 	
-	/*
+	/**
 	 * Questo metodo modifica il titolo del film
 	 * @param newtitolo il nuovo titolo del film
 	 */
@@ -39,9 +39,9 @@ public class Film {
 		titolo=newtitolo;
 	}
 	
-	/*
+	/**
 	 * Questo metodo modifica la descrizione del film
-	 * @param newtitolo la nuova descrizione del film
+	 * @param newDesc la nuova descrizione del film
 	 */
 	public void setDescrizione(String newDesc) {
 		desc=newDesc;
