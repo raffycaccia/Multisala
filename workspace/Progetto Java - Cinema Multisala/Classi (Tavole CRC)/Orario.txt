@@ -1,0 +1,15 @@
+Classe Orario
+
+Metodi:
+	setAnno;
+	setMese;
+	setGiorno;
+	setOra;
+	setMinuto;
+	getAnno;
+	getMese;
+	getGiorno;
+	getOra;
+	getMinuto;
+
+Tipi di oggetti usati da questa classe:

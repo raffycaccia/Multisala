@@ -1,0 +1,6 @@
+Classe Prezzo
+
+Metodi:
+	getPrezzo;
+
+Tipi di oggetti usati da questa classe:

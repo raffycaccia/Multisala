@@ -1,9 +1,9 @@
 Interfaccia Opera:
 
 Metodi:
-	getTitolo;
-	getDescrizione;
 	getCopertina;(Non richiesta nella traccia)
+	getDescrizione;
+	getTitolo;
 	
 Tipi di oggetti usati da questa classe:
 	JImage?; (Non richiesta nella traccia)

@@ -1,10 +1,10 @@
 Classe Film
 
 Metodi:
-	getTitolo;
-	getDescrizione;
-	setTitolo;
 	setDescrizione;
-
+	setTitolo;
+	getDescrizione;
+	getTitolo;
+	
 Tipi di oggetti usati da questa classe:
 	Opera;

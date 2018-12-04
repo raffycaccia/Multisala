@@ -1,5 +1,11 @@
 package progetto;
 
+//TODO descrizione classe
+/**
+ * PoliticaSconto
+ *
+ */
+
 public class PoliticaSconto {
 	
 	//Dichiarazione variabili d'istanza

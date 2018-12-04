@@ -1,18 +1,18 @@
 Classe Spettacolo
 
 Metodi:
+	setData(giorno e ora);
+	setOpera;
+	setPrezzo;
+	setSconto;
+	setSala;
 	getData(giorno e ora);
 	getIncasso;
-	setData(giorno e ora);
-	setPrezzo;
-	getPrezzo;
-	setSconto;
-	getSconto;
-	setSala;
-	getSala;
-	getPostiDisponibili;
-	setOpera;
 	getOpera;
+	getPostiDisponibili;
+	getPrezzo;
+	getSala;
+	getSconto;
 	
 
 Tipi di oggetti usati da questa classe:
