@@ -2,45 +2,52 @@ package progetto;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import eccezioni.PoliticaNotAddedException;
+import eccezioni.PoliticaAlreadyPresentException;
 
 public class Spettacolo {
 	
 	private Calendar data;
 	private Prezzo prezzo;
-	private PoliticaSconto polSconto;
 	private Sala sala;
 	private Opera opera;
 	private ArrayList<Prenotazione> prenotazioni;
-	//private ArrayList<PoliticaSconto>
+	private HashMap<Cliente,PoliticaSconto> politicheSconto;
 	
 	
-	public Spettacolo(Data dataOra, Prezzo prezzoBiglietto, PoliticaSconto polSconto, Sala salaSpettacolo, Opera opera) {
+	public Spettacolo(Calendar dataOra, Prezzo prezzoBiglietto, Sala salaSpettacolo, Opera opera) {
 		setData(dataOra);
 		setPrezzo(prezzoBiglietto);
 		prenotazioni = new ArrayList<Prenotazione>();
-		
+		politicheSconto = new HashMap<Cliente,PoliticaSconto>();
 	}
 	
 	//TODO metodi da scrivere
 	
 	public void addPrenotazione(Prenotazione prenotazione) {
-		prenotazioni.add(prenotazione); //Ci vuole il clone???
+		prenotazioni.add(prenotazione.clone()); //ci vuole il clone???
 	}
 	
-	public void setData(Data data) {
-		
+	public void setData(Calendar data) {
+		this.data = data;
 	}
 	public void setOpera(Opera opera) {
-		
+		this.opera = opera.clone();
 	}
 	public void setPrezzo(Prezzo prezzo) {
-		
+		this.prezzo = prezzo;
 	}
-	public void setSconto(PoliticaSconto politica) {
-		
+	public void setPoliticaSconto(PoliticaSconto politica, Cliente tipoCliente) throws PoliticaNotAddedException, PoliticaAlreadyPresentException {
+		if (politicheSconto.putIfAbsent(tipoCliente, politica) != null) {
+			if (politicheSconto.get(tipoCliente) == null) {
+				throw new PoliticaNotAddedException(); //lancia una finestra di avviso
+			}
+			throw new PoliticaAlreadyPresentException(); //sostituisce la politica gia presente
+		}
 	}
 	public void setSala(Sala sala) {
-		
+		this.sala = sala.clone();
 	}
 	
 	public Calendar getData() {
@@ -50,12 +57,11 @@ public class Spettacolo {
 	public float getIncasso() {
 		float incasso = 0;
 		for(Prenotazione p : prenotazioni) {
-			switch (p.getUtentePrenotazione()) {
-				case Bambino:
-					
-				case Pensionato:
-				
-				case Studente:
+			PoliticaSconto pol = politicheSconto.get(p.getUtentePrenotazione());
+			if (pol.getStato() == true) {
+				incasso += (float) ((100.0 - pol.getPercentualeSconto()) * prezzo.getPrezzo());
+			} else {
+				incasso += prezzo.getPrezzo();
 			}
 		}
 		return incasso;
@@ -83,9 +89,8 @@ public class Spettacolo {
 		
 	}
 	
-	public PoliticaSconto getPoliticaSconto() {
-		return polSconto.clone();
-		
+	public PoliticaSconto getPoliticaSconto(Cliente tipoCliente) {
+		return politicheSconto.get(tipoCliente);
 	}
 
 }
