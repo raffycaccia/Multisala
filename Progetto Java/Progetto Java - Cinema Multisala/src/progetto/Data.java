@@ -12,13 +12,12 @@ public class Data {
 	
 	public Data(int anno, int mese, int giorno, int ora, int minuto) {
 		//TODO gestire eccezioni
-		this.setAnno(anno);
-		this.setMese(mese);
-		this.setGiorno(giorno);
-		this.setOra(ora);
-		this.setMinuto(minuto);
+		setAnno(anno);
+		setMese(mese);
+		setGiorno(giorno);
+		setOra(ora);
+		setMinuto(minuto);
 	}
-
 
 	/**
 	 * @param anno un nuovo anno

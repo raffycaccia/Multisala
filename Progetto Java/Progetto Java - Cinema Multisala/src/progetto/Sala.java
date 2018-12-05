@@ -2,7 +2,7 @@ package progetto;
 
 import java.util.ArrayList;
 
-public class Sala {
+public class Sala implements Cloneable {
 	ArrayList<Posto> posti = new ArrayList<Posto>();
 	int num_sala;
 	
@@ -23,6 +23,16 @@ public class Sala {
 	 */
 	public Posto getPosto(int ind) {
 		return posti.get(ind);
+	}
+	
+	
+	public Sala clone() {
+		try {
+			return (Sala) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

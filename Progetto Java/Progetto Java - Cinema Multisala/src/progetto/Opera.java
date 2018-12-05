@@ -1,12 +1,14 @@
 package progetto;
 
+import java.awt.Image;
+
 //TODO rivedere descrizione interfaccia
 
 /**
  * Un oggetto che implementa Opera é un possibile spettacolo.
  *
  */
-public interface Opera {
+public interface Opera extends Cloneable{
 	
 	/**
 	 * Restituisce la descrizione dell'opera.
@@ -26,5 +28,7 @@ public interface Opera {
 	 */
 	int getDurata();
 	
-	//getCopertina();
+	Image getCopertina();
+
+	Opera clone();
 }

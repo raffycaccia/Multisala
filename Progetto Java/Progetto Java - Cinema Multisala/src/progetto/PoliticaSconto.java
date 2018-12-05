@@ -6,7 +6,7 @@ package progetto;
  *
  */
 
-public class PoliticaSconto {
+public class PoliticaSconto implements Cloneable {
 	
 	//Dichiarazione variabili d'istanza
 	
@@ -79,5 +79,19 @@ public class PoliticaSconto {
 	public boolean getStato() {
 		return politicaAttiva;
 	}
-
+	
+	//Clone
+	
+	/**
+	 * Restituisce un clone dell'oggetto.
+	 * @return il clone dell'oggetto
+	 */
+	public PoliticaSconto clone() {
+		try {
+			return (PoliticaSconto) super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
