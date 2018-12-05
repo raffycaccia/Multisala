@@ -8,7 +8,7 @@ public class Posto extends JButton{
 	int id;
 	private boolean disponibile,indisponibile,prenotato,venduto;
 
-	Posto(int id){
+	public Posto(int id){
 		this.id=id;
 	}
 	
@@ -16,7 +16,8 @@ public class Posto extends JButton{
 	 * speriamo che funzioni l'immagine
 	 * @param img
 	 */
-	Posto(ImageIcon img){
+	public Posto(int id, ImageIcon img){
+		this.id=id;
 		this.setIcon(img);
 		this.setBorderPainted(false);
 		this.setContentAreaFilled(false);
