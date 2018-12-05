@@ -1,9 +1,12 @@
 package tester;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import progetto.Posto;
@@ -16,7 +19,19 @@ public class ButtonPostotester {
 		frame.setSize(500,500);
 		
 		JPanel pannello = new JPanel();
-		pannello.add(new Posto(1,new ImageIcon("image/seat_disponibile.png")));
+		Posto c = new Posto(1,new ImageIcon("image/seat_disponibile.png"));
+		
+		
+		c.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, "Sono una poltrona fighissima");
+				
+			}
+		});
+		
+		
+		pannello.add(c);
 	
 		pannello.setBackground(Color.BLUE);
 		
