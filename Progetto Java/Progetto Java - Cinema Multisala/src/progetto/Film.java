@@ -94,8 +94,7 @@ public class Film implements Opera{
 	
 	public Film clone() {
 		try {
-			Film film = (Film) super.clone();
-			return film;
+			return (Film) super.clone();
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
