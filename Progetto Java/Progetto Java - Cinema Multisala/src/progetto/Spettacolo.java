@@ -2,7 +2,7 @@ package progetto;
 
 public class Spettacolo {
 	
-	public Spettacolo(Orario dataOra, Prezzo prezzoBiglietto, PoliticaSconto polSconto, Sala salaSpettacolo, Opera opera) {
+	public Spettacolo(Data dataOra, Prezzo prezzoBiglietto, PoliticaSconto polSconto, Sala salaSpettacolo, Opera opera) {
 		
 	}
 	
