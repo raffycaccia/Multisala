@@ -8,6 +8,7 @@ public class Film {
 	 * Costruttore, inizializza le variabili del Film
 	 * @param titolo il titolo del film
 	 * @param desc descrizione del film
+	 * @param durata durata del Film espressa in minuti
 	 */
 	Film(String titolo, String desc, int durata){
 		this.titolo=titolo;
