@@ -1,14 +1,13 @@
 package progetto;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import eccezioni.PoliticaNotAddedException;
 import eccezioni.PoliticaAlreadyPresentException;
 
 public class Spettacolo {
 	
-	private Calendar data;
+	private Data data;
 	private Prezzo prezzo;
 	private Sala sala;
 	private Opera opera;
@@ -16,7 +15,7 @@ public class Spettacolo {
 	private HashMap<Cliente,PoliticaSconto> politicheSconto;
 	
 	
-	public Spettacolo(Calendar dataOra, Prezzo prezzoBiglietto, Sala salaSpettacolo, Opera opera) {
+	public Spettacolo(Data dataOra, Prezzo prezzoBiglietto, Sala salaSpettacolo, Opera opera) {
 		setData(dataOra);
 		setPrezzo(prezzoBiglietto);
 		prenotazioni = new ArrayList<Prenotazione>();
@@ -29,7 +28,7 @@ public class Spettacolo {
 		prenotazioni.add(prenotazione.clone()); //ci vuole il clone???
 	}
 	
-	public void setData(Calendar data) {
+	public void setData(Data data) {
 		this.data = data;
 	}
 	public void setOpera(Opera opera) {
@@ -50,7 +49,7 @@ public class Spettacolo {
 		this.sala = sala.clone();
 	}
 	
-	public Calendar getData() {
+	public Data getData() {
 		return data;
 	}
 	

@@ -11,11 +11,13 @@ public class Prenotazione implements Cloneable {
 	private final Calendar dataPrenotazione;
 	private final Opera operaPrenotata;
 	private final Cliente utentePrenotazione;
+	private final Posto postoScelto;
 	
-	public Prenotazione(Calendar dataPrenotazione, Opera operaPrenotata, Cliente utentePrenotazione) {
+	public Prenotazione(Calendar dataPrenotazione, Opera operaPrenotata, Cliente utentePrenotazione, Posto postoScelto) {
 		this.dataPrenotazione = dataPrenotazione;
 		this.operaPrenotata = operaPrenotata;
 		this.utentePrenotazione = utentePrenotazione;
+		this.postoScelto = postoScelto;
 	}
 
 	/**
@@ -33,6 +35,13 @@ public class Prenotazione implements Cloneable {
 	}
 
 	/**
+	 * @return il posto della prenotazione
+	 */
+	public Posto getPosto() {
+		return postoScelto;
+	}
+
+	/**
 	 * @return il tipo di utente che ha effettuato la prenotazione
 	 */
 	public Cliente getUtentePrenotazione() {
@@ -47,6 +56,7 @@ public class Prenotazione implements Cloneable {
 		}
 		return null;
 	}
+
 	
 	
 	
