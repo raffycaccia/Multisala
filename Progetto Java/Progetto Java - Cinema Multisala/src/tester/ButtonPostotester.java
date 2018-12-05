@@ -19,7 +19,7 @@ public class ButtonPostotester {
 		
 		JPanel pannello = new JPanel();
 		Posto c = new Posto(1,new ImageIcon("image/seat_disponibile.png"));
-		
+		Posto d = new Posto(1,new ImageIcon("image/seat_disponibile.png"));
 		
 		c.addActionListener(new ActionListener() {
 			
@@ -29,8 +29,19 @@ public class ButtonPostotester {
 			}
 		});
 		
+		d.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(frame, "Sono una poltrona fighissima e ora sono indisponibile");
+				d.setIndisponibile(true);
+				d.setIcon(new ImageIcon("image/seat_indisponibile.png"));
+			}
+		});
+		
+		
 		
 		pannello.add(c);
+		pannello.add(d);
 	
 		pannello.setBackground(Color.BLUE);
 		
