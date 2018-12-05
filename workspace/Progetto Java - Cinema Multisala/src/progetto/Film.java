@@ -2,15 +2,17 @@ package progetto;
 
 public class Film {
 	String titolo, desc;
+	int durata; //espressa in minuti
 	
 	/**
 	 * Costruttore, inizializza le variabili del Film
 	 * @param titolo il titolo del film
 	 * @param desc descrizione del film
 	 */
-	Film(String titolo, String desc){
+	Film(String titolo, String desc, int durata){
 		this.titolo=titolo;
 		this.desc=desc;
+		this.durata=durata;
 	}
 	
 	

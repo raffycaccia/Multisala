@@ -7,7 +7,6 @@ package progetto;
  *
  */
 public interface Opera {
-
 	/**
 	 * Restituisce la descrizione dell'opera.
 	 * @return	la descrizione dell'opera
