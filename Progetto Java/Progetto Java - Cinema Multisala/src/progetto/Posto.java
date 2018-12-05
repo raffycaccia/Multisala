@@ -1,5 +1,6 @@
 package progetto;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Posto extends JButton{
@@ -10,8 +11,37 @@ public class Posto extends JButton{
 	Posto(int id){
 		this.id=id;
 	}
+	
+	/**
+	 * speriamo che funzioni l'immagine
+	 * @param img
+	 */
+	Posto(ImageIcon img){
+		this.setIcon(img);
+		this.setBorderPainted(false);
+		this.setContentAreaFilled(false);
+		this.setSize(30, 30);	
+	}
 
 	//metodi di get
+	
+	/**
+	 * 
+	 * @return
+	 */
+    public int getStato() {
+        if (disponibile == true) {
+            return 0;
+        }
+        if (indisponibile == true) {
+            return 1;
+        }
+        if (prenotato == true) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
 	
 	/**
 	 * 
@@ -20,7 +50,7 @@ public class Posto extends JButton{
 	public int getId() {
 		return id;
 	}
-	
+
 	/**
 	 * 
 	 * @return
@@ -28,7 +58,7 @@ public class Posto extends JButton{
 	public boolean isDisponibile() {
 		return disponibile;
 	}
-	
+
 	/**
 	 * 
 	 * @return
@@ -87,5 +117,5 @@ public class Posto extends JButton{
 	public void setVenduto(boolean vend) {
 		this.venduto=vend;
 	}
-	
+
 }
