@@ -7,6 +7,7 @@ package progetto;
  *
  */
 public interface Opera {
+	
 	/**
 	 * Restituisce la descrizione dell'opera.
 	 * @return	la descrizione dell'opera
@@ -19,6 +20,11 @@ public interface Opera {
 	 */
 	String getTitolo();
 	
+	/**
+	 * Restituisce la durata (in minuti) dell'opera.
+	 * @return 	la durata in minuti
+	 */
+	int getDurata();
 	
 	//getCopertina();
 }
