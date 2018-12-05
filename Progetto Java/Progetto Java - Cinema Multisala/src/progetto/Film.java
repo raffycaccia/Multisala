@@ -1,5 +1,7 @@
 package progetto;
 
+import java.awt.Image;
+
 public class Film implements Opera{
 	String titolo, desc;
 	int durata; //espressa in minuti
@@ -10,7 +12,7 @@ public class Film implements Opera{
 	 * @param desc 		descrizione del film
 	 * @param durata 	durata del Film espressa in minuti
 	 */
-	Film(String titolo, String desc, int durata){
+	public Film(String titolo, String desc, int durata){
 		this.titolo=titolo;
 		this.desc=desc;
 		this.durata=durata;
@@ -61,6 +63,50 @@ public class Film implements Opera{
 		desc=newDesc;
 	}
 	
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	
+	public String toString() {
+		return getClass() + "[Titolo = " + titolo + ", Descrizione = " + desc + ", Durata = " + durata + "]";
+	}
+	
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	
+	public boolean equals(Object obj) {
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		Film film = (Film) obj;
+		return titolo.equals(film.titolo) && desc.equals(film.desc) && durata == film.durata;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	
+	public Film clone() {
+		try {
+			Film film = (Film) super.clone();
+			return film;
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return null;
+	
+	}
+
+	@Override
+	public Image getCopertina() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
