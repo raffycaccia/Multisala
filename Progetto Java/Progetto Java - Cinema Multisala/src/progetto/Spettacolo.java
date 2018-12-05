@@ -7,6 +7,8 @@ import eccezioni.PoliticaAlreadyPresentException;
 
 public class Spettacolo {
 	
+	//Dichiarazione variabili d'istanza
+	
 	private Data data;
 	private Prezzo prezzo;
 	private Sala sala;
@@ -14,14 +16,25 @@ public class Spettacolo {
 	private ArrayList<Prenotazione> prenotazioni;
 	private HashMap<Cliente,PoliticaSconto> politicheSconto;
 	
+	//Costruttore
 	
+	/**
+	 * Crea un nuovo oggetto Spettacolo con una data, un prezzo, una sala e un'opera
+	 * @param dataOra			la data dello spettacolo
+	 * @param prezzoBiglietto	il prezzo di una prenotazione
+	 * @param salaSpettacolo	la sala dello spettacolo
+	 * @param opera				l'opera dello spettacolo
+	 */
 	public Spettacolo(Data dataOra, float prezzoBiglietto, Sala salaSpettacolo, Opera opera) {
 		setData(dataOra);
 		setPrezzo(prezzoBiglietto);
+		setSala(salaSpettacolo);
+		setOpera(opera);
 		prenotazioni = new ArrayList<Prenotazione>();
 		politicheSconto = new HashMap<Cliente,PoliticaSconto>();
 	}
 	
+	//Metodi modificatori
 	
 	/**
 	 * Aggiunge una prenotazione
@@ -86,6 +99,8 @@ public class Spettacolo {
 	public void setSala(Sala sala) {
 		this.sala = sala.clone();
 	}
+	
+	//Metodi d'accesso
 	
 	/**
 	 * Restituisce la data dello spettacolo.
