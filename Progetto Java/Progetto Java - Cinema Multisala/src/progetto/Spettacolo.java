@@ -1,5 +1,6 @@
 package progetto;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Spettacolo {
@@ -9,15 +10,23 @@ public class Spettacolo {
 	private PoliticaSconto polSconto;
 	private Sala sala;
 	private Opera opera;
+	private ArrayList<Prenotazione> prenotazioni;
+	//private ArrayList<PoliticaSconto>
 	
 	
 	public Spettacolo(Data dataOra, Prezzo prezzoBiglietto, PoliticaSconto polSconto, Sala salaSpettacolo, Opera opera) {
 		setData(dataOra);
 		setPrezzo(prezzoBiglietto);
+		prenotazioni = new ArrayList<Prenotazione>();
 		
 	}
 	
 	//TODO metodi da scrivere
+	
+	public void addPrenotazione(Prenotazione prenotazione) {
+		prenotazioni.add(prenotazione); //Ci vuole il clone???
+	}
+	
 	public void setData(Data data) {
 		
 	}
@@ -39,7 +48,17 @@ public class Spettacolo {
 	}
 	
 	public float getIncasso() {
-		return;
+		float incasso = 0;
+		for(Prenotazione p : prenotazioni) {
+			switch (p.getUtentePrenotazione()) {
+				case Bambino:
+					
+				case Pensionato:
+				
+				case Studente:
+			}
+		}
+		return incasso;
 	}
 	
 	public Opera getOpera() {
@@ -47,8 +66,11 @@ public class Spettacolo {
 	}
 	
 	public int getPostiDisponibili() {
-		return sala.getTotalePosti() - numPrenotazioni;
-		
+		return sala.getTotalePosti() - prenotazioni.size();
+	}
+	
+	public Prenotazione getPrenotazioneAtIndex(int index) {
+		return prenotazioni.get(index).clone();
 	}
 	
 	public Prezzo getPrezzo() {
