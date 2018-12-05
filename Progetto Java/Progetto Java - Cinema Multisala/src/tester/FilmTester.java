@@ -9,7 +9,12 @@ public class FilmTester {
 		
 		Film film = new Film("Tre uomini e una gamba", "Stupendo", 110);
 		
-		film.toString();
+		System.out.println(film);
+		
+		Film cloned = film.clone();
+		System.out.println(cloned);
+		System.out.println(cloned.equals(film));
+		
 		
 		
 

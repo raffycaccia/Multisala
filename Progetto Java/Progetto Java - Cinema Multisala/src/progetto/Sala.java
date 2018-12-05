@@ -6,6 +6,7 @@ public class Sala implements Cloneable {
 	ArrayList<Posto> posti = new ArrayList<Posto>();
 	int num_sala;
 	
+
 	
 	/*
 	 * Metodo che ritorna il numero di posti della sala
@@ -25,6 +26,20 @@ public class Sala implements Cloneable {
 		return posti.get(ind);
 	}
 	
+	/*
+	 * Metodo che ritorna il numero della sala
+	 * @return ritorna il numero della sala
+	 */
+	
+	public int getNumeroSala() {
+		return num_sala;
+	}
+	
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	
 	public Sala clone() {
 		try {
