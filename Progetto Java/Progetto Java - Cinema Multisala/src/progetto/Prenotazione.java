@@ -1,19 +1,17 @@
 package progetto;
 
-import java.util.Calendar;
-
 /**
  * Contiene i dati di una prenotazione
  *
  */
 public class Prenotazione implements Cloneable {
 	
-	private final Calendar dataPrenotazione;
+	private final Data dataPrenotazione;
 	private final Opera operaPrenotata;
 	private final Cliente utentePrenotazione;
 	private final Posto postoScelto;
 	
-	public Prenotazione(Calendar dataPrenotazione, Opera operaPrenotata, Cliente utentePrenotazione, Posto postoScelto) {
+	public Prenotazione(Data dataPrenotazione, Opera operaPrenotata, Cliente utentePrenotazione, Posto postoScelto) {
 		this.dataPrenotazione = dataPrenotazione;
 		this.operaPrenotata = operaPrenotata;
 		this.utentePrenotazione = utentePrenotazione;
@@ -23,7 +21,7 @@ public class Prenotazione implements Cloneable {
 	/**
 	 * @return la data della prenotazione
 	 */
-	public Calendar getDataPrenotazione() {
+	public Data getDataPrenotazione() {
 		return dataPrenotazione;
 	}
 
