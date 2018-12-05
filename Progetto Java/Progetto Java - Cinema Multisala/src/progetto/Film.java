@@ -70,7 +70,7 @@ public class Film implements Opera{
 	 */
 	
 	public String toString() {
-		return getClass() + "[Titolo = " + titolo + ", Descrizione = " + desc + ", Durata = " + durata + "]";
+		return getClass().getName() + "[Titolo = " + titolo + ", Descrizione = " + desc + ", Durata = " + durata + "]";
 	}
 	
 	/**
