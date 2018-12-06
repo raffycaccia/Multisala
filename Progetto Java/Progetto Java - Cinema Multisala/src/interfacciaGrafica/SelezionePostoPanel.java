@@ -51,6 +51,9 @@ public class SelezionePostoPanel extends JPanel {
         JLabel screen = new JLabel(schermo);
         nord.add(screen);
         
+        JPanel hall= new JPanel(new BorderLayout(20, 30));
+        JPanel cart = new Carrello();
+        
 		/*
 		 * qui va aggiunto il
 		 * metodo del controller che carica i posti nei vari array list
@@ -106,10 +109,13 @@ public class SelezionePostoPanel extends JPanel {
 		}
 		
 		center.add(LayoutPosti, BorderLayout.CENTER);
-
-
-		this.add(nord, BorderLayout.NORTH);
-		this.add(center, BorderLayout.CENTER);
+		hall.add(nord, BorderLayout.NORTH);
+		hall.add(center, BorderLayout.CENTER);
+		
+		//
+        this.add(hall, BorderLayout.CENTER);
+		this.add(cart, BorderLayout.EAST);
+		
 	}
 
 	/*
