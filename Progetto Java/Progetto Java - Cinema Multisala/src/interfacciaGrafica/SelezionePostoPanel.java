@@ -52,7 +52,7 @@ public class SelezionePostoPanel extends JPanel {
         nord.add(screen);
         
         JPanel hall= new JPanel(new BorderLayout(20, 30));
-        JPanel cart = new Carrello();
+        JPanel cart = new CarrelloPanel();
         
 		/*
 		 * qui va aggiunto il
