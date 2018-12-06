@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import eccezioni.PostoIndisponibileException;
 import progetto.Posto;
 import progetto.Sala;
 import progetto.Spettacolo;
@@ -91,11 +92,8 @@ public class SelezionePostoPanel extends JPanel {
 		 * FOR CHE AGGIUNGE I POSTI ALLA TABELLA E SETTA LE FUNZIONI
 		 */
 		for (int i = 0; i < posti.size(); i++) {
-			if (posti.get(i).isIndisponibile() == false && posti.get(i).isVenduto() == false && posti.get(i).isPrenotato() == false) {
-				posti.get(i).addActionListener(postoClick()); //definire
-			}else {
-				posti.get(i).addActionListener(postoIndisponibileClick()); //definire
-			}
+				posti.get(i).addActionListener(postoClick(posti.get(i))); //definire
+			
 			LayoutPosti.add(posti.get(i));
 		}
 		
@@ -109,26 +107,22 @@ public class SelezionePostoPanel extends JPanel {
 	/*
 	 * ACTION LISTENER
 	 */
-	private ActionListener  postoClick() {
+	private ActionListener  postoClick(Posto posto) {
 		ActionListener evento = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "SONO UNA BELLISSIMA POLTRONA!! STICAZZI!! FUNZIONO!!");
+				
+				//lancio eccezione nel caso si clicchi su un pulsante non selezionabile
+				if (posto.isIndisponibile() == true || posto.isVenduto() == true || posto.isPrenotato() == true) {
+					throw new PostoIndisponibileException();
+				}
 			}
 		};
 		return evento;
 
 	}
 
-	private ActionListener  postoIndisponibileClick() {
-		ActionListener evento = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				//aggiungere
-			}
-		};
-		return evento;
-	}
+
 }
 
 
