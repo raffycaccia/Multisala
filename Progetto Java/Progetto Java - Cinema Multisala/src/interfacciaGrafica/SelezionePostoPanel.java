@@ -1,11 +1,13 @@
 package interfacciaGrafica;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import progetto.Posto;
@@ -28,22 +30,31 @@ public class SelezionePostoPanel extends JPanel {
 		ImageIcon posto_ind = new ImageIcon("image/sala/seat_disponibile.png");
 		ImageIcon posto_pren = new ImageIcon("image/sala/seat_disponibile.png");
 		ImageIcon posto_vend = new ImageIcon("image/sala/seat_disponibile.png");
+		ImageIcon schermo = new ImageIcon("image/sala/schermo.png");
 
 		Sala sala = spettacolo.getSala();
 
 		ArrayList<Posto> posti = new ArrayList<Posto>(); 
 		ArrayList<Posto> postiA = new ArrayList<Posto>(); 
 		ArrayList<Posto> postiP = new ArrayList<Posto>(); 
-
+		
+		 this.removeAll();
+         this.setLayout(new BorderLayout(20, 30)); 
+		
 		JPanel LayoutPosti = new JPanel(new GridLayout(sala.getRighe(), sala.getColonne(), 0, 1));
 		
+		JPanel nord = new JPanel();
+        JPanel center = new JPanel(new BorderLayout());
 		
+        JLabel screen = new JLabel(schermo);
+        nord.add(screen);
+        
 		/*
 		 * qui va aggiunto il
 		 * metodo del controller che carica i posti nei vari array list
 		 */
 		
-		//########## METODO DI PROVA
+		//########## METODO DI PROVA - SERVE SOLO AL TESTER
 		for(int i=0;i<sala.getRighe()*sala.getColonne();i++) {
 			posti.add(new Posto(i,posto_disp));
 		}
@@ -86,9 +97,12 @@ public class SelezionePostoPanel extends JPanel {
 			}
 			LayoutPosti.add(posti.get(i));
 		}
+		
+		center.add(LayoutPosti, BorderLayout.CENTER);
 
 
-		this.add(LayoutPosti);
+		this.add(nord, BorderLayout.NORTH);
+		this.add(center, BorderLayout.CENTER);
 	}
 
 	/*
