@@ -36,10 +36,24 @@ public class SelezionePostoPanel extends JPanel {
 		ArrayList<Posto> postiP = new ArrayList<Posto>(); 
 
 		JPanel LayoutPosti = new JPanel(new GridLayout(sala.getRighe(), sala.getColonne(), 0, 1));
-
+		
+		
 		/*
 		 * metodo del controller che carica i posti nei vari array list
 		 */
+		
+		/*metodo di prova
+		 * 
+		 */
+		for(int i=0;i<sala.getRighe()*sala.getColonne();i++) {
+			posti.add(new Posto(i,posto_disp));
+		}
+		
+		/*
+		 * 
+		 */
+		
+		
 
 		/**
 		 * FOR PER SETTARE I POSTI
@@ -66,7 +80,7 @@ public class SelezionePostoPanel extends JPanel {
 		}
 
 
-
+		this.add(LayoutPosti);
 	}
 
 	/*
