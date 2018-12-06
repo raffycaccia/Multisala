@@ -27,7 +27,7 @@ public class Spettacolo {
 	 */
 	public Spettacolo(Data dataOra, float prezzoBiglietto, Sala salaSpettacolo, Opera opera) {
 		setData(dataOra);
-		setPrezzo(prezzoBiglietto);
+		//setPrezzo(prezzoBiglietto);
 		setSala(salaSpettacolo);
 		setOpera(opera);
 		prenotazioni = new ArrayList<Prenotazione>();
@@ -78,7 +78,7 @@ public class Spettacolo {
 	 * Se é giá presente una politica per un determinato tipo di Cliente, questa viene
 	 * sovrascritta.
 	 * @param politica								la politica di sconto da aggiungere a questo spettacolo
-	 * @param tipoCliente							il tipo di Cliente per al quale si riferisce la politica
+	 * @param tipoCliente							il tipo di Cliente a cui si riferisce la politica
 	 * @throws PoliticaNotAddedException
 	 * @throws PoliticaAlreadyPresentException
 	 */
