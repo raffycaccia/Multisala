@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import progetto.Posto;
@@ -112,7 +113,7 @@ public class SelezionePostoPanel extends JPanel {
 		ActionListener evento = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//aggiungere
+				JOptionPane.showMessageDialog(null, "SONO UNA BELLISSIMA POLTRONA!! STICAZZI!! FUNZIONO!!");
 			}
 		};
 		return evento;
