@@ -39,30 +39,38 @@ public class SelezionePostoPanel extends JPanel {
 		
 		
 		/*
+		 * qui va aggiunto il
 		 * metodo del controller che carica i posti nei vari array list
 		 */
 		
-		/*metodo di prova
-		 * 
-		 */
+		//########## METODO DI PROVA
 		for(int i=0;i<sala.getRighe()*sala.getColonne();i++) {
 			posti.add(new Posto(i,posto_disp));
 		}
-		
-		/*
-		 * 
-		 */
+		//########## DEVE SCOMPARIRE
 		
 		
 
 		/**
-		 * FOR PER SETTARE I POSTI
+		 * FOR PER SETTARE I POSTI VENDUTI
 		 */
 		for (int i = 0; i < postiA.size(); i++) {
 			for (int j = 0; j < posti.size(); j++) {
 				if (postiA.get(i).getId() == posti.get(j).getId()) {
 					posti.get(j).setIcon(posto_vend);
 					posti.get(j).setVenduto(true);
+				}
+			}
+		}
+		
+		/**
+		 * FOR PER SETTARE I POSTI PRENOTATI
+		 */
+		for (int i = 0; i < postiP.size(); i++) {
+			for (int j = 0; j < posti.size(); j++) {
+				if (postiP.get(i).getId() == posti.get(j).getId()) {
+					posti.get(j).setIcon(posto_pren);
+					posti.get(j).setPrenotato(true);
 				}
 			}
 		}
