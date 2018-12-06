@@ -118,5 +118,9 @@ public class Posto extends JButton{
 	public void setVenduto(boolean vend) {
 		this.venduto=vend;
 	}
+	
+	public void setimage(ImageIcon img) {
+		this.setIcon(img);
+	}
 
 }

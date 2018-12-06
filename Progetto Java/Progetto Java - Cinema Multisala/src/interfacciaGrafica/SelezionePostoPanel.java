@@ -29,9 +29,9 @@ public class SelezionePostoPanel extends JPanel {
 	private void initGui(Spettacolo spettacolo) {
 
 		ImageIcon posto_disp = new ImageIcon("image/sala/seat_disponibile.png");
-		ImageIcon posto_ind = new ImageIcon("image/sala/seat_disponibile.png");
-		ImageIcon posto_pren = new ImageIcon("image/sala/seat_disponibile.png");
-		ImageIcon posto_vend = new ImageIcon("image/sala/seat_disponibile.png");
+		ImageIcon posto_ind = new ImageIcon("image/sala/seat_indisponibile.png");
+		ImageIcon posto_pren = new ImageIcon("image/sala/seat_prenotato.png");
+		ImageIcon posto_vend = new ImageIcon("image/sala/seat_venduto.png");
 		ImageIcon schermo = new ImageIcon("image/sala/schermo.png");
 
 		Sala sala = spettacolo.getSala();
@@ -60,6 +60,14 @@ public class SelezionePostoPanel extends JPanel {
 		for(int i=0;i<sala.getRighe()*sala.getColonne();i++) {
 			posti.add(new Posto(i,posto_disp));
 		}
+		posti.get(2).setimage(posto_vend);
+		posti.get(2).setVenduto(true);
+		
+		posti.get(5).setimage(posto_vend);
+		posti.get(5).setVenduto(true);
+		
+		posti.get(9).setimage(posto_pren);
+		posti.get(9).setPrenotato(true);
 		//########## DEVE SCOMPARIRE
 		
 		
