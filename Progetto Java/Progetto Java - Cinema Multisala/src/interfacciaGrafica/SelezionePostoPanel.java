@@ -131,6 +131,11 @@ public class SelezionePostoPanel extends JPanel {
 					throw new PostoIndisponibileException();
 				}else {
 					System.out.println("cxiao");
+					/*
+					 * TODO RAFFY PARLA A TE STESSO _ RICORDATI CHE QUA VANNO ANCORA GESTITI TUTTI I POSTI
+					 * VANNO GESTITE LE SELEZIONI E L'AGGIORNAMENTO DOPO OGNI ACQUISTO
+					 */
+					
 					cart.addPostoCarrello(posto);
 				}
 			}

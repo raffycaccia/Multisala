@@ -71,7 +71,7 @@ public class CarrelloPanel extends JPanel{
 	 * 	qui va fatta anche la ricercaa!!
 	 */
 	public void removePostoCarrello() {
-		//ciclo
+		//TODO RAFFY PARLA A TE STESSO _ RICORDATI DI FARE STO CICLO
 		refresh();
 		this.revalidate();
 	}
