@@ -91,7 +91,7 @@ public class SelezionePostoPanel extends JPanel {
 		 * FOR CHE AGGIUNGE I POSTI ALLA TABELLA E SETTA LE FUNZIONI
 		 */
 		for (int i = 0; i < posti.size(); i++) {
-			if (posti.get(i).isIndisponibile() == false && posti.get(i).isVenduto() == false&& posti.get(i).isPrenotato() == false) {
+			if (posti.get(i).isIndisponibile() == false && posti.get(i).isVenduto() == false && posti.get(i).isPrenotato() == false) {
 				posti.get(i).addActionListener(postoClick()); //definire
 			}else {
 				posti.get(i).addActionListener(postoIndisponibileClick()); //definire
