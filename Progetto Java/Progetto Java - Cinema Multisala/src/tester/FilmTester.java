@@ -1,5 +1,5 @@
 package tester;
-import progetto.Film;
+import obj.Film;
 
 
 public class FilmTester {

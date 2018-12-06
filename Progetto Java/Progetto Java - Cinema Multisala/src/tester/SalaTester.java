@@ -1,5 +1,5 @@
 package tester;
-import progetto.Sala;
+import obj.Sala;
 
 
 public class SalaTester {

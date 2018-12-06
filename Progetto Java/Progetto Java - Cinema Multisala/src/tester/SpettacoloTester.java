@@ -1,6 +1,6 @@
 package tester;
 
-import progetto.Spettacolo;
+import core.Spettacolo;
 
 public class SpettacoloTester {
 

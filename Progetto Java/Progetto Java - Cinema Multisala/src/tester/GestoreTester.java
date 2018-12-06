@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import interfacciaGrafica.MenuPanel;
-import interfacciaGrafica.ProgrammaSettimanalePanel;
-import interfacciaGrafica.ResourceLoader;
-import progetto.Data;
-import progetto.Film;
-import progetto.Sala;
-import progetto.Spettacolo;
+import core.Spettacolo;
+import gui.MenuPanel;
+import gui.ProgrammaSettimanalePanel;
+import gui.ResourceLoader;
+import obj.Data;
+import obj.Film;
+import obj.Sala;
 
 public class GestoreTester {
 

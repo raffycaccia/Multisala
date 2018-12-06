@@ -11,12 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import interfacciaGrafica.SelezionePostoPanel;
-import progetto.Data;
-import progetto.Film;
-import progetto.Posto;
-import progetto.Sala;
-import progetto.Spettacolo;
+import core.Spettacolo;
+import gui.SelezionePostoPanel;
+import obj.Data;
+import obj.Film;
+import obj.Posto;
+import obj.Sala;
 
 public class PostiInSalaTester {
 
