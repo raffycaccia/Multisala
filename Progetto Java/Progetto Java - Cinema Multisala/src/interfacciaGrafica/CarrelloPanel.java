@@ -5,18 +5,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import eccezioni.PostoIndisponibileException;
 import progetto.Posto;
 
 public class CarrelloPanel extends JPanel{
 	JPanel cart_element = new JPanel();
-	ArrayList<PoltroneInCarrello> poltrone = new ArrayList<>();
+	ArrayList<PoltroneInCarrello> poltrone = new ArrayList<PoltroneInCarrello>();
 
 	public CarrelloPanel() {
 		initGui();
@@ -26,7 +28,8 @@ public class CarrelloPanel extends JPanel{
 		
 		this.removeAll();
 		this.setLayout(new BorderLayout(20, 30)); 
-
+		
+		cart_element.setLayout(new BoxLayout(cart_element, BoxLayout.Y_AXIS));
 		JLabel cartimage = new JLabel(new ImageIcon("image/carrello/immagine.png"));
 		JButton button_buy = new JButton(new ImageIcon("image/carrello/pulsante.png"));
 
@@ -39,16 +42,20 @@ public class CarrelloPanel extends JPanel{
 		button_buy.setContentAreaFilled(false);
 		
 		this.setVisible(true);
+		cart_element.setVisible(true);
 	}
 	
 	/**
 	 * metodo che aggiorna il carrello
 	 */
 	private void refresh() {
+		
+		
 		cart_element.removeAll();
 		for(int i=0; i<poltrone.size();i++) {
 			cart_element.add(poltrone.get(i));
 		}
+		this.revalidate();
 	}
 	
 	/**
@@ -64,8 +71,9 @@ public class CarrelloPanel extends JPanel{
 	 * 	qui va fatta anche la ricercaa!!
 	 */
 	public void removePostoCarrello() {
-		//ciclo
+		//TODO RAFFY PARLA A TE STESSO _ RICORDATI DI FARE STO CICLO
 		refresh();
+		this.revalidate();
 	}
 	
 	

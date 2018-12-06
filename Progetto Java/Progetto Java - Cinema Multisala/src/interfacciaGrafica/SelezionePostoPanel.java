@@ -18,6 +18,7 @@ import progetto.Spettacolo;
 
 public class SelezionePostoPanel extends JPanel {
 	Spettacolo spet;
+    CarrelloPanel cart = new CarrelloPanel();
 
 	public SelezionePostoPanel(Spettacolo spettacolo) {
 		spet=spettacolo;
@@ -52,7 +53,6 @@ public class SelezionePostoPanel extends JPanel {
         nord.add(screen);
         
         JPanel hall= new JPanel(new BorderLayout(20, 30));
-        JPanel cart = new CarrelloPanel();
         
 		/*
 		 * qui va aggiunto il
@@ -129,6 +129,14 @@ public class SelezionePostoPanel extends JPanel {
 				//lancio eccezione nel caso si clicchi su un pulsante non selezionabile
 				if (posto.isIndisponibile() == true || posto.isVenduto() == true || posto.isPrenotato() == true) {
 					throw new PostoIndisponibileException();
+				}else {
+					System.out.println("cxiao");
+					/*
+					 * TODO RAFFY PARLA A TE STESSO _ RICORDATI CHE QUA VANNO ANCORA GESTITI TUTTI I POSTI
+					 * VANNO GESTITE LE SELEZIONI E L'AGGIORNAMENTO DOPO OGNI ACQUISTO
+					 */
+					
+					cart.addPostoCarrello(posto);
 				}
 			}
 		};
