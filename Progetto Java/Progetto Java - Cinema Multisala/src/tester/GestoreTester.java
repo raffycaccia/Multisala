@@ -28,14 +28,17 @@ public class GestoreTester {
 		arrSpettacoli.add(spett2);
 		
 		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli);
+
+		frame.add(progSet);
 		
-		//non funziona
+		
 		if (arrSpettacoli.size() > 0) {
 			JScrollPane scrollBar = new JScrollPane(progSet);
+			scrollBar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollBar.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 			frame.add(scrollBar);
 		}
 		
-		frame.add(progSet);
 		frame.setSize(600, 1000);
 		frame.setBackground(Color.white);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -3,10 +3,9 @@ package interfacciaGrafica;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-
 import progetto.Spettacolo;
 
 public class ProgrammaSettimanalePanel extends JPanel {
@@ -21,7 +20,8 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		add(header);
 		//setSize(PANEL_SIZE, PANEL_SIZE);
 		setBackground(Color.white);
-		//setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		
 		for (Spettacolo spet : arrSpettacoli) {
 			add(new ListEntry(spet));
 		}
