@@ -1,0 +1,97 @@
+package interfacciaGrafica;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+import progetto.Posto;
+import progetto.Sala;
+import progetto.Spettacolo;
+
+public class SelezionePostoPanel extends JPanel {
+	Spettacolo spet;
+
+	public SelezionePostoPanel(Spettacolo spettacolo) {
+		spet=spettacolo;
+		initGui(spet);
+	}
+
+
+
+	private void initGui(Spettacolo spettacolo) {
+
+		ImageIcon posto_disp = new ImageIcon("image/sala/seat_disponibile.png");
+		ImageIcon posto_ind = new ImageIcon("image/sala/seat_disponibile.png");
+		ImageIcon posto_pren = new ImageIcon("image/sala/seat_disponibile.png");
+		ImageIcon posto_vend = new ImageIcon("image/sala/seat_disponibile.png");
+
+		Sala sala = spettacolo.getSala();
+
+		ArrayList<Posto> posti = new ArrayList<Posto>(); 
+		ArrayList<Posto> postiA = new ArrayList<Posto>(); 
+		ArrayList<Posto> postiP = new ArrayList<Posto>(); 
+
+		JPanel LayoutPosti = new JPanel(new GridLayout(sala.getRighe(), sala.getColonne(), 0, 1));
+
+		/*
+		 * metodo del controller che carica i posti nei vari array list
+		 */
+
+		/**
+		 * FOR PER SETTARE I POSTI
+		 */
+		for (int i = 0; i < postiA.size(); i++) {
+			for (int j = 0; j < posti.size(); j++) {
+				if (postiA.get(i).getId() == posti.get(j).getId()) {
+					posti.get(j).setIcon(posto_vend);
+					posti.get(j).setVenduto(true);
+				}
+			}
+		}
+
+		/**
+		 * FOR CHE AGGIUNGE I POSTI ALLA TABELLA E SETTA LE FUNZIONI
+		 */
+		for (int i = 0; i < posti.size(); i++) {
+			if (posti.get(i).isIndisponibile() == false && posti.get(i).isVenduto() == false&& posti.get(i).isPrenotato() == false) {
+				posti.get(i).addActionListener(postoClick()); //definire
+			}else {
+				posti.get(i).addActionListener(postoIndisponibileClick()); //definire
+			}
+			LayoutPosti.add(posti.get(i));
+		}
+
+
+
+	}
+
+	/*
+	 * ACTION LISTENER
+	 */
+	private ActionListener  postoClick() {
+		ActionListener evento = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//aggiungere
+			}
+		};
+		return evento;
+
+	}
+
+	private ActionListener  postoIndisponibileClick() {
+		ActionListener evento = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//aggiungere
+			}
+		};
+		return evento;
+	}
+}
+
+
