@@ -10,7 +10,7 @@ import progetto.Spettacolo;
 
 public class ProgrammaSettimanalePanel extends JPanel {
 	
-	private static final int PANEL_SIZE = 400;
+	//private static final int PANEL_SIZE = 400;
 	
 	public ProgrammaSettimanalePanel(ArrayList<Spettacolo> arrSpettacoli) {
 
