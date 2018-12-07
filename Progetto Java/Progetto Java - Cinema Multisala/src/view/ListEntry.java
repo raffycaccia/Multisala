@@ -41,7 +41,7 @@ public class ListEntry extends JLayeredPane {
 		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT + 200);
 	
 		JLabel titolo = new JLabel(spet.getOpera().getTitolo());
-		TextStyler.setHeaderStyle(titolo);
+		TextStyler.setTitleStyle(titolo);
 		titolo.setBounds(30, 30, TITLE_WIDTH, TITLE_HEIGHT);
 		
 		JTextArea desc = new JTextArea(spet.getOpera().getDescrizione());
@@ -50,9 +50,7 @@ public class ListEntry extends JLayeredPane {
 		
 		
 		JLabel durata = new JLabel(spet.getOpera().getDurata() + " MINUTI");
-		durata.setFont(ResourceLoader.DescFont);
-		durata.setForeground(Color.GRAY);
-		durata.setOpaque(false);
+		TextStyler.setDescriptionStyle(durata);
 		durata.setBounds(30, 250, DURATA_WIDTH, DURATA_HEIGHT);
 		
 		String data = (spet.getData().getGiorno() + "/" + spet.getData().getMese());

@@ -2,8 +2,11 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -29,8 +32,10 @@ public class MainFrame extends JFrame {
 			JScrollPane scrollBar = new JScrollPane(progSet);
 			scrollBar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 			scrollBar.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollBar.setBorder(BorderFactory.createEmptyBorder());
 			add(scrollBar);
 		}
+
 		
 		setSize(1400, 900);
 		setBackground(Color.white);

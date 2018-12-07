@@ -6,12 +6,14 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
 import model.ResourceLoader;
@@ -43,8 +45,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		header.setLayout(new BorderLayout());
 
 		JLabel headerLbl = new JLabel("Programma Settimanale");
-		headerLbl.setFont(ResourceLoader.HeaderFont);
-		headerLbl.setForeground(new Color(170, 170, 170));
+		TextStyler.setNavHeaderStyle(headerLbl);
 		header.add(headerLbl, BorderLayout.WEST);
 		header.add(Box.createVerticalStrut(40), BorderLayout.SOUTH);
 		add(header, BorderLayout.NORTH);

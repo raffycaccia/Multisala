@@ -14,6 +14,8 @@ public class ResourceLoader {
 	public static Font HeaderFont;
 	public static Font InfoFont;
 	public static Font DataFont;
+	public static Font BtnFont;
+	public static Font BtnSelFont;
 	
 	/* Momentaneamente opzionale
 	public ResourceLoader() {
@@ -22,14 +24,14 @@ public class ResourceLoader {
 	*/
 	
 	public static void loadFonts() {
-		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		try {
 			DescFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-BookOblique.ttf")).deriveFont(16f));
 			TitleFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-Heavy.ttf")).deriveFont(28f));
 			HeaderFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-Black.ttf")).deriveFont(45f));
 			InfoFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-Heavy.ttf")).deriveFont(18f));
 			DataFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-Heavy.ttf")).deriveFont(18f));
-			ge.registerFont(DescFont);
+			BtnFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-Book.ttf")).deriveFont(19f));
+			BtnSelFont = (Font.createFont(Font.TRUETYPE_FONT, new File("./Fonts/Avenir-Medium.ttf")).deriveFont(19f));
 		} catch (FontFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
