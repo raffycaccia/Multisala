@@ -24,36 +24,30 @@ public class ListEntry extends JLayeredPane {
 	
 	public static final int DURATA_WIDTH = 100;
 	public static final int DURATA_HEIGHT = 30;
-
-	public static final int DATA_WIDTH = 100;
-	public static final int DATA_HEIGHT = 30;
-
+	
 	public static final int GIORNO_WIDTH = 100;
 	public static final int GIORNO_HEIGHT = 30;
 
-	public static final int ORARIO_WIDTH = 200;
-	public static final int ORARIO_HEIGHT = 30;
-
-	public static final int SALA_WIDTH = 200;
-	public static final int SALA_HEIGHT = 30;
+	public static final int INFO_WIDTH = 400;
+	public static final int INFO_HEIGHT = 30;
 	
 	public ListEntry(Spettacolo spet) {
 		
 		
 		setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
-	
-		//setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		
+
+		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato();
+		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT + 200);
 	
 		JLabel titolo = new JLabel(spet.getOpera().getTitolo());
-		LabelStyler.setHeaderStyle(titolo);
+		TextStyler.setHeaderStyle(titolo);
 		titolo.setBounds(30, 30, TITLE_WIDTH, TITLE_HEIGHT);
 		
 		JTextArea desc = new JTextArea(spet.getOpera().getDescrizione());
-		LabelStyler.setDescriptionStyle(desc);
+		TextStyler.setDescriptionStyle(desc);
 		desc.setBounds(30, 70, DESC_WIDTH, DESC_HEIGHT);
 		
-		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato();
-		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT + 200);
 		
 		JLabel durata = new JLabel(spet.getOpera().getDurata() + " MINUTI");
 		durata.setFont(ResourceLoader.DescFont);
@@ -63,30 +57,20 @@ public class ListEntry extends JLayeredPane {
 		
 		String data = (spet.getData().getGiorno() + "/" + spet.getData().getMese());
 		JLabel dataLbl = new JLabel(data);
-		dataLbl.setFont(ResourceLoader.DescFont);
-		dataLbl.setForeground(Color.GRAY);
-		dataLbl.setOpaque(false);
+		TextStyler.setDataStyle(dataLbl);
 		dataLbl.setBounds(50, 300, GIORNO_WIDTH, GIORNO_HEIGHT);
 		
-		JLabel orario = new JLabel("INIZIA ALLE: " + spet.getData().getOra() + ":" + spet.getData().getMinuto());
-		orario.setFont(ResourceLoader.DescFont);
-		orario.setForeground(Color.GRAY);
-		orario.setOpaque(false);
-		orario.setBounds(50, 400, ORARIO_WIDTH, ORARIO_HEIGHT);
-		
-		JLabel sala = new JLabel("SALA " + spet.getSala().getNome());
-		sala.setFont(ResourceLoader.DescFont);
-		sala.setForeground(Color.GRAY);
-		sala.setOpaque(false);
-		sala.setBounds(50, 450, SALA_WIDTH, SALA_HEIGHT);
-	
+		String orario = "INIZIA ALLE: " + spet.getData().getOra() + ":" + spet.getData().getMinuto();
+		String sala = "SALA " + spet.getSala().getNome();
+		JLabel infoLbl = new JLabel(orario + ", " + sala);
+		TextStyler.setInfoStyle(infoLbl);
+		infoLbl.setBounds(50, 400, INFO_WIDTH, INFO_HEIGHT);
 		
 		add(titolo, 1);
 		add(desc,1);
 		add(durata, 1);
 		add(dataLbl, 1);
-		add(orario, 1);
-		add(sala, 1);
+		add(infoLbl, 1);
 		add(rettangoloDecorativo, 2);
 	}
 

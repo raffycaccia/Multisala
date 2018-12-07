@@ -7,7 +7,7 @@ import javax.swing.JTextArea;
 
 import model.ResourceLoader;
 
-public class LabelStyler {
+public class TextStyler {
 	
 	public static void setHeaderStyle(JLabel lbl) {
 		lbl.setFont(ResourceLoader.TitleFont);
@@ -31,8 +31,16 @@ public class LabelStyler {
 		txtArea.setFocusable(false);
 	}
 	
-	public void setDateStyle(JLabel lbl) {
-		
+	public static void setInfoStyle(JLabel lbl) {
+		lbl.setFont(ResourceLoader.InfoFont);
+		lbl.setForeground(Color.black);
+		lbl.setOpaque(false);
+	}
+	
+	public static void setDataStyle(JLabel lbl) {
+		lbl.setFont(ResourceLoader.DataFont);
+		lbl.setForeground(Color.black);
+		lbl.setOpaque(false);
 	}
 
 }
