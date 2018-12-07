@@ -1,5 +1,5 @@
 package tester;
-import obj.Sala;
+import model.Sala;
 
 
 public class SalaTester {

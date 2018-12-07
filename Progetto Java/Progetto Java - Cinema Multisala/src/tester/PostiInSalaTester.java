@@ -11,12 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import core.Spettacolo;
-import gui.SelezionePostoPanel;
-import obj.Data;
-import obj.Film;
-import obj.Posto;
-import obj.Sala;
+import model.Data;
+import model.Film;
+import model.Posto;
+import model.Sala;
+import model.Spettacolo;
+import view.SelezionePostoPanel;
 
 public class PostiInSalaTester {
 
@@ -32,7 +32,7 @@ public class PostiInSalaTester {
 		frame.setLocation ((screenSize.width - frameSize.width) / 2,
 		(screenSize.height - frameSize.height) / 2);
 		
-		JPanel pannello = new SelezionePostoPanel(new Spettacolo(new Data(2018, 12, 17, 18, 10), 12, new Sala(1, 10, 12), new Film("Ciao", "testaaa", 120)));
+		JPanel pannello = new SelezionePostoPanel(new Spettacolo(new Data(2018, 12, 17, 18, 10), 12, new Sala("A",1, 10, 12), new Film("Ciao", "testaaa", 120)));
 		
 		
 		

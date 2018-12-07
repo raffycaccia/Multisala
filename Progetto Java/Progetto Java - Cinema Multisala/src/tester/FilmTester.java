@@ -1,5 +1,5 @@
 package tester;
-import obj.Film;
+import model.Film;
 
 
 public class FilmTester {

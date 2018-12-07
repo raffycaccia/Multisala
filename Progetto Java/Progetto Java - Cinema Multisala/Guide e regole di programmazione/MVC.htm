@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html class="no-touch" lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:addthis="https://www.addthis.com/help/api-spec" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.upgrad.com/blog/xmlrpc.php">
+
+
+<title>A Beginner’s Guide to MVC Architecture in Java | UpGrad Blog</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="MVC architecture provides an altogether new level of modularity to your code. It should be your top priority if you want to scale heights in your career as an application developer."/>
+<link rel="canonical" href="https://www.upgrad.com/blog/mvc-architecture-in-java/"/>
+<link rel="publisher" href="https://plus.google.com/+UpGradGlobal"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="A Beginner’s Guide to MVC Architecture in Java | UpGrad Blog"/>
+<meta property="og:description" content="MVC architecture provides an altogether new level of modularity to your code. It should be your top priority if you want to scale heights in your career as an application developer."/>
+<meta property="og:url" content="https://www.upgrad.com/blog/mvc-architecture-in-java/"/>
+<meta property="og:site_name" content="UpGrad Blog"/>
+<meta property="article:publisher" content="https://www.facebook.com/UpGradGlobal/"/>
+<meta property="article:tag" content="Software"/>
+<meta property="article:tag" content="Technical Skills"/>
+<meta property="article:tag" content="Web Development"/>
+<meta property="article:section" content="Software"/>
+<meta property="article:published_time" content="2018-04-09T11:05:40+00:00"/>
+<meta property="article:modified_time" content="2018-08-07T10:14:18+00:00"/>
+<meta property="og:updated_time" content="2018-08-07T10:14:18+00:00"/>
+<meta property="fb:app_id" content="126524504714240"/>
+<meta property="og:image" content="https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_MVC-Architecture-in-Java-1200x365.png"/>
+<meta property="og:image:secure_url" content="https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_MVC-Architecture-in-Java-1200x365.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="365"/>
+<meta property="og:image:alt" content="MVC Architecture in Java"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:description" content="MVC architecture provides an altogether new level of modularity to your code. It should be your top priority if you want to scale heights in your career as an application developer."/>
+<meta name="twitter:title" content="A Beginner’s Guide to MVC Architecture in Java | UpGrad Blog"/>
+<meta name="twitter:site" content="@UpGrad_Edu"/>
+<meta name="twitter:image" content="https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_MVC-Architecture-in-Java.png"/>
+<meta name="twitter:creator" content="@UpGrad_Edu"/>
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.upgrad.com\/blog\/","sameAs":["https:\/\/www.facebook.com\/UpGradGlobal\/","https:\/\/www.instagram.com\/upgrad_edu\/","https:\/\/in.linkedin.com\/company\/ueducation","https:\/\/plus.google.com\/+UpGradGlobal","https:\/\/www.youtube.com\/channel\/UCO3pT4ZI8x2RVqYWxxcrZsw","https:\/\/in.pinterest.com\/upgrad_edu\/","https:\/\/twitter.com\/UpGrad_Edu"],"@id":"https:\/\/www.upgrad.com\/blog\/#organization","name":"UpGrad","logo":"https:\/\/blog.upgrad.com\/wp-content\/uploads\/2016\/06\/logo.png"}</script>
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.upgrad.com\/blog\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.upgrad.com\/blog\/software\/","name":"Software"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/www.upgrad.com\/blog\/mvc-architecture-in-java\/","name":"A Beginner\u2019s Guide to MVC Architecture in Java"}}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s7.addthis.com'/>
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net'/>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+<link rel='dns-prefetch' href='//s.w.org'/>
+<link rel="alternate" type="application/rss+xml" title="UpGrad Blog &raquo; Feed" href="https://www.upgrad.com/blog/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="UpGrad Blog &raquo; Comments Feed" href="https://www.upgrad.com/blog/comments/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="UpGrad Blog &raquo; A Beginner’s Guide to MVC Architecture in Java Comments Feed" href="https://www.upgrad.com/blog/mvc-architecture-in-java/feed/"/>
+		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.upgrad.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);</script>
+		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+<link rel='stylesheet' id='advpsStyleSheet-css' href='https://www.upgrad.com/blog/wp-content/plugins/advanced-post-slider/advps-style.css?ver=4.9.8' type='text/css' media='all'/>
+<link rel='stylesheet' id='contact-form-7-css' href='https://www.upgrad.com/blog/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.4' type='text/css' media='all'/>
+<link rel='stylesheet' id='llamaformcss-css' href='https://www.upgrad.com/blog/wp-content/plugins/llamaform/css/llamaform.css?ver=4.9.8' type='text/css' media='all'/>
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://www.upgrad.com/blog/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.2.6' type='text/css' media='all'/>
+<style id='rs-plugin-settings-inline-css' type='text/css'>#rs-demo-id{}</style>
+<link rel='stylesheet' id='uncode-style-css' href='https://www.upgrad.com/blog/wp-content/themes/uncode/library/css/style.css?ver=868061548' type='text/css' media='all'/>
+<style id='uncode-style-inline-css' type='text/css'>@media (min-width:960px){.limit-width{max-width:1200px;margin:auto}}</style>
+<link rel='stylesheet' id='uncode-icons-css' href='https://www.upgrad.com/blog/wp-content/themes/uncode/library/css/uncode-icons.css?ver=868061548' type='text/css' media='all'/>
+<link rel='stylesheet' id='uncode-custom-style-css' href='https://www.upgrad.com/blog/wp-content/themes/uncode/library/css/style-custom.css?ver=868061548' type='text/css' media='all'/>
+<style id='uncode-custom-style-inline-css' type='text/css'>.style-light .link,.style-light.style-override .link,.style-dark .style-light .link,.style-light a,.style-light.style-override a,.style-dark .style-light a,.style-light input[type="checkbox"]:checked:before,.style-light.style-override input[type="checkbox"]:checked:before,.style-dark .style-light input[type="checkbox"]:checked:before{color:#00aeff}.info-box{background:#00aeff;border:1px solid #e5e5e5;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;padding:8px 15px}.center-wr,.row-parent{max-width:1130px;margin:0 auto}*{outline:none}#masthead .limit-width{max-width:98%}#masthead .logo-container{padding:15px 36px}#masthead .menu-item-button{padding:10px 0 7px;vertical-align:top}ul.menu-smart>li .btn{background-color:#22af73;border-radius:3px;color:#fff;font-family:lato!important;font-weight:normal!important;letter-spacing:0;padding:13px 15px!important;text-transform:none;border:none}#masthead .navbar-nav .menu-icons{margin:0 0 0 20px;padding:0 0 0 15px}.rev_slider h2.tp-caption{text-shadow:2px 2px 5px #333}.rev_slider .sliderbtn{background-color:#22af73;border-radius:3px;color:#fff;display:block;font-family:lato;padding:5px 15px!important;text-transform:uppercase}.rev_slider .sliderbtn:hover{background-color:#219c6e}.rev_slider .tp-bullets .tp-bullet{border:medium none}.homeportfolio-menu{border-bottom:2px solid #e3e3e3}.homeportfolio-menu .center-wr{position:relative}.homeportfolio-menu ul{margin:0;padding:0;list-style:none}.categorylist{float:left;width:calc(100% - 130px);width:-moz-calc(100% - 130px);width:-webkit-calc(100% - 130px);width:-o-calc(100% - 130px)}.categorylist li{display:inline-block}.categorylist li a{border-bottom:3px solid #fff;padding:14px 10px;margin:0 8px;color:#333;text-transform:capitalize;line-height:20px;display:block;font-size:14px}.categorylist li:first-child a{margin-left:0}.categorylist li a.cat-active,.categorylist li a:hover{border-bottom:3px solid #2da973;color:#2da973}.homeportfolio-menu .cat-label{color:#ccc;text-transform:uppercase;padding-right:5px;position:absolute;right:100%;top:16px;display:none}select.topicslist{background-color:#fafafa;background-image:url(https://journal.upgrad.com/wp-content/uploads/2016/11/select-arrow.png);background-position:70px 20px;background-repeat:no-repeat;background-size:40px 15px;border-bottom:medium none;border-left:1px solid #e3e3e3;border-right:1px solid #e3e3e3;cursor:pointer;float:right;height:51px;margin:0;max-width:unset;min-width:unset;outline:medium none;padding:0 10px;text-align:center;width:117px;-webkit-appearance:none;-moz-appearance:none}select.topicslist option{padding:5px 10px;border-bottom:1px solid #ddd}.ajax-response-container{background-color:#fafafa;padding:45px 0}.homeportfolio-imageswr .element-item,.catetemp-postwr li{background-color:#fff;border-radius:3px;box-shadow:0 0 5px #ddd;float:left;margin:0 3.2% 30px 0;width:31.2%;min-height:418px;position:relative;vertical-align:top;top:0;transition:all .5s ease 0s;-webkit-transition:all .5s ease 0s;-moz-transition:all .5s ease 0s;-ms-transition:all .5s ease 0s;-o-transition:all .5s ease 0s}.catetemp-postwr li{min-height:363px}.ajax-result-item{margin-top:100px;opacity:0}.homeportfolio-imageswr .element-item:nth-child(3n),.catetemp-postwr li:nth-child(3n) {margin-right:0}.homeportfolio-imageswr .element-item:hover,.catetemp-postwr li:hover{opacity:.8;top:-4px}.newpost{background-color:#2788f3;border-radius:5px;color:#fff;display:block;font-size:15px;font-weight:bold;left:-10px;padding:5px 10px;position:absolute;text-transform:uppercase;top:12px}.loader-icon-wrapper,.view-all-btn-wrapper{text-align:center}.view-all-form .view-all-submit.view-all-link{background-color:#21af73;background-image:none;border-radius:3px;box-shadow:none;color:#fff;font-family:lato!important;font-size:15px;padding:12px 20px;text-transform:capitalize;width:300px;margin-top:6px}.view-all-form .view-all-submit.view-all-link:hover{background-color:#219c6e}.fb-comments.fb_iframe_widget.fb_iframe_widget_fluid_desktop>span{width:100%!important}ul.catetemp-postwr{margin:0;padding:0;list-style:none}.catetemp-postwr li:nth-child(3n+1) {clear:both}.catetemp-imgwr a{border-top-right-radius:3px;display:block;line-height:10px}.catetemp-imgwr img{border-top-left-radius:3px;border-top-right-radius:3px}.catetempcntwr{padding:13px}h2.catetemp-posttitle{border-bottom:1px solid #ddd;font-size:16px;line-height:24px;margin:0 0 5px;padding-bottom:6px;overflow:hidden;height:55px;color:#000}h2.catetemp-posttitle a{color:#000}.catetemp-postcnt{font-size:14px;height:65px;line-height:22px;margin-bottom:10px;overflow:hidden;color:#000}.catetemp-postmeta .catetemp-author{color:#000;float:left;font-size:12px;font-weight:bold}.catetemp-postdate{font-size:13px;color:#ccc;float:right}.catetemp-author img{vertical-align:middle;margin-right:5px;border-radius:50%}.single .post-content{font-family:'Merriweather';max-width:unset!important}.single .post-content .row-parent,.single .post-footer .row-parent,.single .row-navigation .row-parent{max-width:750px!important;padding:30px 0!important}.single .post-title{font-size:40px;font-weight:500;line-height:48px}.single .author-info img{vertical-align:middle;border-radius:50%;width:24px}.single .author-info{float:left;line-height:20px;color:#303133;font-size:20px;font-weight:bold;text-transform:none}.single .author-info a,.single .author-info a:hover,.single .author-info a:focus{color:#303133;cursor:text}.single .post-info span,.catetemp-author span{background-image:url(https://secure.gravatar.com/avatar/?s=40&d=mm&r=g\ 2x);background-size:100% auto;border-radius:50%;display:inline-block;font-size:0;text-indent:0;vertical-align:middle;width:24px;height:24px;margin:0 10px 0 0}.single .date-info{float:left;font-size:16px;font-weight:normal;line-height:21px;margin-left:10px;color:#303133}.single .category-info{float:right;line-height:20px;font-size:16px;font-weight:normal}.single .category-info a{border:1px solid #ddd;box-shadow:0 2px 2px #ddd;color:#333;padding:5px 10px;font-size:16px;text-transform:none;margin:0 5px;display:inline-block}.single .post-title-wrapper{border-bottom:1px solid #ddd;padding-bottom:20px}.postcustom-section{background-color:#36424d;padding:60px 0;text-align:center}.postcustomtitle{color:#fff;font-size:32px;line-height:36px;margin:10px 0 20px}.postcustom-desc{color:#fff;font-size:20px;line-height:26px}.postcustombtn{background-color:#22af73;border-radius:100px;color:#fff;display:inline-block;font-size:16px;font-weight:bold;margin-top:30px;padding:12px 40px}.single .at-above-post.addthis_toolbox{margin-bottom:20px}.single .post-content p{margin:0 0 30px}.single .post-content h2,.single .post-content h3{margin:0 0 20px}.single .post-content ul,.single .post-content ol{margin:0 0 30px;padding-left:20px}.sp-big-title{font-family:lato;font-size:29px;font-weight:bold;line-height:35px;margin:0 0 20px}.sp-small-title{font-family:lato;font-size:24px;font-weight:bold;line-height:30px;margin:0 0 20px}.sp-bold-text{font-size:16px;font-weight:bold;line-height:28px}.sp-paragraph{font-size:16px;font-weight:normal;line-height:28px;margin:0 0 30px}.sp-large-image,.sp-large-advertise{margin-bottom:20px;width:100%}.sp-full-image{margin:0 auto 20px;text-align:center;width:75%}.sp-half-image{margin:0 auto 20px;text-align:center;width:50%}.sp-small-image{margin:0 auto 20px;text-align:center;width:33%}.sp-left-image{float:left;width:48%;margin-bottom:30px}.sp-right-image{float:right;width:48%;margin-bottom:30px}.related-articlewr{background-color:#2f2f2f;padding:45px 0}.rlpost-title{margin:0 0 45px;color:#fff}.related-articlewr .catetemp-postwr li, .related-articlewr .catetemp-postwr li:nth-child(3n+1) {box-shadow:none;clear:none;margin:0;top:auto;width:300px}.related-articlewr .bx-wrapper{position:relative;margin:0 auto}.bx-wrapper .bx-controls-direction a{background-color:rgba(0,0,0,.5);background-position:center center;background-repeat:no-repeat;font-size:0;height:40px;position:absolute;text-indent:0;top:50%;margin-top:-20px;width:40px}.bx-controls a.bx-prev{background-image:url(https://journal.upgrad.com/wp-content/uploads/2016/11/arrow-left.png);left:-50px}.bx-controls a.bx-next{background-image:url(https://journal.upgrad.com/wp-content/uploads/2016/11/arrow-right.png);right:-50px}.bx-controls a.bx-prev:hover,.bx-controls a.bx-next:hover{background-position:center center}footer{background-color:#141618}footer .widget-container .widget-title{margin:0 0 15px}footer#colophon .row-parent{padding:35px 0}footer#colophon .footer-last{margin-bottom:55px;padding:0}footer#colophon .footer-last .row-parent{padding:10px 0}.footer-bottom{background-color:#141618;border-top:1px solid #000;bottom:-55px;left:0;position:fixed;transition:all .8s ease 0s;-webkit-transition:all .8s ease 0s;-moz-transition:all .8s ease 0s;-ms-transition:all .8s ease 0s;-o-transition:all .8s ease 0s;width:100%;z-index:-1}.footer-bottom.footer_sticky{bottom:0;z-index:9999}.footer-bottom.footer_sticky_responsive{bottom:0px;z-index:9999}footer#colophon .footer-bottom .row-parent{padding:0}footer .footer-bottom .widget_wysija{width:70%;margin:0 auto}footer .footer-bottom .widget-title{margin:0}footer .footer-bottom .wysija-paragraph{display:block;float:left;margin:0;width:calc(100% - 150px);width:-moz-calc(100% - 150px);width:-webkit-calc(100% - 150px);width:-o-calc(100% - 150px);position:relative}footer .footer-bottom .wysija-input{background-color:#fff;display:block;margin:0;width:100%;border:none;padding:10px}footer .footer-bottom .wysija-submit{background-color:#21af73;border:medium none;color:#fff;float:right;font-family:lato!important;font-size:14px;margin:0;padding:10px 0;width:140px}footer .footer-bottom .form-validation-field-0formError{bottom:100%!important;display:block!important;left:0!important;margin-bottom:5px;top:auto!important;width:100%!important}footer .footer-bottom .formError .formErrorContent{width:100%}footer#colophon .row-parent .pos-top.tablet-hidden{display:table-cell!important}@media screen and (max-width:1200px){.homeportfolio-menu .cat-label{float:left;padding:17px 0;position:static;width:85px}.categorylist{width:calc(100% - 210px);width:-moz-calc(100% - 210px);width:-webkit-calc(100% - 210px);width:-o-calc(100% - 210px)}}@media screen and (max-width:1160px){.center-wr,.row-parent{max-width:96%}}@media screen and (max-width:979px){.view-all-form .view-all-submit.view-all-link{width:auto}.catetemp-postmeta .catetemp-author,.catetemp-postmeta .catetemp-postdate{display:block;float:none;text-align:center;width:auto}}@media screen and (max-width:959px){#masthead .logo-container{padding:15px 36px!important}#masthead .menu-item-button{padding:0}ul.menu-smart>li .btn{background-color:rgba(0,0,0,0);color:#333;font-size:16px!important;font-weight:bold!important;padding:0!important}#masthead .navbar-nav .menu-icons{margin:0;padding:0}footer#colophon .row-parent .pos-top.tablet-hidden{display:inline-table!important}}@media screen and (max-width:767px){.homeportfolio-menu .cat-label{display:block;float:none;padding:0;text-align:center;width:auto;margin:20px 0 10px}.categorylist{float:none;width:auto;text-align:center}select.topicslist{background-position:right center;border:1px solid #e3e3e3;float:none;margin:10px auto;width:80%}#homeportfolio-imageswr,ul.catetemp-postwr{text-align:center}.homeportfolio-imageswr .element-item, .homeportfolio-imageswr .element-item:nth-child(3n), .catetemp-postwr li, .catetemp-postwr li:nth-child(3n) {display:inline-block;float:none;margin:0 1.5% 20px;width:38%}.related-articlewr .catetemp-postwr li, .related-articlewr .catetemp-postwr li:nth-child(3n+1){display:block;margin:0}.single .post-title{font-size:24px;line-height:30px}.single .author-info,.single .date-info,.single .category-info{display:block;float:none;margin:0 auto 10px;width:90%}.catetemp-postmeta .catetemp-author,.catetemp-postmeta .catetemp-postdate{float:none}.related-articlewr .bx-wrapper{width:250px}.bx-controls a.bx-prev{left:-30px}.bx-controls a.bx-next{right:-30px}.single .category-info a{margin-top:5px}footer .footer-bottom .widget_wysija{width:90%}footer .footer-bottom .wysija-paragraph{width:calc(100% - 95px);width:-moz-calc(100% - 95px);width:-webkit-calc(100% - 95px);width:-o-calc(100% - 95px)}footer .footer-bottom .wysija-submit{font-size:12px;width:90px;padding:11px 0}.single .post-content .row-parent,.single .post-footer .row-parent,.single .row-navigation .row-parent{max-width:96%!important}}@media screen and (max-width:649px){.categorylist li a{margin:0;padding:5px 10px}.homeportfolio-imageswr .element-item, .homeportfolio-imageswr .element-item:nth-child(3n), .catetemp-postwr li, .catetemp-postwr li:nth-child(3n){display:block;float:none;margin:0 auto 20px;width:290px}.header-wrapper .header-bg-wrapper+div,.header-wrapper .header-bg-wrapper:only-child{min-height:unset}.main-menu-container.middle.open-items{height:auto!important}}@media screen and (max-width:479px){.rev_slider .sliderbtn{font-size:10px!important;padding:5px!important}#bitnami-banner{display:none!important}.categorylist li a{background-color:#2788f3;border-bottom:medium none;border-radius:3px;color:#fff;font-size:13px;margin-top:2px;padding:3px 6px}.categorylist li a.cat-active,.categorylist li a:hover{background-color:#2da973;border:medium none;color:#fff}select.topicslist{width:96%}.at-share-dock-outer{}}</style>
+<link rel='stylesheet' id='uncodefont-google-css' href='//fonts.googleapis.com/css?family=Poppins%3A300%2Cregular%2C500%2C600%2C700%7CHind%3A300%2Cregular%2C500%2C600%2C700%7CDroid+Serif%3Aregular%2Citalic%2C700%2C700italic%7CDosis%3A200%2C300%2Cregular%2C500%2C600%2C700%2C800%7CPlayfair+Display%3Aregular%2Citalic%2C700%2C700italic%2C900%2C900italic%7COswald%3A300%2Cregular%2C700%7CRoboto%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C700%2C700italic%2C900%2C900italic%7CSource+Sans+Pro%3A200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C900%2C900italic%7CMerriweather%3A300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic%7CLato%3A100%2C100italic%2C300%2C300italic%2Cregular%2Citalic%2C700%2C700italic%2C900%2C900italic&#038;subset=devanagari%2Clatin-ext%2Clatin%2Ccyrillic%2Cvietnamese%2Cgreek%2Ccyrillic-ext%2Cgreek-ext&#038;ver=1.4.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='js_composer_custom_css-css' href='//www.upgrad.com/blog/wp-content/uploads/js_composer/custom.css?ver=4.12.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='addthis_all_pages-css' href='https://www.upgrad.com/blog/wp-content/plugins/addthis/frontend/build/addthis_wordpress_public.min.css?ver=4.9.8' type='text/css' media='all'/>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/advanced-post-slider/js/advps.frnt.script.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/advanced-post-slider/bxslider/jquery.bxslider.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/llamaform/js/llama-js.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/llamaform/js/Cookies.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.2.6'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.2.6'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/upgradctblog/js/upgradctblog.js?ver=4.9.8'></script>
+<script type='text/javascript'>//<![CDATA[
+var pys_fb_pixel_options={"woo":{"addtocart_enabled":false,"product_data":""},"gdpr":{"disable":false,"enable_before_consent":"","ginger_enabled":false,"cookiebot_enabled":false}};var pys_events=[{"type":"init","name":"633256313481494","params":[]},{"type":"track","name":"PageView","params":{"domain":"www.upgrad.com\/blog"},"delay":0},{"type":"trackCustom","name":"GeneralEvent","params":{"post_type":"post","content_name":"A Beginner\u2019s Guide to MVC Architecture in Java","post_id":60879,"content_category":"Full Stack Development, Software","domain":"www.upgrad.com\/blog"},"delay":0}];
+//]]></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/pixelyoursite/js/public.js?ver=5.3.2'></script>
+<script type='text/javascript'>var mejsL10n={"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};</script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.6-78496d1'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>//<![CDATA[
+var _wpmejsSettings={"pluginPath":"\/blog\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
+//]]></script>
+<script type='text/javascript' src='/blog/wp-content/themes/uncode/library/js/min/ai-uncode.min.js' id='uncodeAI' data-home='/blog/' data-path='/blog/' data-breakpoints-images='258,516,720,1032,1440,2064,2880'></script>
+<script type='text/javascript'>//<![CDATA[
+var SiteParameters={"site_url":"https:\/\/www.upgrad.com\/blog\/","theme_directory":"https:\/\/www.upgrad.com\/blog\/wp-content\/themes\/uncode","days":"days","hours":"hours","minutes":"minutes","seconds":"seconds","constant_scroll":"on","scroll_speed":"2","parallax_factor":"0.25"};
+//]]></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/themes/uncode/library/js/init.js?ver=868061548'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.upgrad.com/blog/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.upgrad.com/blog/wp-includes/wlwmanifest.xml"/> 
+<meta name="generator" content="WordPress 4.9.8"/>
+<link rel='shortlink' href='https://www.upgrad.com/blog/?p=60879'/>
+<link rel="alternate" type="application/json+oembed" href="https://www.upgrad.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.upgrad.com%2Fblog%2Fmvc-architecture-in-java%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://www.upgrad.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.upgrad.com%2Fblog%2Fmvc-architecture-in-java%2F&#038;format=xml"/>
+<meta property="fb:app_id" content="1650713914989906"/><!-- Start Drift By WP-Plugin: Drift -->
+<!-- Start of Async Drift Code -->
+<script>!function(){var t;if(t=window.driftt=window.drift=window.driftt||[],!t.init)return t.invoked?void(window.console&&console.error&&console.error("Drift snippet included twice.")):(t.invoked=!0,t.methods=["identify","config","track","reset","debug","show","ping","page","hide","off","on"],t.factory=function(e){return function(){var n;return n=Array.prototype.slice.call(arguments),n.unshift(e),t.push(n),t;};},t.methods.forEach(function(e){t[e]=t.factory(e);}),t.load=function(t){var e,n,o,i;e=3e5,i=Math.ceil(new Date()/e)*e,o=document.createElement("script"),o.type="text/javascript",o.async=!0,o.crossorigin="anonymous",o.src="https://js.driftt.com/include/"+i+"/"+t+".js",n=document.getElementsByTagName("script")[0],n.parentNode.insertBefore(o,n);});}();drift.SNIPPET_VERSION='0.3.1';drift.load('vcui6u2vrsim');</script>
+<!-- End of Async Drift Code --><!-- end: Drift Code. -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P8N4NT9');</script>
+
+<!-- Plugin: Open external links a new window. Plugin by Kristian Risager Larsen, http://kristianrisagerlarsen.dk . Download it at http://wordpress.org/extend/plugins/open-external-links-in-a-new-window/ -->
+<script type="text/javascript">//<![CDATA[
+function external_links_in_new_windows_loop(){if(!document.links){document.links=document.getElementsByTagName('a');}
+var change_link=false;var force='';var ignore='';for(var t=0;t<document.links.length;t++){var all_links=document.links[t];change_link=false;if(document.links[t].hasAttribute('onClick')==false){if(all_links.href.search(/^http/)!=-1&&all_links.href.search('www.upgrad.com')==-1){change_link=true;}
+if(force!=''&&all_links.href.search(force)!=-1){change_link=true;}
+if(ignore!=''&&all_links.href.search(ignore)!=-1){change_link=false;}
+if(change_link==true){document.links[t].setAttribute('onClick','javascript:window.open(\''+all_links.href+'\'); return false;');document.links[t].removeAttribute('target');}}}}
+function external_links_in_new_windows_load(func)
+{var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+external_links_in_new_windows_load(external_links_in_new_windows_loop);
+//]]></script>
+
+<style id='cw_css'></style>
+		<!-- Facebook Pixel code is added on this page by PixelYourSite FREE v5.3.2 plugin. You can test it with Pixel Helper Chrome Extension. -->
+
+		<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://www.upgrad.com/blog/wp-content/plugins/uncode-js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="https://www.upgrad.com/blog/wp-content/plugins/uncode-js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]-->
+<!-- Dynamic Widgets by QURL loaded - http://www.dynamic-widgets.com //-->
+<style type="text/css">.broken_link,a.broken_link{text-decoration:line-through}</style><style type="text/css" id="custom-background-css">body.custom-background{background-color:#f1f3f4}</style>
+<link rel="amphtml" href="https://www.upgrad.com/blog/mvc-architecture-in-java/amp/"><meta name="generator" content="Powered by Slider Revolution 5.2.6 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
+<link rel="icon" href="https://www.upgrad.com/blog/wp-content/uploads/2016/11/cropped-Upgrad-Icons_Square-Flat-1-300x300.png" sizes="32x32"/>
+<link rel="icon" href="https://www.upgrad.com/blog/wp-content/uploads/2016/11/cropped-Upgrad-Icons_Square-Flat-1-300x300.png" sizes="192x192"/>
+<link rel="apple-touch-icon-precomposed" href="https://www.upgrad.com/blog/wp-content/uploads/2016/11/cropped-Upgrad-Icons_Square-Flat-1-300x300.png"/>
+<meta name="msapplication-TileImage" content="https://www.upgrad.com/blog/wp-content/uploads/2016/11/cropped-Upgrad-Icons_Square-Flat-1-300x300.png"/>
+		<style type="text/css" id="wp-custom-css">.amp-wp-header .amp-wp-site-icon{left:18px!important;right:initial!important;display:block}.footer-bottom.footer_sticky{display:none}li.blockchain,li.full-stack-development{display:none}</style>
+	<noscript><style type="text/css">.wpb_animate_when_almost_visible{opacity:1}</style></noscript><link rel="stylesheet" type="text/css" href="https://www.upgrad.com/blog/wp-content/themes/uncode/core/assets/css/jquery.fancybox.min.css"/>
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-65532869-1','auto');ga('send','pageview');</script>
+
+</head>
+<body class="post-template-default single single-post postid-60879 single-format-standard custom-background  style-color-lxmt-bg group-blog smooth-scroller hmenu hmenu-position-right header-full-width main-center-align wpb-js-composer js-comp-ver-4.12.1 vc_responsive" data-border="0">
+		<div class="body-borders" data-border="0"><div class="top-border body-border-shadow"></div><div class="right-border body-border-shadow"></div><div class="bottom-border body-border-shadow"></div><div class="left-border body-border-shadow"></div><div class="top-border style-light-bg"></div><div class="right-border style-light-bg"></div><div class="bottom-border style-light-bg"></div><div class="left-border style-light-bg"></div></div>	<div class="box-wrapper">
+		<div class="box-container">
+		<script type="text/javascript">UNCODE.initBox();</script>
+		<div class="menu-wrapper menu-sticky">
+													
+													<header id="masthead" class="navbar menu-primary menu-dark submenu-light style-dark-original menu-with-logo">
+														<div class="menu-container style-color-wayh-bg menu-borders menu-shadows">
+															<div class="row-menu limit-width">
+																<div class="row-menu-inner">
+																	<div id="logo-container-mobile" class="col-lg-0 logo-container middle">
+																		<div id="main-logo" class="navbar-header style-dark">
+																			<a href="https://www.upgrad.com/blog" class="navbar-brand" data-minheight="20"><div class="logo-image logo-skinnable" data-maxheight="29" style="height: 29px;"><img src="https://www.upgrad.com/blog/wp-content/uploads/2016/11/UpGrad-Blog-Logo-1.png" alt="UpGrad Blog" width="210" height="29" class="img-responsive"/></div></a>
+																		</div>
+																		<div class="mmb-container"><div class="mobile-menu-button mobile-menu-button-dark lines-button x2"><span class="lines"></span></div></div>
+																	</div>
+																	<div class="col-lg-12 main-menu-container middle">
+																		<div class="menu-horizontal">
+																			<div class="menu-horizontal-inner">
+																				<div class="nav navbar-nav navbar-main navbar-nav-first"><ul id="menu-primary-menu-old" class="menu-primary-inner menu-smart sm"><li id="menu-item-55271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-55271 dropdown menu-item-link"><a title="Programs" href="#" data-toggle="dropdown" class="dropdown-toggle" data-type="title">Programs<i class="fa fa-angle-down fa-dropdown"></i></a>
+<ul role="menu" class="drop-menu">
+	<li id="menu-item-59948" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59948 dropdown"><a title="Data Sciences" href="#" data-type="title">Data Sciences<i class="fa fa-angle-down fa-dropdown"></i></a>
+	<ul role="menu" class="drop-menu">
+		<li id="menu-item-59949" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59949"><a title="PG Program in Data Science" target="_blank" href="https://upgrad.com/data-science/?iref=Blog_NavBar_Program_datascience">PG Program in Data Science<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+		<li id="menu-item-59950" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59950"><a title="PG Program in Big Data Engineering" target="_blank" href="https://upgrad.com/big-data/?iref=Blog_NavBar_Program_BigData">PG Program in Big Data Engineering<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+		<li id="menu-item-59951" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59951"><a title="PG Program in Machine Learning &amp; AI" href="https://upgrad.com/machine-learning-and-artificial-intelligence/?iref=Blog_NavBar_Program_MlAndAi">PG Program in Machine Learning &#038; AI<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	</ul>
+</li>
+	<li id="menu-item-59952" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59952 dropdown"><a title="Marketing &amp; Management" href="#" data-type="title">Marketing &#038; Management<i class="fa fa-angle-down fa-dropdown"></i></a>
+	<ul role="menu" class="drop-menu">
+		<li id="menu-item-59953" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59953"><a title="PG Certification in Digital Marketing &amp; Communication" target="_blank" href="https://upgrad.com/digital-marketing/?iref=Blog_NavBar_Program_PGInDigitalMarketing">PG Certification in Digital Marketing &#038; Communication<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+		<li id="menu-item-59954" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59954"><a title="Executive Program in Strategic Digital Marketing" target="_blank" href="https://upgrad.com/digital-strategies/?iref=Blog_NavBar_Program_digitalStrategies">Executive Program in Strategic Digital Marketing<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+		<li id="menu-item-59955" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59955"><a title="PG Program in Management" target="_blank" href="https://upgrad.com/sales-and-marketing/?iref=Blog_NavBar_Program_SalesAndMarketing">PG Program in Management<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	</ul>
+</li>
+	<li id="menu-item-59957" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59957 dropdown"><a title="Product Management" href="#" data-type="title">Product Management<i class="fa fa-angle-down fa-dropdown"></i></a>
+	<ul role="menu" class="drop-menu">
+		<li id="menu-item-59958" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59958"><a title="Product Management Certification Program" target="_blank" href="https://upgrad.com/product-management/?iref=Blog_NavBar_Program_ProductManagement">Product Management Certification Program<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	</ul>
+</li>
+	<li id="menu-item-59959" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59959 dropdown"><a title="Entrepreneurship" href="#" data-type="title">Entrepreneurship<i class="fa fa-angle-down fa-dropdown"></i></a>
+	<ul role="menu" class="drop-menu">
+		<li id="menu-item-59960" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59960"><a title="Entrepreneurship Certificate Program" href="https://upgrad.com/entrepreneurship-certificate-program/?iref=Blog_NavBar_Program_Entrepreneurship">Entrepreneurship Certificate Program<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	</ul>
+</li>
+	<li id="menu-item-59961" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59961 dropdown"><a title="Technology" href="#" data-type="title">Technology<i class="fa fa-angle-down fa-dropdown"></i></a>
+	<ul role="menu" class="drop-menu">
+		<li id="menu-item-59962" class="lcourse menu-item menu-item-type-custom menu-item-object-custom menu-item-59962"><a title="PG Program in Software Development" href="https://upgrad.com/software-engineering/?iref=Blog_NavBar_Program_SoftwareEngineering">PG Program in Software Development<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-55670" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55670 menu-item-link"><a title="Start Learning" target="_blank" href="https://upgrad.com/?iref=Blog_NavBar_StartLearning#programs">Start Learning<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-57445" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57445 menu-item-link"><a title="Insights" href="https://www.upgrad.com/blog/insights/">Insights<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-57446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57446 menu-item-link"><a title="Careers" href="https://www.upgrad.com/blog/careers/">Careers<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-57447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57447 menu-item-link"><a title="Resources" href="https://www.upgrad.com/blog/resources/">Resources<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+<li id="menu-item-57448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57448 menu-item-link"><a title="Learn" href="https://www.upgrad.com/blog/learn/">Learn<i class="fa fa-angle-right fa-dropdown"></i></a></li>
+</ul></div><div class="nav navbar-nav navbar-nav-last"><ul class="menu-smart sm menu-icons"><li class="menu-item-link search-icon style-dark dropdown"><a href="#" class="trigger-overlay search-icon" data-area="search" data-container="box-container">
+													<i class="fa fa-search3"></i><span class="desktop-hidden"><span>Search</span></span><i class="fa fa-angle-down fa-dropdown desktop-hidden"></i>
+													</a>
+													<ul role="menu" class="drop-menu desktop-hidden">
+														<li>
+															<form class="search" method="get" action="https://www.upgrad.com/blog/">
+																<input type="search" class="search-field no-livesearch" placeholder="Search…" value="" name="s" title="Search for:"/>
+															</form>
+														</li>
+													</ul></li></ul></div><div class="desktop-hidden">
+														 							</div></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</header>
+												</div>			<script type="text/javascript">UNCODE.fixMenuHeight();</script>
+			<div class="main-wrapper">
+				<div class="main-container">
+					<div class="page-wrapper">
+						<div class="sections-container">
+
+
+
+
+<span class="post_id">60879</span>
+
+
+<div id="page-header"><div class="header-basic style-light">
+													<div class="background-element header-wrapper background-single-wr style-color-lxmt-bg header-only-text" data-height="60" style="min-height: 380px;">
+													<div class="header-bg-wrapper single-page-featured-image-desktop">
+											<div class="header-bg" style="background-image:url(https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_MVC-Architecture-in-Java.png)"></div>
+											
+										</div><div class="header-bg-wrapper single-page-featured-image-mobile">
+										<div class="header-bg"><img src="https://www.upgrad.com/blog/wp-content/themes/uncode/thumbs/timthumb.php?src=https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_MVC-Architecture-in-Java.png&amp;w=480&amp;h=233&amp;zc=1&amp;a=c&amp;q=100" alt=""/></div>
+										</div><div class="header-scrolldown style-light"><i class="fa fa-angle-down"></i></div></div>
+												</div></div><div class="clearfix center-wr"><div class="left-single-content"><script type="text/javascript">UNCODE.initHeader();</script><!-- Breadcrumb NavXT 6.2.1 -->
+<span class="bred-list" property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to UpGrad Blog." href="https://www.upgrad.com/blog" class="home"><span property="name">Home</span></a><meta property="position" content="1"></span><span class="bred-list" property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Software category archives." href="https://www.upgrad.com/blog/software/" class="taxonomy category"><span property="name">Software</span></a><meta property="position" content="2"></span><span class="bred-list" property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Full Stack Development category archives." href="https://www.upgrad.com/blog/software/full-stack-development/" class="taxonomy category"><span property="name">Full Stack Development</span></a><meta property="position" content="3"></span><span class="bred-list" property="itemListElement" typeof="ListItem"><span property="name">A Beginner’s Guide to MVC Architecture in Java</span><meta property="position" content="4"></span><article id="1post-60879" class="page-body style-light-bg post-60879 post type-post status-publish format-standard has-post-thumbnail hentry category-full-stack-development category-software tag-software tag-technical-skills tag-web-development maincategory-learn maincategory-resources topics-article">
+          <div class="post-wrapper">
+          	<div class="post-body"><div class="post-content"><div class="row-container">
+	  					<div class="row row-parent style-light limit-width double-top-padding double-bottom-padding">
+								<div class="post-title-wrapper"><h1 class="post-title">A Beginner’s Guide to MVC Architecture in Java</h1><div class="post-info clearfix"><div class="author-info"><span><a target="_blank" href="https://www.upgrad.com/blog/author/arjun/"><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-80x80.jpg' class='avatar avatar-80 photo' height='80' width='80'/></a></span>by <a target="_blank" href="https://www.upgrad.com/blog/author/arjun/">Arjun Mathur</a></div><div class="date-info">April 9, 2018</div></div></div><div class="at-above-post addthis_tool" data-url="https://www.upgrad.com/blog/mvc-architecture-in-java/"></div><p><span style="font-weight: 400;">If you’re related to web development scene, you’ll most certainly have come across the acronym “MVC” hundreds of time, if not more. MVC is one of the most talked about design patterns in the web programming world today, and rightly so. In this article, we’ll take you through the world of MVC Architecture. We’ll talk about the basics of MVC, its advantages, and finally, a simple code that will help you understand the implementation of <a href="https://www.codeproject.com/Articles/25057/Simple-Example-of-MVC-Model-View-Controller-Design">MVC</a> in Java in a clearer way.</span></p>
+<p><img class="size-full wp-image-60881 aligncenter" src="https://upgrad.com/blog/wp-content/uploads/2018/04/Figure4.gif" alt="" width="600" height="400"/></p>
+<h2 style="text-align: center;"><b>What exactly is the MVC architecture?</b></h2>
+<p><span style="font-weight: 400;">Before we get into the technicalities of it, let’s make some things clear &#8211; MVC is NOT a design pattern, it’s a way to structure your applications. In recent years, the web applications are extensively using the MVC architecture, and hence it’s natural to confuse it for a design pattern exclusive for web applications. However, let’s tell you that MVC was first described way back in 1979 &#8211; before the WWW era when there was no concept of web applications. The architecture used today for web applications is an adaptation of the original pattern.</span></p>
+<p><span style="font-weight: 400;">In fact, this architecture was initially included in the two major web development frameworks &#8211; Struts and Ruby on Rails. These two environments paved the way for a majority of web frameworks that came later &#8211; and thus the popularity of this architecture kept rising.</span></p>
+<a href="https://upgrad.com/blog/why-companies-are-looking-to-hire-full-stack-developers/?iref=Blog_Content_MVC_Architecture" class="su-button su-button-style-flat" style="color:#ffffff;background-color:#2D89EF;border-color:#246ebf;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px" target="_blank"><span style="color:#ffffff;padding:7px 20px;font-size:16px;line-height:24px;border-color:#6cacf4;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none"><i class="fa fa-external-link" style="font-size:16px;color:#FFFFFF"></i> Why Companies are Looking to Hire Full Stack Developers</span></a>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">MVC architectural pattern follows an elementary idea &#8211; we must separate the responsibilities in any application on the following basis:</span></p>
+<ul>
+<li><b>Model: <span style="font-weight: 400;">Handles data and business logic.</span></b></li>
+<li><strong>View:</strong> <span style="font-weight: 400;">Presents the data to the user whenever asked for.</span></li>
+<li><strong>Controller:</strong> <span style="font-weight: 400;">Entertains user requests and fetch necessary resources.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Each of the components has a demarcated set of tasks which ensures smooth functioning of the entire application along with complete modularity. Let us have a look at each of these components in further detail.</span></p>
+<h3 style="text-align: center;"><span style="font-weight: 400;">Controller</span></h3>
+<p><span style="font-weight: 400;">The controller is the like the housekeeper of the application &#8211; it performs coordination between model and view to entertain a user request. The user requests are received as HTTP get or post request &#8211; for example, when the user clicks on any GUI elements to perform any action.</span></p>
+<p><span style="font-weight: 400;">The primary function of a controller is to call and coordinate with the model to fetch any necessary resources required to act. Usually, on receiving a user request, the controller calls the appropriate model for the task at hand.</span></p>
+<h3 style="text-align: center;"><span style="font-weight: 400;">Model</span></h3>
+<p><span style="font-weight: 400;">The model is quite simply the data for our application. The data is </span><i><span style="font-weight: 400;">“modelled”</span></i><span style="font-weight: 400;"> in a way it’s easy to store, retrieve, and edit. The model is how we apply rules to our data, which eventually represents the concepts our application manages.</span></p>
+<p><span style="font-weight: 400;">For any software application, everything is modelled as data that can be handled easily. What is a user, a book, or a message for an app? Nothing really, only data that must be processed according to specific rules. Like, the date must not be higher than the current date, the email must be in the correct format, the name mustn’t be more than “x” characters long, etc.</span></p>
+<p><img class="size-full wp-image-60882 aligncenter" src="https://upgrad.com/blog/wp-content/uploads/2018/04/ModelData.jpg" alt="" width="590" height="285" srcset="https://www.upgrad.com/blog/wp-content/uploads/2018/04/ModelData.jpg 590w, https://www.upgrad.com/blog/wp-content/uploads/2018/04/ModelData-300x145.jpg 300w" sizes="(max-width: 590px) 100vw, 590px"/></p>
+<p><span style="font-weight: 400;">Whenever a user makes any request from the controller, it contacts the appropriate model which returns a data representation of whatever the user requested. This model will be the same for a particular work, irrespective of how we wish to display it to the user. That is why we can choose any available view to render the model data.</span></p>
+<p><span style="font-weight: 400;">Additionally, a model also contains the logic to update the relevant controller whenever there is any change in the model’s data.</span></p>
+<h3 style="text-align: center;"><span style="font-weight: 400;">View</span></h3>
+<p><span style="font-weight: 400;">As the name suggests, the view is responsible for rendering the data received from the model. There may be pre-designed templates where you can fit the data, and there may even be several different views per model depending on the requirements.</span></p>
+<a href="https://upgrad.com/blog/how-to-succeed-at-your-first-software-development-job/?iref=Blog_Content_MVC_Architecture" class="su-button su-button-style-flat" style="color:#ffffff;background-color:#2D89EF;border-color:#246ebf;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px" target="_blank"><span style="color:#ffffff;padding:7px 20px;font-size:16px;line-height:24px;border-color:#6cacf4;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none"><i class="fa fa-external-link" style="font-size:16px;color:#FFFFFF"></i> How to Succeed in Your First Software Development Job</span></a>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Any web application is structured keeping these three core components in mind. There may be a primary controller that is responsible for receiving all the requests and calling the specific controller for specific actions. Let’s understand the working of a web application under the MVC architecture better using an example. </span></p>
+<h3 style="text-align: center;"><b>Let&#8217;s See an Example</b></h3>
+<p><span style="font-weight: 400;">Let’s take an example of an online stationery shop. The user can view items, buy, add items to cart, add items to current order, or even add/remove items (if he’s the admin).</span></p>
+<p><span style="font-weight: 400;">Now, let’s see what will happen when a user clicks on the title “Pens” to see the list of pens.</span></p>
+<p><span style="font-weight: 400;">Our application will have a particular controller to handle all the queries related to pens. Let’s say it’s called “pens_controller.php”. We’ll also have a model that will store the data regarding the pens we have &#8211; let’s call it “pens_model.php”. Finally, we’ll have several views to present the data &#8211; a list of pens, a table displaying pens, a page to edit the list, etc.</span></p>
+<p><span style="font-weight: 400;">The following figure shows the complete <a href="https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488">flow of control</a> right from the moment a user clicks on “pens”, to when the result is rendered in front of him:</span></p>
+<p><img class="size-full wp-image-60880 aligncenter" src="https://upgrad.com/blog/wp-content/uploads/2018/04/diagram.jpg" alt="" width="600" height="450" srcset="https://www.upgrad.com/blog/wp-content/uploads/2018/04/diagram.jpg 600w, https://www.upgrad.com/blog/wp-content/uploads/2018/04/diagram-483x362.jpg 483w, https://www.upgrad.com/blog/wp-content/uploads/2018/04/diagram-300x225.jpg 300w" sizes="(max-width: 600px) 100vw, 600px"/></p>
+<p><span style="font-weight: 400;">First, the “pens_controller.php” handles the user request (1) as a GET or POST request. We can also have an “index.php” which is the central controller which will call the “pens_controller” whenever needed.</span></p>
+<p><span style="font-weight: 400;">The controller then examines the request and the parameters and calls the required model &#8211; in this case, “pens_model.php”. The controller asks the model to return the list of available pens (2).</span></p>
+<p><span style="font-weight: 400;">Now, the model searches the database for the necessary information (3), applies logics if necessary, and returns the data to the controller(4).</span></p>
+<p><span style="font-weight: 400;">The controller then picks an appropriate view (5) and presents the data (6 and 7). If a request comes from a handheld device, a view suitable for it will be used, or if the user has a particular theme selected, its view will be picked &#8211; and so on.</span></p>
+<a href="https://upgrad.com/blog/how-to-become-a-full-stack-developer-part-1/?iref=Blog_Content_MVC_Architecture" class="su-button su-button-style-flat" style="color:#ffffff;background-color:#2D89EF;border-color:#246ebf;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px" target="_blank"><span style="color:#ffffff;padding:7px 20px;font-size:16px;line-height:24px;border-color:#6cacf4;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none"><i class="fa fa-external-link" style="font-size:16px;color:#FFFFFF"></i> How to Become a Full Stack Developer</span></a>
+<p>&nbsp;</p>
+<h2 style="text-align: center;"><b>The Advantages of the MVC Architecture</b></h2>
+<p><span style="font-weight: 400;">A common problem faced by application developers these days is the support for different type of devices. The MVC architecture solves this problem as developers can create different interfaces for different devices, and based on from which device the request is made, the controller will select an appropriate view. The model sends the same data irrespective of the device being used, which ensures a complete consistency across all devices.</span></p>
+<p><span style="font-weight: 400;">The MVC separation beautifully isolates the view from the business logic. It also reduces complexities in designing large application by keeping the code and workflow structured. This makes the overall code much easier to maintain, test, debug, and reuse.</span></p>
+<h2 style="text-align: center;"><b>A Simple Implementation of MVC using Java</b></h2>
+<p><span style="font-weight: 400;">We will have the following three: </span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">StudentObject : the model.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">StudentView: view class to print details on the console.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">StudentController: a controller that stores data in studentObject and updates StudentView accordingly</span></li>
+</ol>
+<p><b>Step 1: Create the Model</b></p>
+<pre><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">class</span> <span style="font-weight: 400;">Student</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">private</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> rollNo</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">private</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> name</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> getRollNo</span><span style="font-weight: 400;">()</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">return</span><span style="font-weight: 400;"> rollNo</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+<span style="font-weight: 400;">   </span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> setRollNo</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">String</span><span style="font-weight: 400;"> rollNo</span><span style="font-weight: 400;">)</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">this</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">rollNo </span><span style="font-weight: 400;">=</span><span style="font-weight: 400;"> rollNo</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+<span style="font-weight: 400;">   </span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> getName</span><span style="font-weight: 400;">()</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">return</span><span style="font-weight: 400;"> name</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+<span style="font-weight: 400;">   </span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> setName</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">String</span><span style="font-weight: 400;"> name</span><span style="font-weight: 400;">)</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">this</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">name </span><span style="font-weight: 400;">=</span><span style="font-weight: 400;"> name</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+<span style="font-weight: 400;">}</span></pre>
+<p><span style="font-weight: 400;">The code is self-explanatory. It consists of functions to get/set roll number and names of the students. Let’s call it “student.java”.</span></p>
+<p><b>Step 2: Create the View</b></p>
+<pre><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">class</span> <span style="font-weight: 400;">StudentView</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> printStudentDetails</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">String</span><span style="font-weight: 400;"> studentName</span><span style="font-weight: 400;">,</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> studentRollNo</span><span style="font-weight: 400;">){</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">System</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">out</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">println</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">"Student: "</span><span style="font-weight: 400;">);</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">System</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">out</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">println</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">"Name: "</span> <span style="font-weight: 400;">+</span><span style="font-weight: 400;"> studentName</span><span style="font-weight: 400;">);</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">System</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">out</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">println</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">"Roll No: "</span> <span style="font-weight: 400;">+</span><span style="font-weight: 400;"> studentRollNo</span><span style="font-weight: 400;">);</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+<span style="font-weight: 400;">}</span></pre>
+<p><span style="font-weight: 400;">This is simply to print the values to the console. Let’s call this “studentView.java”.</span></p>
+<p><b>Step 3: Create the Controller</b></p>
+<pre><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">class</span> <span style="font-weight: 400;">StudentController</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">private</span> <span style="font-weight: 400;">Student</span><span style="font-weight: 400;"> model</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">private</span> <span style="font-weight: 400;">StudentView</span><span style="font-weight: 400;"> view</span><span style="font-weight: 400;">;</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">StudentController</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">Student</span><span style="font-weight: 400;"> model</span><span style="font-weight: 400;">,</span> <span style="font-weight: 400;">StudentView</span><span style="font-weight: 400;"> view</span><span style="font-weight: 400;">){</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">this</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">model </span><span style="font-weight: 400;">=</span><span style="font-weight: 400;"> model</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">this</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">view </span><span style="font-weight: 400;">=</span><span style="font-weight: 400;"> view</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> setStudentName</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">String</span><span style="font-weight: 400;"> name</span><span style="font-weight: 400;">){</span>
+<span style="font-weight: 400;">      model</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">setName</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">name</span><span style="font-weight: 400;">);</span> 
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> getStudentName</span><span style="font-weight: 400;">(){</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">return</span><span style="font-weight: 400;"> model</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">getName</span><span style="font-weight: 400;">();</span> 
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> setStudentRollNo</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">String</span><span style="font-weight: 400;"> rollNo</span><span style="font-weight: 400;">){</span>
+<span style="font-weight: 400;">      model</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">setRollNo</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">rollNo</span><span style="font-weight: 400;">);</span> 
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">String</span><span style="font-weight: 400;"> getStudentRollNo</span><span style="font-weight: 400;">(){</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">return</span><span style="font-weight: 400;"> model</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">getRollNo</span><span style="font-weight: 400;">();</span> 
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> updateView</span><span style="font-weight: 400;">(){</span> 
+<span style="font-weight: 400;">      view</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">printStudentDetails</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">model</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">getName</span><span style="font-weight: 400;">(),</span><span style="font-weight: 400;"> model</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">getRollNo</span><span style="font-weight: 400;">());</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span> 
+<span style="font-weight: 400;">}</span></pre>
+<p><span style="font-weight: 400;">Call this “StudentController.java”. A cursory glance will tell you that this controller is just responsible for calling the model to get/set the data, and then updating the view. </span></p>
+<p><span style="font-weight: 400;">Now, let’s have a look at how all of this is tied together.</span></p>
+<p><b>Step 4: Create the main Java file</b></p>
+<pre><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">class</span> <span style="font-weight: 400;">MVCPatternDemo</span> <span style="font-weight: 400;">{</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">public</span> <span style="font-weight: 400;">static</span> <span style="font-weight: 400;">void</span><span style="font-weight: 400;"> main</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">String</span><span style="font-weight: 400;">[]</span><span style="font-weight: 400;"> args</span><span style="font-weight: 400;">)</span> <span style="font-weight: 400;">{</span>
+
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">//fetch student record based on his roll no from the database</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">Student</span><span style="font-weight: 400;"> model  </span><span style="font-weight: 400;">=</span><span style="font-weight: 400;"> retriveStudentFromDatabase</span><span style="font-weight: 400;">();</span>
+
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">//Create a view : to write student details on console</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">StudentView</span><span style="font-weight: 400;"> view </span><span style="font-weight: 400;">=</span> <span style="font-weight: 400;">new</span> <span style="font-weight: 400;">StudentView</span><span style="font-weight: 400;">();</span>
+
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">StudentController</span><span style="font-weight: 400;"> controller </span><span style="font-weight: 400;">=</span> <span style="font-weight: 400;">new</span> <span style="font-weight: 400;">StudentController</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">model</span><span style="font-weight: 400;">,</span><span style="font-weight: 400;"> view</span><span style="font-weight: 400;">);</span>
+
+<span style="font-weight: 400;">      controller</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">updateView</span><span style="font-weight: 400;">();</span>
+
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">//update model data</span>
+<span style="font-weight: 400;">      controller</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">setStudentName</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">"John"</span><span style="font-weight: 400;">);</span>
+
+<span style="font-weight: 400;">      controller</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">updateView</span><span style="font-weight: 400;">();</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">private</span> <span style="font-weight: 400;">static</span> <span style="font-weight: 400;">Student</span><span style="font-weight: 400;"> retriveStudentFromDatabase</span><span style="font-weight: 400;">(){</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">Student</span><span style="font-weight: 400;"> student </span><span style="font-weight: 400;">=</span> <span style="font-weight: 400;">new</span> <span style="font-weight: 400;">Student</span><span style="font-weight: 400;">();</span>
+<span style="font-weight: 400;">      student</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">setName</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">"Robert"</span><span style="font-weight: 400;">);</span>
+<span style="font-weight: 400;">      student</span><span style="font-weight: 400;">.</span><span style="font-weight: 400;">setRollNo</span><span style="font-weight: 400;">(</span><span style="font-weight: 400;">"10"</span><span style="font-weight: 400;">);</span>
+<span style="font-weight: 400;">      </span><span style="font-weight: 400;">return</span><span style="font-weight: 400;"> student</span><span style="font-weight: 400;">;</span>
+<span style="font-weight: 400;">   </span><span style="font-weight: 400;">}</span>
+<span style="font-weight: 400;">}</span></pre>
+<p><span style="font-weight: 400;">This is called “MVCPatternDemo.java”. As you can see, it fetches the student data from the database or a function (in this case we’re using a function to set the values) and pushes it on to the Student model. Then, it initialises the view we had created earlier. </span></p>
+<p><span style="font-weight: 400;">Further, it also initialises our controller and binds it to the model and the view. The updateView() method is a part of the controller which updates the student details on the console. </span></p>
+<p><b>Step 5: Test the Result</b></p>
+<p><span style="font-weight: 400;">If everything goes right, the result should be: </span></p>
+<pre><span style="font-weight: 400;">Student: </span>
+<span style="font-weight: 400;">Name: Robert</span>
+<span style="font-weight: 400;">Roll No: 10</span>
+<span style="font-weight: 400;">Student: </span>
+<span style="font-weight: 400;">Name: John</span>
+<span style="font-weight: 400;">Roll No: 10</span></pre>
+<p><span style="font-weight: 400;">If you get this as the output, congratulations! You’ve successfully implemented the MVC architecture using Java, albeit for a simple application. However simple, this application is enough to demonstrate the powers of the MVC architecture.</span></p>
+<a href="https://upgrad.com/blog/15-spring-mvc-interview-questions/?iref=Blog_Content_MVC_Architecture" class="su-button su-button-style-flat" style="color:#ffffff;background-color:#2D89EF;border-color:#246ebf;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px" target="_blank"><span style="color:#ffffff;padding:7px 20px;font-size:16px;line-height:24px;border-color:#6cacf4;border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;text-shadow:none;-moz-text-shadow:none;-webkit-text-shadow:none"><i class="fa fa-external-link" style="font-size:16px;color:#FFFFFF"></i> 15 Must-Know Spring MVC Interview Questions</span></a>
+<p>&nbsp;</p>
+<p><b>Wrapping Up…</b></p>
+<p><span style="font-weight: 400;">After so much said and done, it’s hard to emphasise more on the power of the MVC architecture in any web/desktop application these days. It provides an altogether new level of modularity to your code which makes it a lot more readable and maintainable. So, if you want to scale to new heights in your career as an application developer, getting hold of the MVC architecture and its working should be your top priority. </span></p>
+<p><em><span style="font-weight: 400;">Do drop by a comment and let us know how you like this article!</span></em></p>
+<div id="wpdevar_comment_1" style="width:100%;text-align:left;">
+		<span style="padding: 10px;font-size:15px;font-family:Arial,Helvetica Neue,Helvetica,sans-serif;color:#000000;">Facebook Comments</span>
+		<div class="fb-comments" data-href="https://www.upgrad.com/blog/mvc-architecture-in-java/" data-order-by="social" data-numposts="7" data-width="100%" style="display:block;"></div></div><style>#wpdevar_comment_1 span,#wpdevar_comment_1 iframe{width:100%!important}</style><script>isSingle=true;catStr='Full Stack Development';</script><!-- AddThis Advanced Settings above via filter on the_content --><!-- AddThis Advanced Settings below via filter on the_content --><!-- AddThis Advanced Settings generic via filter on the_content --><!-- AddThis Share Buttons above via filter on the_content --><!-- AddThis Share Buttons below via filter on the_content --><div class="at-below-post addthis_tool" data-url="https://www.upgrad.com/blog/mvc-architecture-in-java/"></div><!-- AddThis Share Buttons generic via filter on the_content --><div class="widget-container post-tag-container uncont text-left"><div class="tagcloud"><a href="https://www.upgrad.com/blog/tag/software/" class="tag-cloud-link tag-link-465 tag-link-position-1" style="font-size: 11px;">Software</a>
+<a href="https://www.upgrad.com/blog/tag/technical-skills/" class="tag-cloud-link tag-link-236 tag-link-position-2" style="font-size: 11px;">Technical Skills</a>
+<a href="https://www.upgrad.com/blog/tag/web-development/" class="tag-cloud-link tag-link-466 tag-link-position-3" style="font-size: 11px;">Web Development</a></div></div>
+							</div>
+						</div><div class="postcustom-section"><div class="center-wr"><div class="postcustom-imgwr"><img src="" alt=""/></div><h2 class="postcustomtitle">Become a Full Stack Developer</h2><div class="postcustom-desc">UpGrad and IIIT-Bangalore's PG Diploma in Software Development</div><a class="postcustombtn" href="https://upgrad.com/software-engineering/?iref=Blog_Card_MVC_Architecture">Learn More</a></div></div></div><div class="post-footer post-footer-light row-container"><div class="row-container">
+	  					<div class="row row-parent style-light limit-width no-top-padding double-bottom-padding">
+								
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div>
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Add comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/mvc-architecture-in-java/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.upgrad.com/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-describedby="form-allowed-tags" aria-required="true"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required'/></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required'/></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"/></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="btn" value="Post Comment"/> <input type='hidden' name='comment_post_ID' value='60879' id='comment_post_ID'/>
+<input type='hidden' name='comment_parent' id='comment_parent' value='0'/>
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="5bce9da7d3"/></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="205"/></p>			</form>
+			</div><!-- #respond -->
+		</div>
+</div><!-- #comments -->
+
+							</div>
+						</div></div></div><div class="row-container row-navigation row-navigation-light">
+	  					<div class="row row-parent style-light limit-width">
+								<nav class="post-navigation">
+									<ul class="navigation"><li class="page-prev"><span class="btn-container"><a class="btn btn-link text-default-color btn-icon-left" href="https://www.upgrad.com/blog/video-marketing-the-next-digital-frontier/" rel="prev"><i class="fa fa-angle-left"></i><span>Prev</span></a></span></li><li class="page-next"><span class="btn-container"><a class="btn btn-link text-default-color btn-icon-right" href="https://www.upgrad.com/blog/getting-started-with-wireframing-using-balsamiq/" rel="next"><span>Next</span><i class="fa fa-angle-right"></i></a></span></li></ul><!-- .navigation -->
+							</nav><!-- .post-navigation -->
+							</div>
+						</div>
+          </div>
+        </article>
+</div><!--end of .left-single-content-->
+
+<div class="right-single-content">
+	<div>
+
+		<aside id="media_image-9" class="widget widget_media_image widget-container sidebar-widgets"><a href="https://upgrad.com/software-engineering/?iref=Blog_Sidebar_SD"><img width="495" height="967" src="https://www.upgrad.com/blog/wp-content/uploads/2016/11/Software-Development.png" class="image wp-image-62132  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" srcset="https://www.upgrad.com/blog/wp-content/uploads/2016/11/Software-Development.png 495w, https://www.upgrad.com/blog/wp-content/uploads/2016/11/Software-Development-185x362.png 185w, https://www.upgrad.com/blog/wp-content/uploads/2016/11/Software-Development-154x300.png 154w, https://www.upgrad.com/blog/wp-content/uploads/2016/11/Software-Development-322x630.png 322w" sizes="(max-width: 495px) 100vw, 495px"/></a></aside><aside id="execphp-2" class="widget widget_execphp widget-container sidebar-widgets"><h3 class="widget-title">Recent Posts</h3>			<div class="execphpwidget"><li><a href="https://www.upgrad.com/blog/is-angularjs-right-choice-for-your-next-mobile-app-development/">Is AngularJS Right Choice For Your Next Mobile App Development?</a></li>
+<li><a href="https://www.upgrad.com/blog/how-to-make-most-of-being-a-jack-of-multiple-things/">How to Make Most of Being A Jack of Multiple Things!</a></li>
+<li><a href="https://www.upgrad.com/blog/what-does-a-software-developer-do/">What Does A Software Developer Do?</a></li>
+<li><a href="https://www.upgrad.com/blog/15-must-know-agile-methodology-interview-questions/">15 Must-Know Agile Methodology Interview Questions</a></li>
+<li><a href="https://www.upgrad.com/blog/intellij-idea-vs-eclipse-the-holy-war/">IntelliJ IDEA vs. Eclipse: The Holy War!</a></li>
+</div>
+		</aside><aside id="custom_html-2" class="widget_text widget widget_custom_html widget-container sidebar-widgets"><h3 class="widget-title">Follow UpGrad</h3><div class="textwidget custom-html-widget"><ul>
+<li class="facebook-icon-color"><a href="https://www.facebook.com/UpGradGlobal" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+<li class="insta-icon-color"><a href="https://www.instagram.com/upgrad_edu/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+<li class="linkedin-icon-color"><a href="https://www.linkedin.com/company/ueducation" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+<li class="twitter-icon-color"><a href="https://twitter.com/upGrad_Edu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+<li class="youtube-icon-color"><a href="https://www.youtube.com/channel/UCO3pT4ZI8x2RVqYWxxcrZsw" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+</ul></div></aside><aside id="llama_widget-2" class="widget widget_llama_widget widget-container sidebar-widgets"><h3 class="widget-title">Accelerate Your Career with UpGrad</h3>
+        <script defer async src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAV_BSqA__DhqJnfvTG2R5mhcCZQqMiNL0&libraries=places&sensor=false'></script>
+        
+        <form method='post' class='email-form' id='llama-widget' novalidate='novalidate'>
+            <div class='input-holder field-text wpcf7-form-control-wrap inputName'>	
+                
+                <div class='field-element '>
+                <input id='sb-firstname' type='text' name='Rmlyc3QgbmFtZQ==' value='' data-label-inside='First name' placeholder='First Name' class='wpcf7-form-control wpcf7-text wpcf7-validates-as-required shortnice form-input  required  ' pattern='[A-Za-z]*'>
+                </div>
+            </div>
+            <div class='input-holder field-text wpcf7-form-control-wrap inputName'>	
+                <div class='field-element '>
+                <input id='sb-lastname' type='text' name='TGFzdCBuYW1l' value='' data-label-inside='Last name' placeholder='Last Name' class='wpcf7-form-control wpcf7-text wpcf7-validates-as-required shortnice form-input  required  ' pattern='[A-Za-z]*'>
+                </div>
+            </div>
+            <div class='input-holder field-text wpcf7-form-control-wrap inputName'>	
+                <div class='field-element '>
+                <input id='sb-email' type='email' name='RW1haWw=' value='' data-label-inside='Email' placeholder='Email' class='wpcf7-form-control wpcf7-text wpcf7-validates-as-required shortnice form-input required  ' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'>
+                </div>
+            </div>
+            <div class='input-holder field-text wpcf7-form-control-wrap inputName'>
+                <div class='field-element '>
+                <input id='sb-phone' type='text' name='UGhvbmUgbm8u' value='' data-label-inside='Phone no.' placeholder='Phone No.' class='wpcf7-form-control wpcf7-text wpcf7-validates-as-required shortnice form-input  required  '>
+                </div>
+            </div>
+            <div class='input-holder field-text wpcf7-form-control-wrap inputName'>	
+                <div class='field-element '>
+                <input id='sb-city' type='text' name='Q2l0eQ==' value='' data-label-inside='City' placeholder='City' class='wpcf7-form-control wpcf7-text wpcf7-validates-as-required shortnice form-input  required  '>
+                </div>
+            </div>
+            <div class='input-holder field-text wpcf7-form-control-wrap inputName'>
+                <div id='llama-form-status' class='llama-bv field-element llama-center'></div>
+                <div class='field-element llama-center '>
+                    <input type='submit' value='Submit' id='llama-button' class='llamasubmit'>            
+                </div>
+            </div>
+            <input type='hidden' id='hd-redirect' name='redirect' value=''>
+            <input type='hidden' id='hd-category' name='catname' value='Software'>
+            <input type='hidden' id='hd-folderName' name='folderName' value='software-engineering'>
+            <input type='hidden' id='hd-course_title' name='course_title' value='software-engineering'>
+            <input type='hidden' id='hd-courseName' name='courseName' value='software-engineering'>
+            <input type='hidden' id='hd-cn' name='cn' value='Full Stack Development'>
+            <div class='llama-small'>
+                By clicking 'Submit' you Agree to <a href='https://www.upgrad.com/terms?iref=Blog_Leadform_TermsNConditions' title='UpGrad' s Terms & Conditions'>UpGrad's Terms & Conditions</a>.
+            </div>
+        </form>
+        <script>function initializeMapsApi(){var input=document.getElementById('city');new google.maps.places.Autocomplete(input);}
+google.maps.event.addDomListener(window,'load',initializeMapsApi);</script>
+        </aside>	</div>
+</div><!--end of .right-single-content-->
+
+</div>
+
+<div class="related-articlewr">
+    <div class="center-wr">
+    	<h2 class="rlpost-title">Related Articles</h2>
+		<ul class="catetemp-postwr clearfix">
+							<li>
+					<a class="post-analytic" data-label-value="Is AngularJS Right Choice For Your Next Mobile App Development?" href="https://www.upgrad.com/blog/is-angularjs-right-choice-for-your-next-mobile-app-development/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/11/Nov_Mobile-App-Development-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Is AngularJS Right Choice For Your Next Mobile App Development?						</h2>
+						<div class="catetemp-postcnt">Mobiles are something that we use every day and are an integral part of our&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Kavya Gajjar' src='https://www.upgrad.com/blog/wp-content/uploads/2016/11/auhor-image-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Kavya Gajjar							</span>
+							<span class="catetemp-postdate">November 29, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Growing Demand for Software Engineers in Blockchain Technology" href="https://www.upgrad.com/blog/growing-demand-for-software-engineers-in-blockchain-technology/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/10/Oct_Demand-for-Software-Engineers-in-Blockchain-Technology-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Growing Demand for Software Engineers in Blockchain Technology						</h2>
+						<div class="catetemp-postcnt">Blockchain technology makes use of a centralized, peer-to-peer (P2P) network of databases, also called nodes,&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">October 31, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="What is Blockchain Technology? [Explained]" href="https://www.upgrad.com/blog/what-is-blockchain-technology-explained/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/10/Oct_Blockchain-Technology-Explained--300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							What is Blockchain Technology? [Explained]						</h2>
+						<div class="catetemp-postcnt">If ‘Blockchain’ is the word you’re hearing a tad too much nowadays, then by now&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate"></span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="7 ways Blockchain is Revolutionizing the Automotive Industry" href="https://www.upgrad.com/blog/7-ways-blockchain-is-revolutionizing-the-automotive-industry/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/10/Oct_Blockchain-in-the-Automotive-Industry-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							7 ways Blockchain is Revolutionizing the Automotive Industry						</h2>
+						<div class="catetemp-postcnt">The automotive industry is witnessing huge growth with every passing year. In 2017 alone, 73.5&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='' src='https://secure.gravatar.com/avatar/c081cfb064418fdca9d8b19b00943ba2?s=24&#038;d=monsterid&#038;r=g' srcset='https://secure.gravatar.com/avatar/c081cfb064418fdca9d8b19b00943ba2?s=48&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-24 photo' height='24' width='24'/></span>Michelle Joe							</span>
+							<span class="catetemp-postdate">October 22, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="How to Make Most of Being A Jack of Multiple Things!" href="https://www.upgrad.com/blog/how-to-make-most-of-being-a-jack-of-multiple-things/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/09/Sep_Book-Excerpt-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							How to Make Most of Being A Jack of Multiple Things!						</h2>
+						<div class="catetemp-postcnt">This is an excerpt from the e-book ‘self.debug - An Emotional Guide To Being A&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Karan Kurani' src='https://www.upgrad.com/blog/wp-content/uploads/2018/09/Karan-Kurani_avatar_1536221503-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Karan Kurani							</span>
+							<span class="catetemp-postdate">September 6, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="All You Need to Know About Bitcoin" href="https://www.upgrad.com/blog/all-you-need-to-know-about-bitcoin/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/09/Sep_All-You-Need-To-Know-About-Bitcoin-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							All You Need to Know About Bitcoin						</h2>
+						<div class="catetemp-postcnt">Not long ago, Bitcoin was the new buzz of the town and all everyone wanted&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Radhika Maloo' src='https://www.upgrad.com/blog/wp-content/uploads/2018/08/Radhika-Maloo_avatar_1533189093-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Radhika Maloo							</span>
+							<span class="catetemp-postdate">September 5, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Applications of Blockchain in Healthcare" href="https://www.upgrad.com/blog/applications-of-blockchain-in-healthcare/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/08/Aug_Blockchain-Applications-in-Healthcare-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Applications of Blockchain in Healthcare						</h2>
+						<div class="catetemp-postcnt">After taking the finance and business sector by storm, Blockchain is now all set to&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Shubham Chakraborty' src='https://blog.upgrad.com/wp-content/uploads/2017/10/Shubham-Chakraborty_avatar_1507647628-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Shubham Chakraborty							</span>
+							<span class="catetemp-postdate">August 29, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Blockchain Applications in Supply Chain" href="https://www.upgrad.com/blog/blockchain-applications-in-supply-chain/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/08/Aug_Blockchain-Applications-in-Supply-Chain-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Blockchain Applications in Supply Chain						</h2>
+						<div class="catetemp-postcnt">The distributed-nature technology of Blockchain has disrupted many industries, with its uses and applications leading&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Radhika Maloo' src='https://www.upgrad.com/blog/wp-content/uploads/2018/08/Radhika-Maloo_avatar_1533189093-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Radhika Maloo							</span>
+							<span class="catetemp-postdate">August 2, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Blockchain Technology Use Cases in the Banking Sector" href="https://www.upgrad.com/blog/blockchain-technology-use-cases-in-the-banking-sector/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/08/Aug_Blockchain-in-the-Banking-Sector-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Blockchain Technology Use Cases in the Banking Sector						</h2>
+						<div class="catetemp-postcnt">The blockchain technology has successfully disrupted many industries, and the banking sector is one of&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Radhika Maloo' src='https://www.upgrad.com/blog/wp-content/uploads/2018/08/Radhika-Maloo_avatar_1533189093-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Radhika Maloo							</span>
+							<span class="catetemp-postdate"></span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="What Does A Software Developer Do?" href="https://www.upgrad.com/blog/what-does-a-software-developer-do/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/08/Aug_What-Does-A-Software-Developer-Do--300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							What Does A Software Developer Do?						</h2>
+						<div class="catetemp-postcnt">As the world continues to embrace technological advancements at a pace that’s growing exponentially, the&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">August 1, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="15 Must-Know Agile Methodology Interview Questions" href="https://www.upgrad.com/blog/15-must-know-agile-methodology-interview-questions/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_-Agile-Methodology-Interview-Questions-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							15 Must-Know Agile Methodology Interview Questions						</h2>
+						<div class="catetemp-postcnt">Let’s accept, we all get a bit nervous about interviews. No matter how capable you&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">April 12, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="IntelliJ IDEA vs. Eclipse: The Holy War!" href="https://www.upgrad.com/blog/intellij-idea-vs-eclipse-the-holy-war/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/04/FI_The-holy-war-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							IntelliJ IDEA vs. Eclipse: The Holy War!						</h2>
+						<div class="catetemp-postcnt">Batman vs. Superman, Marvel vs. DC, Windows vs. Linux, Java vs. C#, are a few&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate"></span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="15 Must-Know Spring MVC Interview Questions" href="https://www.upgrad.com/blog/15-spring-mvc-interview-questions/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/03/FI-2_Spring-MVC-Interview-Questions-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							15 Must-Know Spring MVC Interview Questions						</h2>
+						<div class="catetemp-postcnt">Spring has become one of the most used Java frameworks for the development of web-applications.&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">March 25, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="What is Test-driven Development: A Newbie’s Guide" href="https://www.upgrad.com/blog/what-is-test-driven-development-a-newbies-guide/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/03/FI-2_Test-driven-Development-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							What is Test-driven Development: A Newbie’s Guide						</h2>
+						<div class="catetemp-postcnt">Programmers and bugs have been in a never-ending fight for supremacy since time unknown. It’s&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">March 12, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Internship: The road to a promising tech career" href="https://www.upgrad.com/blog/internship-the-road-to-a-promising-tech-career/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/02/FI_Guaranteed-Internship-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Internship: The road to a promising tech career						</h2>
+						<div class="catetemp-postcnt">We at UpGrad have always stressed on simplifying the convoluted routes of great careers for&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='UpGrad' src='https://blog.upgrad.com/wp-content/uploads/2017/11/UpGrad_avatar_1510920652-24x24.png' class='avatar avatar-24 photo' height='24' width='24'/></span>UpGrad							</span>
+							<span class="catetemp-postdate">February 28, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Why Companies are Looking to Hire Full Stack Developers" href="https://www.upgrad.com/blog/why-companies-are-looking-to-hire-full-stack-developers/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2018/01/JanFI2_Why-companies-are-looking-to-hire-full-stack-developers-2-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Why Companies are Looking to Hire Full Stack Developers						</h2>
+						<div class="catetemp-postcnt">It’s no secret that companies today are looking to hire young and talented software developers.&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Gopi Vajravelu' src='https://blog.upgrad.com/wp-content/uploads/2017/12/Gopi-Vajravelu_avatar_1513930961-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Gopi Vajravelu							</span>
+							<span class="catetemp-postdate">January 31, 2018</span>
+						</div>
+					</div>
+										</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="How to Succeed in Your First Software Development Job" href="https://www.upgrad.com/blog/how-to-succeed-at-your-first-software-development-job/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2017/12/FI_The-12-Best-Things-at-UpGrad-in-2017-copy-2-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							How to Succeed in Your First Software Development Job						</h2>
+						<div class="catetemp-postcnt">Coming into a new job is always challenging. You have to learn how the company&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Gopi Vajravelu' src='https://blog.upgrad.com/wp-content/uploads/2017/12/Gopi-Vajravelu_avatar_1513930961-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Gopi Vajravelu							</span>
+							<span class="catetemp-postdate">December 22, 2017</span>
+						</div>
+					</div>
+					<span class="newpost">New</span>					</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Interview with Farooq Adam, Co-Founder, Fynd" href="https://www.upgrad.com/blog/interview-with-farooq-adam-co-founder-fynd/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2017/12/SOFTWARE_Interview-with-Farooq-Adam-Co-Founder-Fynd-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Interview with Farooq Adam, Co-Founder, Fynd						</h2>
+						<div class="catetemp-postcnt">Following up on our series of co-founder and CTO interviews, we met Farooq Adam, Co-Founder&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">December 4, 2017</span>
+						</div>
+					</div>
+					<span class="newpost">New</span>					</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="Interview with Ankit Tomar, Co-Founder &#038; CTO, Bizongo" href="https://www.upgrad.com/blog/interview-with-ankit-tomar-co-founder-cto-bizongo/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2017/12/SOFTWARE_Interview-with-Ankit-Tomar-Co-Founder-CTO-Bizongo-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							Interview with Ankit Tomar, Co-Founder &#038; CTO, Bizongo						</h2>
+						<div class="catetemp-postcnt">We recently met with the Co-Founder and CTO of one of India’s leading online B2B&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='Arjun Mathur' src='https://blog.upgrad.com/wp-content/uploads/2016/11/Arjun_Mathur-e1512106272291-24x24.jpg' class='avatar avatar-24 photo' height='24' width='24'/></span>Arjun Mathur							</span>
+							<span class="catetemp-postdate">December 1, 2017</span>
+						</div>
+					</div>
+					<span class="newpost">New</span>					</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="How to Become a Full-Stack Developer: Part 3" href="https://www.upgrad.com/blog/how-to-become-a-full-stack-developer-part-3/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2017/11/SOFTWARE_How-to-become-a-Full-Stack-Developer-Part-3-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							How to Become a Full-Stack Developer: Part 3						</h2>
+						<div class="catetemp-postcnt">This post is the third and final in the series on becoming a full-stack developer.&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='' src='https://secure.gravatar.com/avatar/db51fa3f6a5b0d034a8a1378dd9a1be6?s=24&#038;d=monsterid&#038;r=g' srcset='https://secure.gravatar.com/avatar/db51fa3f6a5b0d034a8a1378dd9a1be6?s=48&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-24 photo' height='24' width='24'/></span>Rounak Banik							</span>
+							<span class="catetemp-postdate"></span>
+						</div>
+					</div>
+					<span class="newpost">New</span>					</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="How to Become a Full-Stack Developer: Part 2" href="https://www.upgrad.com/blog/how-to-become-a-full-stack-developer-part-2/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2017/11/SOFTWARE_How-to-become-a-Full-Stack-Developer-Part-2-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							How to Become a Full-Stack Developer: Part 2						</h2>
+						<div class="catetemp-postcnt">This is the second in a series of posts on teaching yourself programming and full-stack&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='' src='https://secure.gravatar.com/avatar/db51fa3f6a5b0d034a8a1378dd9a1be6?s=24&#038;d=monsterid&#038;r=g' srcset='https://secure.gravatar.com/avatar/db51fa3f6a5b0d034a8a1378dd9a1be6?s=48&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-24 photo' height='24' width='24'/></span>Rounak Banik							</span>
+							<span class="catetemp-postdate"></span>
+						</div>
+					</div>
+					<span class="newpost">New</span>					</a>
+				</li>
+
+								
+							<li>
+					<a class="post-analytic" data-label-value="How to Become a Full Stack Developer: Part 1" href="https://www.upgrad.com/blog/how-to-become-a-full-stack-developer-part-1/">
+											<div class="catetemp-imgwr">
+														<img src="https://www.upgrad.com/blog/wp-content/uploads/2017/11/SOFTWARE_How-to-become-a-Full-Stack-Developer-Part-1-1-300x170.png" alt=""/>
+						</div>
+										<div class="catetempcntwr">
+						<h2 class="catetemp-posttitle">
+							How to Become a Full Stack Developer: Part 1						</h2>
+						<div class="catetemp-postcnt">It is the 21st century and the geek has inherited Earth. A Full Stack Developer&hellip;</div>
+						<div class="catetemp-postmeta clearfix">
+							<span class="catetemp-author">
+							 <span><img alt='' src='https://secure.gravatar.com/avatar/db51fa3f6a5b0d034a8a1378dd9a1be6?s=24&#038;d=monsterid&#038;r=g' srcset='https://secure.gravatar.com/avatar/db51fa3f6a5b0d034a8a1378dd9a1be6?s=48&#038;d=monsterid&#038;r=g 2x' class='avatar avatar-24 photo' height='24' width='24'/></span>Rounak Banik							</span>
+							<span class="catetemp-postdate"></span>
+						</div>
+					</div>
+					<span class="newpost">New</span>					</a>
+				</li>
+
+								
+								</ul>
+	</div>
+</div>
+<form class="catslugform" action="https://www.upgrad.com/blog/" method="post" name="submitForm">
+	<input class="catslugnm" type="hidden" name="catslugnm" value=""/>
+</form>
+
+
+
+<script type="text/javascript">jQuery(document).ready(function(){jQuery('.close_popup').click(function(){jQuery('.subscibe_popup').hide();});});jQuery(window).load(function(){var post_id=jQuery('.post_id').text();var numItems=jQuery('.bred-list').length;if(numItems<4){jQuery('.breadcrumps-new .bred-list:nth-child(2n)').addClass('new');var category_name=jQuery('.new a span').text();jQuery('input[name="interested_in_big_data"]').val('yes');}else{jQuery('.breadcrumps-new .bred-list:nth-child(3n)').addClass('new-2');var category_name=jQuery('.new-2 a span').text();if(category_name=='Big Data'){jQuery('input[name="interested_in_big_data"]').val('yes');}}});</script>
+
+							</div><!-- sections container -->
+						</div><!-- page wrapper -->
+										<footer id="colophon" class="site-footer">
+						<div data-parent="true" class="style-color-rgdb-bg row-container mobile-hidden"><div class="row double-top-padding double-bottom-padding single-h-padding limit-width row-parent"><div class="row-inner"><div class="pos-top pos-left align_left column_parent col-lg-3 col-md-33 half-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont">
+	<div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			<aside id="categories-11" class="widget widget_categories widget-container sidebar-widgets"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-1"><a href="https://www.upgrad.com/blog/uncategorized/">All</a>
+</li>
+	<li class="cat-item cat-item-410"><a href="https://www.upgrad.com/blog/data/">Data</a>
+<ul class='children'>
+	<li class="cat-item cat-item-480"><a href="https://www.upgrad.com/blog/data/big-data/">Big Data</a>
+</li>
+	<li class="cat-item cat-item-479"><a href="https://www.upgrad.com/blog/data/data-science/">Data Science</a>
+</li>
+	<li class="cat-item cat-item-481"><a href="https://www.upgrad.com/blog/data/machine-learning-and-artificial-intelligence/">Machine Learning &amp; Artificial Intelligence</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-408"><a href="https://www.upgrad.com/blog/entrepreneurship/">Entrepreneurship</a>
+</li>
+	<li class="cat-item cat-item-411"><a href="https://www.upgrad.com/blog/marketing/">Marketing</a>
+<ul class='children'>
+	<li class="cat-item cat-item-482"><a href="https://www.upgrad.com/blog/marketing/digital-marketing/">Digital Marketing</a>
+</li>
+	<li class="cat-item cat-item-483"><a href="https://www.upgrad.com/blog/marketing/digital-strategies/">Digital Strategies</a>
+</li>
+	<li class="cat-item cat-item-484"><a href="https://www.upgrad.com/blog/marketing/sales-and-marketing-management/">Sales and Marketing Management</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-409"><a href="https://www.upgrad.com/blog/product/">Product</a>
+</li>
+	<li class="cat-item cat-item-464"><a href="https://www.upgrad.com/blog/software/">Software</a>
+<ul class='children'>
+	<li class="cat-item cat-item-505"><a href="https://www.upgrad.com/blog/software/blockchain/">Blockchain</a>
+</li>
+	<li class="cat-item cat-item-506"><a href="https://www.upgrad.com/blog/software/full-stack-development/">Full Stack Development</a>
+</li>
+</ul>
+</li>
+		</ul>
+</aside>
+		</div>
+	</div>
+</div></div></div></div></div><div class="pos-top pos-left align_left column_parent col-lg-3 tablet-hidden col-md-25 single-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont">
+	<div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			<aside id="nav_menu-2" class="widget widget_nav_menu widget-container sidebar-widgets"><h3 class="widget-title">Programs</h3><div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-56342" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56342"><a target="_blank" href="https://upgrad.com/data-science/?iref=Blog_Footer_Program_datascience">PG Program in Data Science</a></li>
+<li id="menu-item-57699" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57699"><a target="_blank" href="https://upgrad.com/big-data/?iref=Blog_Footer_Program_BigData">PG Program in Big Data Engineering</a></li>
+<li id="menu-item-60004" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60004"><a href="https://upgrad.com/machine-learning-and-artificial-intelligence/?iref=Blog_Footer_Program_MlAndAi">PG Program in Machine Learning &#038; AI</a></li>
+<li id="menu-item-60007" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60007"><a href="https://upgrad.com/digital-strategies/?iref=Blog_Footer_Program_digitalStrategies">Executive Program in Strategic Digital Marketing</a></li>
+<li id="menu-item-56340" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56340"><a target="_blank" href="https://upgrad.com/digital-marketing/?iref=Blog_Footer_Program_PGInDigitalMarketing">PG Certification in Digital Marketing &#038; Communication</a></li>
+<li id="menu-item-60006" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60006"><a href="https://upgrad.com/sales-and-marketing/?iref=Blog_Footer_Program_SalesAndMarketing">PG Program in Management</a></li>
+<li id="menu-item-56341" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56341"><a target="_blank" href="https://upgrad.com/product-management/?iref=Blog_Footer_Program_ProductManagement">Product Management Certification Program</a></li>
+<li id="menu-item-56343" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56343"><a target="_blank" href="https://upgrad.com/entrepreneurship-certificate-program/?iref=Blog_Footer_Program_Entrepreneurship">UpGrad Entrepreneurship Program</a></li>
+<li id="menu-item-57700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-57700"><a target="_blank" href="https://upgrad.com/software-engineering/?iref=Blog_Footer_Program_SoftwareEngineering">PG Program in Software Development</a></li>
+</ul></div></aside>
+		</div>
+	</div>
+</div></div></div></div></div><div class="pos-top pos-left align_left column_parent col-lg-3 col-md-33 single-internal-gutter"><div class="uncol style-dark"><div class="uncoltable"><div class="uncell no-block-padding"><div class="uncont">
+	<div class="wpb_widgetised_column wpb_content_element">
+		<div class="wpb_wrapper">
+			
+			<aside id="recent-posts-6" class="widget widget_recent_entries widget-container sidebar-widgets">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+											<li>
+					<a href="https://www.upgrad.com/blog/6-strategies-to-drive-traffic-from-instagram-to-your-website/">6 Strategies to drive Traffic from Instagram to Your Website</a>
+									</li>
+											<li>
+					<a href="https://www.upgrad.com/blog/5-essential-skills-needed-to-become-a-big-data-engineer/">5 Essential Skills Needed to Become a Big Data Engineer</a>
+									</li>
+											<li>
+					<a href="https://www.upgrad.com/blog/5-tools-every-social-media-marketer-needs-to-know-about/">5 Tools Every Social Media Marketer Needs To Know About</a>
+									</li>
+											<li>
+					<a href="https://www.upgrad.com/blog/is-angularjs-right-choice-for-your-next-mobile-app-development/">Is AngularJS Right Choice For Your Next Mobile App Development?</a>
+									</li>
+											<li>
+					<a href="https://www.upgrad.com/blog/6-key-elements-which-will-make-you-a-better-leader-than-you-are/">6 Key Elements which will Make YOU a Better Leader than You Are!</a>
+									</li>
+					</ul>
+		</aside><aside id="custom_html-5" class="widget_text widget widget_custom_html widget-container sidebar-widgets"><div class="textwidget custom-html-widget"><ul class='tc-footer'>
+	<li><a href='https://www.upgrad.com/contact/?iref=Blog_Footer_ContactUs'>Contact Us</a></li>
+	<li><a href='https://www.upgrad.com/privacy/?iref=Blog_Footer_PrivacyPolicy'> Privacy Policy</a></li>
+	<li><a href='https://www.upgrad.com/terms/?iref=Blog_Footer_TermsNConditions'> Terms & Conditions</a></li>
+</ul></div></aside><aside id="custom_html-4" class="widget_text widget widget_custom_html widget-container sidebar-widgets"><h3 class="widget-title">Follow UpGrad</h3><div class="textwidget custom-html-widget"><style>.footer-social li{display:inline-block}#custom_html-4{margin-top:20px}</style>
+
+<ul class='footer-social'>
+<li class="facebook-icon-color"><a href="https://www.facebook.com/UpGradGlobal" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+<li class="insta-icon-color"><a href="https://www.instagram.com/upgrad_edu/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+<li class="linkedin-icon-color"><a href="https://www.linkedin.com/company/ueducation" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+<li class="twitter-icon-color"><a href="https://twitter.com/upGrad_Edu" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+<li class="youtube-icon-color"><a href="https://www.youtube.com/channel/UCO3pT4ZI8x2RVqYWxxcrZsw" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+</ul></div></aside>
+		</div>
+	</div>
+</div></div></div></div></div><script id="script-244662" type="text/javascript">UNCODE.initRow(document.getElementById("script-244662"));</script></div></div></div><div class="row-container style-dark-bg footer-center footer-last">
+	  					<div class="row row-parent style-dark limit-width no-top-padding no-h-padding no-bottom-padding">
+								<div class="site-info uncell col-lg-6 pos-middle text-center"><p style="text-align: center;">Copyright @2015-2018 <a href="https://www.upgrad.com/?iref=Blog_Footer_Copyright_Text">UpGrad Education Private Limited</a>.</p>
+<p>&nbsp;</p>
+</div><!-- site info -->
+							</div>
+						</div>						<div class="footer-bottom">
+							<div class="row-parent clearfix">
+															</div>
+						</div>
+					</footer>
+									</div><!-- main container -->
+			</div><!-- main wrapper -->
+		</div><!-- box container -->
+	</div><!-- box wrapper -->
+		<div class="overlay overlay-sequential style-dark style-dark-bg overlay-search" data-area="search" data-container="box-container">
+		<div class="mmb-container"><div class="menu-close-search mobile-menu-button menu-button-offcanvas mobile-menu-button-dark lines-button x2 overlay-close close" data-area="search" data-container="box-container"><span class="lines"></span></div></div>
+		<div class="search-container"><form action="https://www.upgrad.com/blog/" method="get">
+	<div class="search-container-inner">
+		<input type="search" class="search-field form-fluid no-livesearch" placeholder="Search…" value="" name="s" title="Search for:">
+	  <i class="fa fa-search3"></i>
+	</div>
+</form>
+</div>
+	</div>
+
+	
+
+        <div id="fb-root"></div>
+        <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1650713914989906&version=v2.3";fjs.parentNode.insertBefore(js,fjs);}(document,'script','facebook-jssdk'));</script>	
+    <script src="//my.hellobar.com/3d9b4c7ec183b7130796d649c6ceadc8e0c4def8.js" type="text/javascript" async="async"></script><noscript><img height='1' width='1' style='display: none;' src='https://www.facebook.com/tr?id=633256313481494&ev=PageView&noscript=1&cd[domain]=www.upgrad.com%2Fblog' alt='facebook_pixel'></noscript><noscript><img height='1' width='1' style='display: none;' src='https://www.facebook.com/tr?id=633256313481494&ev=GeneralEvent&noscript=1&cd[post_type]=post&cd[content_name]=A+Beginner%E2%80%99s+Guide+to+MVC+Architecture+in+Java&cd[post_id]=60879&cd[content_category]=Full+Stack+Development%2C+Software&cd[domain]=www.upgrad.com%2Fblog' alt='facebook_pixel'></noscript>
+		<script type="text/javascript">//<![CDATA[
+var pys_edd_ajax_events=[];
+//]]></script>
+
+		<script data-cfasync="false" type="text/javascript">if(window.addthis_product===undefined){window.addthis_product="wpp";}if(window.wp_product_version===undefined){window.wp_product_version="wpp-6.1.8";}if(window.wp_blog_version===undefined){window.wp_blog_version="4.9.8";}if(window.addthis_share===undefined){window.addthis_share={"passthrough":{"twitter":{"via":"UpGrad_Edu"}}};}if(window.addthis_config===undefined){window.addthis_config={"data_track_clickback":true,"ui_atversion":"300"};}if(window.addthis_plugin_info===undefined){window.addthis_plugin_info={"info_status":"enabled","cms_name":"WordPress","plugin_name":"Share Buttons by AddThis","plugin_version":"6.1.8","plugin_mode":"AddThis","anonymous_profile_id":"wp-e881742b9541a8be6188cbf8027a9f12","page_info":{"template":"posts","post_type":""},"sharing_enabled_on_post_via_metabox":false};}
+(function(){var first_load_interval_id=setInterval(function(){if(typeof window.addthis!=='undefined'){window.clearInterval(first_load_interval_id);if(typeof window.addthis_layers!=='undefined'&&Object.getOwnPropertyNames(window.addthis_layers).length>0){window.addthis.layers(window.addthis_layers);}
+if(Array.isArray(window.addthis_layers_tools)){for(i=0;i<window.addthis_layers_tools.length;i++){window.addthis.layers(window.addthis_layers_tools[i]);}}}},1000)}());</script><link rel='stylesheet' id='dashicons-css' href='https://www.upgrad.com/blog/wp-includes/css/dashicons.min.css?ver=4.9.8' type='text/css' media='all'/>
+<link rel='stylesheet' id='thickbox-css' href='https://www.upgrad.com/blog/wp-includes/js/thickbox/thickbox.css?ver=4.9.8' type='text/css' media='all'/>
+<link rel='stylesheet' id='font-awesome-css' href='https://www.upgrad.com/blog/wp-content/plugins/uncode-js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=4.12.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='su-shortcodes-css' href='https://www.upgrad.com/blog/wp-content/plugins/shortcodes-ultimate/includes/css/shortcodes.css?ver=5.0.8' type='text/css' media='all'/>
+<script type='text/javascript' src='https://s7.addthis.com/js/300/addthis_widget.js?ver=4.9.8#pubid=ra-56bc80868c94a593'></script>
+<script type='text/javascript'>//<![CDATA[
+var wpcf7={"apiSettings":{"root":"https:\/\/www.upgrad.com\/blog\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+//]]></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.4'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/themes/uncode/library/js/plugins.js?ver=868061548'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-content/themes/uncode/library/js/app.js?ver=868061548'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/comment-reply.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>//<![CDATA[
+var thickboxL10n={"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/www.upgrad.com\/blog\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+//]]></script>
+<script type='text/javascript' src='https://www.upgrad.com/blog/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105'></script>
+<script async="async" type='text/javascript' src='https://www.upgrad.com/blog/wp-content/plugins/akismet/_inc/form.js?ver=4.0.8'></script>
+
+
+
+<script type="text/javascript">jQuery(window).load(function(){jQuery(".at-share-btn").each(function(){jQuery(this).addClass('social-analytic');var sociallabel=jQuery(this).find('.at4-visually-hidden').text();jQuery(this).attr("data-label-value",sociallabel);})
+jQuery('.social-analytic').on('click',function(){var socialVal=jQuery(this).data('label-value');ga('send','event','Social Media','click',socialVal);});});jQuery(document).ready(function(){jQuery("ul.menu-smart a").each(function(){jQuery(this).addClass('menu-analytic');var menulabel=jQuery(this).text();jQuery(this).attr("data-label-value",menulabel+' Menu');})
+jQuery('.menu-analytic').on('click',function(){var menuVal=jQuery(this).data('label-value');ga('send','event','Menu','click',menuVal);});jQuery('.menu-item-button a').addClass('btn-analytic');jQuery('.menu-item-button a').attr("data-label-value","Take a Free Demo Button");jQuery('a.search-icon').addClass('btn-analytic');jQuery('a.search-icon').attr("data-label-value","Search Button");jQuery('.view-all-btn-wrapper').addClass('btn-analytic');jQuery('.view-all-btn-wrapper').attr("data-label-value","View All Button");jQuery('#main-logo .navbar-brand').addClass('btn-analytic');jQuery('#main-logo .navbar-brand').attr("data-label-value","Logo");jQuery('.pushcrew-side-button').addClass('btn-analytic');jQuery('.pushcrew-side-button').attr("data-label-value","Get Insights Now Button");jQuery('.btn-analytic').on('click',function(){var btnVal=jQuery(this).data('label-value');ga('send','event','Buttons','click',btnVal);});jQuery('.post-analytic').on('click',function(){var btnVal=jQuery(this).data('label-value');ga('send','event','Posts','click',btnVal);});jQuery(".single .post-content a").each(function(){jQuery(this).addClass('link-analytic');var linklabel=jQuery(this).text();jQuery(this).attr("data-label-value",linklabel);})
+jQuery('.link-analytic').on('click',function(){var linkVal=jQuery(this).data('label-value');ga('send','event','Post Links','click',linkVal);});jQuery("footer a").each(function(){jQuery(this).addClass('footer-analytic');var footerlabel=jQuery(this).text();jQuery(this).attr("data-label-value",footerlabel);})
+jQuery('.footer-analytic').on('click',function(){var footerVal=jQuery(this).data('label-value');ga('send','event','Footer Links','click',footerVal);});jQuery(".filter-button").each(function(){jQuery(this).addClass('portfolio-analytic');var pflabel=jQuery(this).text();jQuery(this).attr("data-label-value",pflabel);})
+jQuery('.portfolio-analytic').on('click',function(){var pfVal=jQuery(this).data('label-value');ga('send','event','Home Portfolio','click',pfVal);});});</script>
+
+<script src="//cdn.jsdelivr.net/youtube-google-analytics/8.0.2/lunametrics-youtube.gtm.min.js"></script>
+<script type="text/javascript" id="gtm-youtube-tracking">var anon=function(){var iframes=document.getElementsByTagName('iframe');var embeds=document.getElementsByTagName('embed');var i;function isYouTubeVideo(potentialYouTubeVideo){var potentialYouTubeVideoSrc=potentialYouTubeVideo.src||'';if(potentialYouTubeVideoSrc.indexOf('youtube.com/embed/')>-1||potentialYouTubeVideoSrc.indexOf('youtube.com/v/')>-1){return true;}}
+for(i=iframes.length-1;i>-1;i--){consol.log(iframes.length);var _iframe=iframes[i];var test=isYouTubeVideo(_iframe);if(test){return true;}}
+for(i=embeds.length-1;i>-1;i--){var _embed=embeds[i];var test=isYouTubeVideo(_embed);if(test){return true;}}
+return false;}</script>
+
+<script type="text/javascript">var pageSlug='mvc-architecture-in-java';jQuery(document).ready(function(){catID=0;filterTopic=0;jQuery('.categorylist li a').click(function(){jQuery('.categorylist li a').removeClass('cat-active');jQuery(this).addClass('cat-active');catID=jQuery(this).attr("data-filter-catid");viewMore='';pager=1;calledAJAX(catID,filterTopic,viewMore,pager,pageSlug);target_url=jQuery(this).data('term-url');var stateObj={};history.pushState(stateObj,"",target_url);});jQuery('body').on('change','.topicslist',function(){jQuery(this).find('.filter-button').removeClass('cat-active');jQuery(this).find('.filter-button:selected').addClass('cat-active');filterTopic=jQuery(this).find('.filter-button:selected').attr('data-filter-catid');viewMore='';pager=1;calledAJAX(catID,filterTopic,viewMore,pager,pageSlug);});jQuery(document).on('click','.view-all-link',function(){viewMore='yes';pager=jQuery(this).attr('data-pager-index');calledAJAX(catID,filterTopic,viewMore,pager,pageSlug);return false;});});function calledAJAX(catID,filterTopic,viewMore,pager){jQuery('.category-field').val(catID);jQuery('.topic-field').val(filterTopic);jQuery.ajax({type:'POST',data:{catID:catID,filterTopicID:filterTopic,action:'get-post-category',viewMore:viewMore,pager:pager,pageSlug:pageSlug},url:'https://www.upgrad.com/blog/wp-admin/admin-ajax.php',beforeSend:function(){},success:function(response){response=JSON.parse(response);if(!response.view_more_button){jQuery('.view-all-btn-wrapper').find('.view-all-link').fadeOut();}
+else{jQuery('.view-all-btn-wrapper').find('.view-all-link').fadeIn();jQuery('.element-item').removeClass('ajax-result-item');}
+if(response.viewmore){jQuery('.ajax-response-container #homeportfolio-imageswr').append(response.posts).css({height:'auto'});jQuery('.view-all-btn-wrapper').find('.view-all-link').attr('data-pager-index',response.pager);jQuery(".ajax-result-item").each(function(i){jQuery(this).delay(200*i).animate({'opacity':1,'marginTop':0},0);});}else{jQuery('.ajax-response-container #homeportfolio-imageswr').html(response.posts).css({height:'auto'});jQuery('.view-all-btn-wrapper').find('.view-all-link').attr('data-pager-index','2');jQuery(".ajax-result-item").each(function(i){jQuery(this).delay(200*i).animate({'opacity':1,'marginTop':0},0);});}}});}</script>
+
+<script type="text/javascript">jQuery(document).ready(function(){jQuery(".category-info a").click(function(){var catslug=jQuery(this).data("catslug");var catslugnmval=jQuery(".catslugform .catslugnm").val(catslug);jQuery(".catslugform").submit();});});</script>
+
+
+<script type="text/javascript" src="https://www.upgrad.com/blog/wp-content/themes/uncode/core/assets/js/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript">jQuery(document).ready(function(){var windowSize=jQuery(window).width();if(windowSize>1200){jQuery('.related-articlewr .catetemp-postwr').bxSlider({slideWidth:300,minSlides:3,maxSlides:3,mode:'horizontal',easing:'ease',speed:1000,pager:false,responsive:false,slideMargin:20,startSlide:0});}
+if(windowSize<=1200&&windowSize>767){jQuery('.related-articlewr .catetemp-postwr').bxSlider({slideWidth:300,minSlides:2,maxSlides:2,mode:'horizontal',easing:'ease',speed:1000,pager:false,responsive:false,slideMargin:20,startSlide:0});}
+if(windowSize<=767){jQuery('.related-articlewr .catetemp-postwr').bxSlider({mode:'horizontal',pager:false,responsive:true,infiniteLoop:true,startSlide:0});}
+jQuery(".button-style").fancybox({width:'48%',height:'48%',closeClick:false,openEffect:'none',closeEffect:'none',transitionIn:'elastic'});jQuery('.video-slider').bxSlider({pager:false,controls:true});});</script>
+
+<script type="text/javascript">jQuery(document).ready(function(){jQuery(".right-single-content aside").wrapInner("<div class='aside-inner'></div>");jQuery(".aside-inner .widget-title").after("<span class='border-red'></span>");jQuery("span.bred-list").wrapAll("<div class='breadcrumps-new'></div>");jQuery("span.bred-list").prepend("<span class='arrow'> > <span>");div3=jQuery('.post-title-wrapper');div4=jQuery('.breadcrumps-new');tdiv3=div3.clone();tdiv4=div4.clone();if(!div4.is(':empty')){div3.replaceWith(tdiv4);div4.replaceWith(tdiv3);tdiv3.addClass("replaced");}
+div4=jQuery(".fb-comments").parent().addClass('custom-fb-comment');console.log(div4);div1=jQuery('.custom-fb-comment');div2=jQuery('.postcustom-section');tdiv1=div1.clone();tdiv2=div2.clone();if(!div2.is(':empty')){div1.replaceWith(tdiv2);div2.replaceWith(tdiv1);tdiv1.addClass("replaced");}
+jQuery('.video-categories ul li a').on('click',function(){target_url=jQuery(this).data('term-url');var stateObj={};history.pushState(stateObj,"",target_url);jQuery(".video-categories ul li.active-tab").removeClass("active-tab");jQuery(event.target).closest(".video-categories ul li").addClass("active-tab");var cat_id=jQuery(this).attr('data-term-id');var cat_name=jQuery(this).attr('data-term-name');jQuery('.tabber-content').removeClass('current');jQuery(this).addClass('current');jQuery.ajax({type:'POST',url:'https://www.upgrad.com/blog/wp-admin/admin-ajax.php?action=video_posts',data:{"cat_id":cat_id,"cat_name":cat_name},success:function(response){jQuery('.video-left').html(response).hide().fadeIn('slow');}});});jQuery('.video-filetr-select').on('change',function(){var element=jQuery(this).find('option:selected');var cat_id=element.attr("data-term-id");var cat_name=element.attr('data-term-name');jQuery.ajax({type:'POST',url:'https://www.upgrad.com/blog/wp-admin/admin-ajax.php?action=video_bt_filter',data:{"cat_id":cat_id,"cat_name":cat_name},success:function(response){jQuery('.video-posts').html(response).hide().fadeIn('slow');}});});function Utils(){}
+Utils.prototype={constructor:Utils,isElementInView:function(element,fullyInView){var pageTop=jQuery(window).scrollTop();var pageBottom=pageTop+jQuery(window).height();var elementTop=jQuery(element).offset().top;var elementBottom=elementTop+jQuery(element).height();if(fullyInView===true){return((pageTop<elementTop)&&(pageBottom>elementBottom));}else{return((elementTop<=pageBottom)&&(elementBottom>=pageTop));}}};var Utils=new Utils();if(jQuery("body").hasClass("page-template-template-videos")||jQuery("body").hasClass("tax-video_type")||jQuery("body").hasClass("single-video")){var stickyTop=jQuery('#media_image-3').offset().top;if(jQuery(window).width()>979){jQuery(window).scroll(function(){var footer_offset=jQuery('#colophon').offset().top;var media_height=jQuery('#media_image-3').height();var stick_afetr=footer_offset-(media_height+155);if(jQuery(window).scrollTop()>=stickyTop){jQuery('#media_image-3').addClass('stick-aside');jQuery('.stick-aside').css('top',60+"px");}else{jQuery('#media_image-3').removeClass('stick-aside');}
+var isElementInView=Utils.isElementInView(jQuery('#colophon'),false);if(isElementInView){jQuery('#media_image-3').removeClass('stick-aside');jQuery('#media_image-3').addClass('stick-aside-after');jQuery('#media_image-3').css('top',stick_afetr);}else{jQuery('#media_image-3').removeClass('stick-aside-after');}});}}
+if(jQuery("body").hasClass("single-post")){var lastaside=jQuery(".right-single-content div aside").last();var stickyTop=lastaside.offset().top;if(jQuery(window).width()>979){jQuery(window).scroll(function(){console.log(stickyTop);var footer_offset=jQuery('.related-articlewr').offset().top;var media_height=lastaside.height();var stick_afetr=footer_offset-(media_height+155);if(jQuery(window).scrollTop()>=stickyTop){lastaside.addClass('stick-aside');jQuery('.stick-aside').css('top',60+"px");}else{lastaside.removeClass('stick-aside');}
+var isElementInView=Utils.isElementInView(jQuery('.related-articlewr'),false);var isElementInfooter=Utils.isElementInView(jQuery('#colophon'),false);if(isElementInView||isElementInfooter){lastaside.removeClass('stick-aside');lastaside.addClass('stick-aside-after');lastaside.css('top',stick_afetr);}else{console.log('out of view');lastaside.removeClass('stick-aside-after');}});}}
+var windowSize=jQuery(window).width();if(windowSize>979){jQuery(window).scroll(function(){if(jQuery(this).scrollTop()>100){jQuery('.footer-bottom').addClass('footer_sticky');}else{jQuery('.footer-bottom').removeClass('footer_sticky');}});}else{jQuery(window).scroll(function(){if(jQuery(this).scrollTop()>100){jQuery('.footer-bottom').addClass('footer_sticky_responsive');}else{jQuery('.footer-bottom').removeClass('footer_sticky_responsive');}});}
+if(windowSize>1199){jQuery(window).scroll(function(){if(jQuery(this).scrollTop()>50){jQuery('.single-video .navbar').addClass('fixed-header');jQuery('.page-template-template-videos .navbar').addClass('fixed-header');jQuery('.tax-video_type .navbar').addClass('fixed-header');}else{jQuery('.single-video .navbar').removeClass('fixed-header');jQuery('.page-template-template-videos .navbar').removeClass('fixed-header');jQuery('.tax-video_type .navbar').removeClass('fixed-header');}});}});</script>
+
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+Model,
+			che rappresentano gli oggetti con i loro dati e funzionalità;
+View,
+			che si occupano della presentazione dei dati all’utente;
+Controller, 
+			che si occupa dell’interazione con l’utente elaborando l’input e le richieste provenienti dal Model per produrre nuove View.
+			Ad esempio interpreta le azioni dell’utente con mouse, tasti, parole, ecc. e li converte in opportune invocazioni di funzioni
+			sul Model e seleziona l’appropriata View di presentazione.

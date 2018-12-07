@@ -7,13 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import core.Spettacolo;
-import gui.MenuPanel;
-import gui.ProgrammaSettimanalePanel;
-import gui.ResourceLoader;
-import obj.Data;
-import obj.Film;
-import obj.Sala;
+import model.Data;
+import model.Film;
+import model.ResourceLoader;
+import model.Sala;
+import model.Spettacolo;
+import view.MenuPanel;
+import view.ProgrammaSettimanalePanel;
 
 public class GestoreTester {
 
@@ -24,8 +24,8 @@ public class GestoreTester {
 		JFrame frame = new JFrame();
 		
 		ArrayList<Spettacolo> arrSpettacoli = new ArrayList<Spettacolo>();
-		Spettacolo spett1 = new Spettacolo(new Data(2018, 12, 05, 20, 55), (float) 10.0, new Sala(10, 20, 30), new Film("Patate a mensaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Horrorgjhjhkgjhjkjhjgkjgjhjkhjjhhjgghhghgghgjhjghkghgjghghjhghgggjhghghjgjhgjhgjh",10));
-		Spettacolo spett2 = new Spettacolo(new Data(2018, 12, 05, 21, 50), (float) 10.0, new Sala(20, 20, 40), new Film("Polpette a mensa","Horror",10));
+		Spettacolo spett1 = new Spettacolo(new Data(2018, 12, 05, 20, 55), (float) 10.0, new Sala("A",10, 20, 30), new Film("Patate a mensaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Horrorgjhjhkgjhjkjhjgkjgjhjkhjjhhjgghhghgghgjhjghkghgjghghjhghgggjhghghjgjhg jhgjhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",10));
+		Spettacolo spett2 = new Spettacolo(new Data(2018, 12, 05, 21, 50), (float) 10.0, new Sala("B",20, 20, 40), new Film("Polpette a mensa","Horror",10));
 		arrSpettacoli.add(spett1);
 		arrSpettacoli.add(spett2);
 		
