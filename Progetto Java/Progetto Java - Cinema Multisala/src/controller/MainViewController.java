@@ -21,7 +21,12 @@ public class MainViewController {
 		arrSpettacoli.add(spett1);
 		arrSpettacoli.add(spett2);
 		
-		JFrame frame = new MainFrame(arrSpettacoli);
+		ArrayList<Sala> arrSale = new ArrayList<Sala>();
+		Sala salaA = new Sala("A",10,10, null);
+		arrSale.add(salaA);
+		
+		JFrame frame = new MainFrame(arrSpettacoli, arrSale);
+		//JFrame frame = new MainFrame(null, null);
 	}
 
 }

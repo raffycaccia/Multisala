@@ -45,19 +45,11 @@ public class ListEntry extends JLayeredPane {
 		//setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 	
 		JLabel titolo = new JLabel(spet.getOpera().getTitolo());
-		titolo.setFont(ResourceLoader.TitleFont);
-		titolo.setForeground(new Color(60, 60, 60));
-		titolo.setOpaque(false);
+		LabelStyler.setHeaderStyle(titolo);
 		titolo.setBounds(30, 30, TITLE_WIDTH, TITLE_HEIGHT);
 		
 		JTextArea desc = new JTextArea(spet.getOpera().getDescrizione());
-		desc.setFont(ResourceLoader.DescFont);
-		desc.setForeground(Color.GRAY);
-		desc.setLineWrap(true);
-		desc.setWrapStyleWord(true);
-		desc.setEditable(false);
-		desc.setFocusable(false);
-		desc.setOpaque(false);
+		LabelStyler.setDescriptionStyle(desc);
 		desc.setBounds(30, 70, DESC_WIDTH, DESC_HEIGHT);
 		
 		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato();

@@ -8,18 +8,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import model.Data;
-import model.Film;
 import model.ResourceLoader;
 import model.Sala;
 import model.Spettacolo;
 
 public class MainFrame extends JFrame {
 	
-	public MainFrame(ArrayList<Spettacolo> arrSpettacoli) {
+	public MainFrame(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
 		ResourceLoader.loadFonts();
 		
-		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli);
+		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli, arrSale);
 
 		setLayout(new BorderLayout());
 		MenuPanel navMenu = new MenuPanel();
@@ -27,7 +25,7 @@ public class MainFrame extends JFrame {
 		
 		add(progSet, BorderLayout.CENTER);
 		
-		if (arrSpettacoli.size() > 0) {
+		if ((arrSpettacoli != null) && arrSpettacoli.size() > 0) {
 			JScrollPane scrollBar = new JScrollPane(progSet);
 			scrollBar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 			scrollBar.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
