@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -47,7 +48,6 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		JLabel headerLbl = new JLabel("Programma Settimanale");
 		TextStyler.setNavHeaderStyle(headerLbl);
 		header.add(headerLbl, BorderLayout.WEST);
-		header.add(Box.createVerticalStrut(40), BorderLayout.SOUTH);
 		add(header, BorderLayout.NORTH);
 
 		if ((arrSale != null) && arrSale.size() > 0) {
@@ -58,12 +58,43 @@ public class ProgrammaSettimanalePanel extends JPanel {
 			}
 			selectSala.setMaximumSize(new Dimension(10,30));
 			header.add(selectSala, BorderLayout.EAST);
+
+			addSubHeader();
 		}
+		
+		//header.add(Box.createVerticalStrut(0), BorderLayout.SOUTH);
+
+	}
+
+	private void addSubHeader() {
+
+		JPanel subHeader = new JPanel();
+		subHeader.setOpaque(false);
+		subHeader.setLayout(new BorderLayout());
+		add(subHeader, BorderLayout.CENTER);
+
+		JCheckBox visualizzaProssimi = new JCheckBox("Visualizza solo gli spettacoli non ancora iniziati. Ua nu poc chiu luong");
+		subHeader.add(visualizzaProssimi, BorderLayout.WEST);
+		JComboBox ordine = new JComboBox();
+		ordine.setName("Ordine");
+		ordine.addItem("Cronologico");
+		ordine.addItem("Sala crescente");
+		ordine.addItem("A-Z");
+		ordine.setVisible(false);
+		subHeader.add(ordine, BorderLayout.EAST);
+
+		visualizzaProssimi.addActionListener((ActionEvent)->{
+			if (visualizzaProssimi.isSelected()) {
+				ordine.setVisible(true);
+			} else {
+				ordine.setVisible(false);
+			}
+		});
 	}
 
 	private void createListPanel(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
 		if ((arrSpettacoli != null) && arrSpettacoli.size() > 0) {
-			add(new OperaListPanel(arrSpettacoli), BorderLayout.CENTER);
+			add(new OperaListPanel(arrSpettacoli), BorderLayout.SOUTH);
 		} else {
 			JLabel noSpettacoliLbl = new JLabel("Non ci sono spettacoli per questa settimana.");
 			add(noSpettacoliLbl, BorderLayout.CENTER);
