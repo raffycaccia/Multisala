@@ -31,9 +31,8 @@ public class MainViewController {
 		
 		JFrame frame = new MainFrame(arrSpettacoli, arrSale);
 		//JFrame frame = new MainFrame(null, null);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle("Progetto: Cinema Multisala");
-		//frame.setVisible(true);
 	}
+	
+	
 
 }

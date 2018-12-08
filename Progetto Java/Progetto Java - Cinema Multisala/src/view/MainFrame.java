@@ -18,16 +18,23 @@ import model.Spettacolo;
 public class MainFrame extends JFrame {
 	
 	public MainFrame(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
+		//Carica i custom font
 		ResourceLoader.loadFonts();
 		
-		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli, arrSale);
-
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//Stile e Layout frame
+		setTitle("Progetto: Cinema Multisala");
 		setLayout(new BorderLayout());
+		setSize(1400, 900);
+		setBackground(Color.white);
+		setVisible(true);
+		//Creo pannello menu e programmazione
+		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli, arrSale);
 		MenuPanel navMenu = new MenuPanel();
+		//Aggiungo pannelli al frame
 		add(navMenu, BorderLayout.WEST);
-		
 		add(progSet, BorderLayout.CENTER);
-		
+		//Se ci sono spettacoli aggiungi scrollBar al pannello programmazione
 		if ((arrSpettacoli != null) && arrSpettacoli.size() > 0) {
 			JScrollPane scrollBar = new JScrollPane(progSet);
 			scrollBar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -36,11 +43,7 @@ public class MainFrame extends JFrame {
 			add(scrollBar);
 		}
 
-		
-		setSize(1400, 900);
-		setBackground(Color.white);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
+
 	}
 
 	
