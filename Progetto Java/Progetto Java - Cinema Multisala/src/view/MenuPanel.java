@@ -26,10 +26,16 @@ import model.Utente;
 public class MenuPanel extends JPanel {
 
 	private Utente status = Utente.CLIENTE;
-		
+	private JButton programmazioneBtn;
+	private JButton prenotazioniBtn;
+	private JPanel clienteMenu;
+	private JPanel gestoreMenu;
+	
 	public MenuPanel() {
 		
 		setStyle();
+		
+		createMenu();
 		
 		if (status.equals(Utente.CLIENTE)) {
 			setClientMenu();
@@ -41,18 +47,51 @@ public class MenuPanel extends JPanel {
 		
 	}
 	
-	// per ora li metto qua
-	public void setClientMenu() {
-		status = Utente.CLIENTE;
+	private void createMenu() {
 		add(Box.createVerticalStrut(80));
 		createUtenteSwitch();
-		createProgrammaButton();
-		createPrenotazioniButton();
+		createClienteMenu();
+		createGestoreMenu();
 	}
 	
-	public void setGestoreMenu() {
+	private void createClienteMenu() {
+		clienteMenu = new JPanel();
+		
+		clienteMenu.setLayout(new BoxLayout(clienteMenu, BoxLayout.Y_AXIS));
+		clienteMenu.setPreferredSize(new Dimension(221, 800));
+		clienteMenu.setBackground(Color.DARK_GRAY);
+		clienteMenu.setOpaque(true);
+		
+		clienteMenu.add(createProgrammaButton());
+		clienteMenu.add(createPrenotazioniButton());
+		add(clienteMenu);
+		
+	}
+	
+	private void createGestoreMenu() {
+		gestoreMenu = new JPanel();
+		
+		gestoreMenu.setLayout(new BoxLayout(gestoreMenu, BoxLayout.Y_AXIS));
+		gestoreMenu.setPreferredSize(new Dimension(221, 800));
+		gestoreMenu.setBackground(Color.DARK_GRAY);
+		gestoreMenu.setOpaque(true);
+		
+		gestoreMenu.add(createProgrammaButton());
+		//gestoreMenu.add(createPrenotazioniButton());
+		add(gestoreMenu);
+	}
+	
+	// per ora li metto qua
+	private void setClientMenu() {
+		status = Utente.CLIENTE;
+		clienteMenu.setVisible(true);
+		gestoreMenu.setVisible(false);
+	}
+	
+	private void setGestoreMenu() {
 		status = Utente.GESTORE;
-		createUtenteSwitch();
+		gestoreMenu.setVisible(true);
+		clienteMenu.setVisible(false);
 	}
 	
 	private void setStyle() {
@@ -65,20 +104,20 @@ public class MenuPanel extends JPanel {
 		setBorder(menuBorder);
 	}
 	
-	private void createProgrammaButton() {
+	private JButton createProgrammaButton() {
 		//ImageIcon icon = new ImageIcon(new ImageIcon("image/buttonIcon/ProgrammazioneIcon@2x.png").getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH));
 		ImageIcon icon = new ImageIcon("image/buttonIcon/ProgrammazioneIcon.png");
-		JButton btn = new JButton("Programmazione", icon);
-		ButtonStyler.setNavButtonSelectedStyle(btn);
-		btn.setAlignmentX(LEFT_ALIGNMENT);
-		add(btn);
+		JButton ProgrammazioneBtn = new JButton("Programmazione", icon);
+		ButtonStyler.setNavButtonSelectedStyle(ProgrammazioneBtn);
+		ProgrammazioneBtn.setAlignmentX(LEFT_ALIGNMENT);
+		return ProgrammazioneBtn;
 	}
 	
-	private void createPrenotazioniButton() {
-		JButton btn = new JButton("Carrello", new ImageIcon("image/buttonIcon/carrello.png"));
-		ButtonStyler.setNavButtonStyle(btn);
-		btn.setAlignmentX(LEFT_ALIGNMENT);
-		add(btn);
+	private JButton createPrenotazioniButton() {
+		JButton Prenotazionibtn = new JButton("Carrello", new ImageIcon("image/buttonIcon/carrello.png"));
+		ButtonStyler.setNavButtonStyle(Prenotazionibtn);
+		Prenotazionibtn.setAlignmentX(LEFT_ALIGNMENT);
+		return Prenotazionibtn;
 	}
 	
 	private void createUtenteSwitch() {
@@ -93,6 +132,9 @@ public class MenuPanel extends JPanel {
 		//Crea tasti
 		JRadioButton clienteBtn = new JRadioButton("Cliente");
 		JRadioButton gestoreBtn = new JRadioButton("Gestore");
+		//Comportamento tasti
+		clienteBtn.addActionListener((ActionEvent)->setClientMenu());
+		gestoreBtn.addActionListener((ActionEvent)->setGestoreMenu());
 		//Imposta stile tasti
 		ButtonStyler.setSwitchButtonStyle(clienteBtn);
 		ButtonStyler.setSwitchButtonStyle(gestoreBtn);
