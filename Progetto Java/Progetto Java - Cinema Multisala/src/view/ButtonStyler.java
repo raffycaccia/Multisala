@@ -5,6 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
 import model.ResourceLoader;
@@ -19,7 +20,7 @@ public class ButtonStyler {
 		btn.setMaximumSize(new Dimension(221, 45));
 		btn.setHorizontalAlignment(SwingConstants.LEADING);
 		btn.setIconTextGap(12);
-		btn.setBorder(BorderFactory.createEmptyBorder(0,15,0,0));
+		btn.setBorder(BorderFactory.createEmptyBorder(0,22,0,0));
 	}
 
 	public static void setNavButtonSelectedStyle(JButton btn) {
@@ -31,6 +32,12 @@ public class ButtonStyler {
 		btn.setMaximumSize(new Dimension(221, 45));
 		btn.setHorizontalAlignment(SwingConstants.LEADING);
 		btn.setIconTextGap(12);
-		btn.setBorder(BorderFactory.createEmptyBorder(0,15,0,0));
+		btn.setBorder(BorderFactory.createEmptyBorder(0,22,0,0));
+	}
+	
+	public static void setSwitchButtonStyle(JRadioButton btn) {
+		btn.setForeground(Color.white);
+		btn.setFont(ResourceLoader.TitleFont.deriveFont(18f));
+		
 	}
 }

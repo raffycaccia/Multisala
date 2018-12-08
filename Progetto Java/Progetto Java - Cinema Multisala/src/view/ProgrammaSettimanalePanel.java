@@ -57,12 +57,14 @@ public class ProgrammaSettimanalePanel extends JPanel {
 				selectSala.addItem(s.getNome());
 			}
 			selectSala.setMaximumSize(new Dimension(10,30));
+			header.add(Box.createVerticalStrut(15), BorderLayout.SOUTH);
 			header.add(selectSala, BorderLayout.EAST);
-
+			
 			addSubHeader();
+			return;
 		}
 		
-		//header.add(Box.createVerticalStrut(0), BorderLayout.SOUTH);
+		header.add(Box.createVerticalStrut(40), BorderLayout.SOUTH);
 
 	}
 
@@ -73,7 +75,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		subHeader.setLayout(new BorderLayout());
 		add(subHeader, BorderLayout.CENTER);
 
-		JCheckBox visualizzaProssimi = new JCheckBox("Visualizza solo gli spettacoli non ancora iniziati. Ua nu poc chiu luong");
+		JCheckBox visualizzaProssimi = new JCheckBox("Solo prossime proiezioni");
 		subHeader.add(visualizzaProssimi, BorderLayout.WEST);
 		JComboBox ordine = new JComboBox();
 		ordine.setName("Ordine");
@@ -82,6 +84,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		ordine.addItem("A-Z");
 		ordine.setVisible(false);
 		subHeader.add(ordine, BorderLayout.EAST);
+		subHeader.add(Box.createVerticalStrut(40), BorderLayout.SOUTH);
 
 		visualizzaProssimi.addActionListener((ActionEvent)->{
 			if (visualizzaProssimi.isSelected()) {
