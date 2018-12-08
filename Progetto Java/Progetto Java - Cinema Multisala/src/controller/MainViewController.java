@@ -31,6 +31,7 @@ public class MainViewController {
 		
 		JFrame frame = new MainFrame(arrSpettacoli, arrSale);
 		//JFrame frame = new MainFrame(null, null);
+		frame.setVisible(true);
 	}
 	
 	

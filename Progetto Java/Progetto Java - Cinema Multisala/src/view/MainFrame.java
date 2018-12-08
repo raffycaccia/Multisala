@@ -27,7 +27,6 @@ public class MainFrame extends JFrame {
 		setLayout(new BorderLayout());
 		setSize(1400, 900);
 		setBackground(Color.white);
-		setVisible(true);
 		//Creo pannello menu e programmazione
 		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli, arrSale);
 		MenuPanel navMenu = new MenuPanel();
