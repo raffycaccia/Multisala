@@ -69,7 +69,9 @@ public class MenuPanel extends JPanel {
 	public void createLogo() {
 		ImageIcon logoIcon = new ImageIcon("image/Logo.png");
 		JLabel logo = new JLabel(logoIcon);
-		logo.setBorder(BorderFactory.createEmptyBorder(0,15,0,0));
+		logo.setBorder(BorderFactory.createEmptyBorder(0,22,0,0));
+		logo.setIconTextGap(0);
+		logo.setHorizontalAlignment(SwingConstants.LEFT);
 		add(logo);
 	}
 	
@@ -156,7 +158,7 @@ public class MenuPanel extends JPanel {
 		switchPanel.setMinimumSize(new Dimension(221, 50));
 		switchPanel.setMaximumSize(new Dimension(221, 50));
 		switchPanel.setPreferredSize(new Dimension(221, 50));
-		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,15,0,0));
+		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,17,0,0));
 		switchPanel.setAlignmentX(LEFT_ALIGNMENT);
 		switchPanel.setOpaque(false);
 		//Crea tasti

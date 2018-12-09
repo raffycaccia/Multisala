@@ -30,8 +30,10 @@ public class ButtonStyler {
 	}
 	
 	public static void setSwitchButtonStyle(JRadioButton btn) {
-		btn.setForeground(Color.white);
-		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
+		//btn.setForeground(Color.white);
+		//btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
+		btn.setIconTextGap(0);
+		btn.setHorizontalAlignment(SwingConstants.LEFT);
 		
 	}
 	/*
