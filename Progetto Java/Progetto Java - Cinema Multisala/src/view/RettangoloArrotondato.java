@@ -15,11 +15,12 @@ public class RettangoloArrotondato extends JComponent {
 
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.setPaint(new Color(230, 230, 230));
-        g2.setStroke(new BasicStroke(1.2f));
+        //g2.setStroke(new BasicStroke(1.2f));
+        g2.setColor(new Color(250, 250, 250));
+        
+        g2.fillRoundRect(8, 8, ListEntry.PANEL_WIDTH - 10, ListEntry.PANEL_HEIGHT - 10, 50, 50);
 
-        RoundRectangle2D decorazioneRettangolo = new RoundRectangle2D.Float(8, 8, ListEntry.PANEL_WIDTH - 16, ListEntry.PANEL_HEIGHT - 16, 50, 50);
-		
+        RoundRectangle2D decorazioneRettangolo = new RoundRectangle2D.Float(8, 8, ListEntry.PANEL_WIDTH - 10, ListEntry.PANEL_HEIGHT - 10, 50, 50);
         g2.draw(decorazioneRettangolo);
     }
 	

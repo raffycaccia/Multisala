@@ -49,6 +49,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Header label
 		JLabel headerLbl = new JLabel("Programma Settimanale");
 		TextStyler.setNavHeaderStyle(headerLbl);
+		headerLbl.setBorder(new EmptyBorder(0,8,0,0));
 		//Aggiunge la label al pannello dell'header
 		header.add(headerLbl, BorderLayout.WEST);
 		//Aggiunge il pannello dell'header al pannello della programmazione
@@ -64,7 +65,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 			//Dimensione selettore
 			selectSala.setMaximumSize(new Dimension(10,30));
 			//Distanzia il subheader dall'header
-			header.add(Box.createVerticalStrut(15), BorderLayout.SOUTH);
+			header.add(Box.createVerticalStrut(25), BorderLayout.SOUTH);
 			//Aggiunge il selettore sala al pannello dell'header
 			header.add(selectSala, BorderLayout.EAST);
 			//Crea subheader
@@ -82,10 +83,15 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Stile e layout pannello
 		subHeader.setOpaque(false);
 		subHeader.setLayout(new BorderLayout());
+		subHeader.setBorder(new EmptyBorder(0,2,0,0));
 		//Aggiunge subheader al pannello della programmazione
 		add(subHeader, BorderLayout.CENTER);
 		//Crea checkbox per visualizzare solo le prossime proiezioni
-		JCheckBox visualizzaProssimi = new JCheckBox("Solo prossimi spettacoli");
+		JCheckBox visualizzaProssimi = new JCheckBox("Solo prossimi spettacoli".toUpperCase());
+		//visualizzaProssimi.setForeground(new Color(1,122,255));
+		visualizzaProssimi.setForeground(TextStyler.TITLE_COLOR);
+		visualizzaProssimi.setFont(ResourceLoader.TitleFont.deriveFont(13f));
+		visualizzaProssimi.setPreferredSize(new Dimension(300,30));
 		//Aggiunge la checkbox al subheader
 		subHeader.add(visualizzaProssimi, BorderLayout.WEST);
 		//Crea selettore filtri
@@ -98,7 +104,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Aggiunge selettore filtri al pannello subheader
 		subHeader.add(ordine, BorderLayout.EAST);
 		//Distanzia subheader dalla lista degli spettacoli
-		subHeader.add(Box.createVerticalStrut(40), BorderLayout.SOUTH);
+		subHeader.add(Box.createVerticalStrut(10), BorderLayout.SOUTH);
 		//Comportamento checkbox
 		visualizzaProssimi.addActionListener((ActionEvent)->{
 			if (visualizzaProssimi.isSelected()) {
