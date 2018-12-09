@@ -5,10 +5,10 @@ import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import model.Posto;
 
+@SuppressWarnings("serial")
 public class PoltroneInCarrello extends JPanel{
 	Posto posto;
 	

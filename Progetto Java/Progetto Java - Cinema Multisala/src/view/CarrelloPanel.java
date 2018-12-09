@@ -11,11 +11,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import model.Posto;
-import model.PostoIndisponibileException;
 
+@SuppressWarnings("serial")
 public class CarrelloPanel extends JPanel{
 	JPanel cart_element = new JPanel();
 	ArrayList<PoltroneInCarrello> poltrone = new ArrayList<PoltroneInCarrello>();

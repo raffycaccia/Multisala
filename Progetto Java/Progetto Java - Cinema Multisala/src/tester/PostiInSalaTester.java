@@ -1,19 +1,13 @@
 package tester;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import model.Data;
 import model.Film;
-import model.Posto;
 import model.Sala;
 import model.Spettacolo;
 import view.SelezionePostoPanel;

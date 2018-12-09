@@ -3,24 +3,20 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 
 import model.ResourceLoader;
 import model.Sala;
 import model.Spettacolo;
 
+@SuppressWarnings("serial")
 public class ProgrammaSettimanalePanel extends JPanel {
 
 	//private static final int PANEL_SIZE = 400;
@@ -57,7 +53,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Se esistono sale crea filtro sala e il subheader
 		if ((arrSale != null) && arrSale.size() > 0) {
 			//Crea selettore sala
-			JComboBox selectSala = new JComboBox();
+			JComboBox<String> selectSala = new JComboBox<String>();
 			selectSala.addItem("Tutte le sale");
 			for (Sala s : arrSale) {
 				selectSala.addItem(s.getNome());
@@ -95,7 +91,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Aggiunge la checkbox al subheader
 		subHeader.add(visualizzaProssimi, BorderLayout.WEST);
 		//Crea selettore filtri
-		JComboBox ordine = new JComboBox();
+		JComboBox<String> ordine = new JComboBox<String>();
 		ordine.setName("Ordine");
 		ordine.addItem("Cronologico");
 		ordine.addItem("Sala crescente");

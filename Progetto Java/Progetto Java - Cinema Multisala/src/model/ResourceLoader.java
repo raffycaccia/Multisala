@@ -2,7 +2,6 @@ package model;
 
 import java.awt.Font;
 import java.awt.FontFormatException;
-import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.image.BaseMultiResolutionImage;
 import java.awt.image.MultiResolutionImage;

@@ -3,6 +3,7 @@ package model;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+@SuppressWarnings("serial")
 public class Posto extends JButton{
 	//TODO si devono rifare tutti i commenti
 	int id;

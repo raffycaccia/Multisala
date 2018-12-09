@@ -1,19 +1,11 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BaseMultiResolutionImage;
-import java.awt.image.MultiResolutionImage;
-import java.io.File;
-import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -21,17 +13,14 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
 
-
-import model.ResourceLoader;
 import model.Utente;
 
+@SuppressWarnings("serial")
 public class MenuPanel extends JPanel {
 
 	private Utente status = Utente.CLIENTE;
@@ -128,10 +117,10 @@ public class MenuPanel extends JPanel {
 	private JButton createProgrammaButton() {
 		//ImageIcon icon = new ImageIcon(new ImageIcon("image/buttonIcon/programmazioneIcon@3x.png").getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH));
 		ImageIcon icon = new ImageIcon("image/buttonIcon/ProgrammazioneIconSelected.png");
-		JButton ProgrammazioneBtn = new JButton("Programmazione", icon);
-		ButtonStyler.setNavButtonStyle(ProgrammazioneBtn);
-		ButtonStyler.setNavButtonSelectedStyle(ProgrammazioneBtn);
-		ProgrammazioneBtn.setAlignmentX(LEFT_ALIGNMENT);
+		programmazioneBtn = new JButton("Programmazione", icon);
+		ButtonStyler.setNavButtonStyle(programmazioneBtn);
+		ButtonStyler.setNavButtonSelectedStyle(programmazioneBtn);
+		programmazioneBtn.setAlignmentX(LEFT_ALIGNMENT);
 		class ClickListener implements ActionListener {
 			public void actionPerformed(ActionEvent event) {
 				JButton btn = (JButton)event.getSource();
@@ -139,15 +128,15 @@ public class MenuPanel extends JPanel {
 			}
 		}
 		ActionListener listener = new ClickListener();
-		ProgrammazioneBtn.addActionListener(listener);
-		return ProgrammazioneBtn;
+		programmazioneBtn.addActionListener(listener);
+		return programmazioneBtn;
 	}
 	
 	private JButton createPrenotazioniButton() {
-		JButton Prenotazionibtn = new JButton("Carrello", new ImageIcon("image/buttonIcon/carrello.png"));
-		ButtonStyler.setNavButtonStyle(Prenotazionibtn);
-		Prenotazionibtn.setAlignmentX(LEFT_ALIGNMENT);
-		return Prenotazionibtn;
+		prenotazioniBtn = new JButton("Carrello", new ImageIcon("image/buttonIcon/carrello.png"));
+		ButtonStyler.setNavButtonStyle(prenotazioniBtn);
+		prenotazioniBtn.setAlignmentX(LEFT_ALIGNMENT);
+		return prenotazioniBtn;
 	}
 	
 	private void createUtenteSwitch() {

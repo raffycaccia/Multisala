@@ -1,9 +1,6 @@
 package view;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.time.DayOfWeek;
 import java.time.Month;
 import java.time.format.TextStyle;
 
@@ -13,9 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextArea;
 
-import model.ResourceLoader;
 import model.Spettacolo;
 
+@SuppressWarnings("serial")
 public class ListEntry extends JLayeredPane {
 	
 	public static final int PANEL_WIDTH = 400;

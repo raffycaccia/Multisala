@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import model.Posto;
@@ -16,6 +15,7 @@ import model.PostoIndisponibileException;
 import model.Sala;
 import model.Spettacolo;
 
+@SuppressWarnings("serial")
 public class SelezionePostoPanel extends JPanel {
 	Spettacolo spet;
     CarrelloPanel cart = new CarrelloPanel();
