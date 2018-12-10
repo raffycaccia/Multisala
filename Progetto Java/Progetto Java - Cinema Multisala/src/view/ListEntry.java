@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.time.Month;
 import java.time.format.TextStyle;
@@ -39,11 +40,14 @@ public class ListEntry extends JLayeredPane {
 	public static final int PRENOTABTN_WIDTH = 88;
 	public static final int PRENOTABTN_HEIGHT = 30;
 	
+	public static final Color BGCOLOR = new Color(250,250,250);
+	
 	public ListEntry(Spettacolo spet) {
 		//Setta le dimensioni dell'entry
 		setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
 		//Crea bordo
 		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato();
+		rettangoloDecorativo.setFillColor(BGCOLOR);
 		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT);
 		//Label titolo
 		JLabel titolo = new JLabel(spet.getOpera().getTitolo());
@@ -74,7 +78,7 @@ public class ListEntry extends JLayeredPane {
 		infoLbl.setBounds(32, 390, INFO_WIDTH, INFO_HEIGHT);
 		//Tasto prenota
 		JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenotaBtn.png"));
-		ButtonStyler.setCallToActionButtonStyle(prenotaBtn);
+		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, BGCOLOR);
 		prenotaBtn.setBounds(PANEL_WIDTH - PRENOTABTN_WIDTH - 25, PANEL_HEIGHT - PRENOTABTN_HEIGHT - 25, PRENOTABTN_WIDTH, PRENOTABTN_HEIGHT);
 		//Aggiunge i components al panel dell'entry
 		add(prenotaBtn,1);

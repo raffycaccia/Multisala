@@ -10,18 +10,25 @@ import javax.swing.JComponent;
 @SuppressWarnings("serial")
 public class RettangoloArrotondato extends JComponent {
 	
+	private Color bgColor = Color.white;
+	
 	public void paintComponent(Graphics g) {
 
         Graphics2D g2 = (Graphics2D) g;
 
         //g2.setStroke(new BasicStroke(1.2f));
-        g2.setColor(new Color(250, 250, 250));
+        g2.setColor(bgColor);
         
         g2.fillRoundRect(8, 8, ListEntry.PANEL_WIDTH - 10, ListEntry.PANEL_HEIGHT - 10, 50, 50);
 
         RoundRectangle2D decorazioneRettangolo = new RoundRectangle2D.Float(8, 8, ListEntry.PANEL_WIDTH - 10, ListEntry.PANEL_HEIGHT - 10, 50, 50);
         g2.draw(decorazioneRettangolo);
     }
+	
+	public void setFillColor(Color bgColor){
+		this.bgColor = bgColor;
+		repaint();
+	}
 	
 	//la gesubambino di ombra
 	/*

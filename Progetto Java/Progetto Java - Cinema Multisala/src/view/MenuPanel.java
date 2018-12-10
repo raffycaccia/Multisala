@@ -29,7 +29,7 @@ public class MenuPanel extends JPanel {
 	private JPanel clienteMenu;
 	private JPanel gestoreMenu;
 	
-	private final static Color MENU_COLOR = new Color(45,46,48);
+	public final static Color MENU_COLOR = new Color(45,46,48);
 	public final static int MENU_WIDTH = 221;
 	public final static int BUTTON_HEIGHT = 45;
 	
@@ -162,7 +162,7 @@ public class MenuPanel extends JPanel {
 		switchPanel.setPreferredSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
 		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,17,0,0));
 		switchPanel.setAlignmentX(LEFT_ALIGNMENT);
-		switchPanel.setOpaque(false);
+		switchPanel.setBackground(MENU_COLOR);
 		//Crea tasti
 		JRadioButton clienteBtn = new JRadioButton();
 		JRadioButton gestoreBtn = new JRadioButton();

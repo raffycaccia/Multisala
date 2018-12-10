@@ -15,7 +15,8 @@ public class ButtonStyler {
 	public static void setNavButtonStyle(JButton btn) {
 		btn.setForeground(Color.white);
 		btn.setBorderPainted(false);
-		btn.setOpaque(false);
+		btn.setOpaque(true);
+		btn.setBackground(MenuPanel.MENU_COLOR);
 		btn.setFont(ResourceLoader.BtnSelFont);
 		btn.setMaximumSize(new Dimension(MenuPanel.MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
 		btn.setHorizontalAlignment(SwingConstants.LEADING);
@@ -50,11 +51,12 @@ public class ButtonStyler {
 
 	}
 	 */
-	public static void setCallToActionButtonStyle(JButton btn) {
+	public static void setCallToActionButtonStyle(JButton btn, Color bgColor) {
 		btn.setForeground(Color.white);
 		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBorderPainted(false);
-		btn.setOpaque(false);
+		btn.setBackground(bgColor);
+		//btn.setOpaque(false);
 		btn.setIconTextGap(0);
 		btn.setHorizontalAlignment(SwingConstants.LEFT);
 		btn.setHorizontalTextPosition(JButton.CENTER);
