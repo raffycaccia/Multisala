@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalField;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -17,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import model.Data;
 import model.ResourceLoader;
 import model.Sala;
 import model.Spettacolo;
@@ -163,9 +166,29 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Comportamento checkbox
 		visualizzaProssimi.addActionListener((ActionEvent)->{
 			if (visualizzaProssimi.isSelected()) {
-				ordine.setVisible(true);
+				
+				ArrayList<Spettacolo> prossimiSpettacoli = new ArrayList<Spettacolo>();
+				for (Spettacolo s : arrSpettacoli) {
+					Data data = s.getData();
+					int anno = (data.getAnno() - LocalDateTime.now().getYear()) * 525600; //MOLTIPLICO PER I minuti in un anno
+					int mese = (data.getMese() - LocalDateTime.now().getMonthValue()) * 44640; //moltiplico prt i minuti in un mese
+					int giorno = (data.getGiorno() - LocalDateTime.now().getDayOfMonth()) * 1440;
+					int ora = (data.getOra() - LocalDateTime.now().getHour()) * 60;
+					int minuto = data.getMinuto() - LocalDateTime.now().getMinute();
+					if ((anno + mese + giorno + ora + minuto) > 0) {
+						System.out.println(anno + mese + giorno + ora + minuto);
+						prossimiSpettacoli.add(s);
+					}
+				}
+				this.remove(operaList);
+				createListPanel(prossimiSpettacoli);
+				if (prossimiSpettacoli.size() > 0) {
+					ordine.setVisible(true);
+				}
 			} else {
 				ordine.setVisible(false);
+				this.remove(operaList);
+				createListPanel(arrSpettacoli);
 			}
 		});
 
