@@ -32,6 +32,8 @@ public class ProgrammaSettimanalePanel extends JPanel {
 	private ArrayList<Spettacolo> arrSpettacoli;
 	private ArrayList<Sala> arrSale;
 	private JPanel operaList;
+	private JComboBox<String> ordine;
+	private JCheckBox visualizzaProssimi;
 
 	public ProgrammaSettimanalePanel(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
 
@@ -94,6 +96,8 @@ public class ProgrammaSettimanalePanel extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				visualizzaProssimi.setEnabled(false);
+				ordine.setEnabled(false);
 				visualizzaListaSala();
 			}
 			
@@ -117,6 +121,8 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		if (!isPresent) {
 			this.remove(operaList);
 			createListPanel(arrSpettacoli);
+			visualizzaProssimi.setEnabled(true);
+			ordine.setEnabled(true);
 			return;
 		}
 		ArrayList<Spettacolo> arrFiltrato = new ArrayList<Spettacolo>();
@@ -142,7 +148,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		filtroSpettacoli.add(tipoFiltroLbl);
 
 		//Crea checkbox per visualizzare solo le prossime proiezioni
-		JCheckBox visualizzaProssimi = new JCheckBox("Solo prossimi spettacoli".toUpperCase());
+		visualizzaProssimi = new JCheckBox("Solo prossimi spettacoli".toUpperCase());
 		//visualizzaProssimi.setForeground(new Color(1,122,255));
 		visualizzaProssimi.setForeground(TextStyler.TITLE_COLOR);
 		visualizzaProssimi.setFont(ResourceLoader.TitleFont.deriveFont(13f));
@@ -152,7 +158,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Aggiunge la checkbox al subheader
 		filtroSpettacoli.add(visualizzaProssimi, BorderLayout.CENTER);
 		//Crea selettore filtri
-		JComboBox<String> ordine = new JComboBox<String>();
+		ordine = new JComboBox<String>();
 		ordine.setName("Ordine");
 		ordine.addItem("Cronologico");
 		ordine.addItem("Sala crescente");
@@ -176,7 +182,6 @@ public class ProgrammaSettimanalePanel extends JPanel {
 					int ora = (data.getOra() - LocalDateTime.now().getHour()) * 60;
 					int minuto = data.getMinuto() - LocalDateTime.now().getMinute();
 					if ((anno + mese + giorno + ora + minuto) > 0) {
-						System.out.println(anno + mese + giorno + ora + minuto);
 						prossimiSpettacoli.add(s);
 					}
 				}
@@ -185,8 +190,10 @@ public class ProgrammaSettimanalePanel extends JPanel {
 				if (prossimiSpettacoli.size() > 0) {
 					ordine.setVisible(true);
 				}
+				selectSala.setEnabled(false);
 			} else {
 				ordine.setVisible(false);
+				selectSala.setEnabled(true);
 				this.remove(operaList);
 				createListPanel(arrSpettacoli);
 			}
