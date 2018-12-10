@@ -28,7 +28,10 @@ public class MenuPanel extends JPanel {
 	private JButton prenotazioniBtn;
 	private JPanel clienteMenu;
 	private JPanel gestoreMenu;
+	
 	private final static Color MENU_COLOR = new Color(45,46,48);
+	public final static int MENU_WIDTH = 221;
+	public final static int BUTTON_HEIGHT = 45;
 	
 	public MenuPanel() {
 		
@@ -68,7 +71,7 @@ public class MenuPanel extends JPanel {
 		clienteMenu = new JPanel();
 		
 		clienteMenu.setLayout(new BoxLayout(clienteMenu, BoxLayout.Y_AXIS));
-		clienteMenu.setPreferredSize(new Dimension(221, 800));
+		clienteMenu.setPreferredSize(new Dimension(MENU_WIDTH, 0));
 		clienteMenu.setBackground(MENU_COLOR);
 		clienteMenu.setOpaque(true);
 		
@@ -82,11 +85,11 @@ public class MenuPanel extends JPanel {
 		gestoreMenu = new JPanel();
 		
 		gestoreMenu.setLayout(new BoxLayout(gestoreMenu, BoxLayout.Y_AXIS));
-		gestoreMenu.setPreferredSize(new Dimension(221, 800));
+		gestoreMenu.setPreferredSize(new Dimension(MENU_WIDTH, 0));
 		gestoreMenu.setBackground(MENU_COLOR);
 		gestoreMenu.setOpaque(true);
 		
-		gestoreMenu.add(createProgrammaButton());
+		//gestoreMenu.add(createProgrammaButton());
 		//gestoreMenu.add(createPrenotazioniButton());
 		add(gestoreMenu);
 	}
@@ -95,7 +98,7 @@ public class MenuPanel extends JPanel {
 	private void setClientMenu() {
 		status = Utente.CLIENTE;
 		clienteMenu.setVisible(true);
-		gestoreMenu.setVisible(false);
+		//gestoreMenu.setVisible(false);
 	}
 	
 	private void setGestoreMenu() {
@@ -106,7 +109,7 @@ public class MenuPanel extends JPanel {
 	
 	private void setStyle() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setPreferredSize(new Dimension(221, 800));
+		setPreferredSize(new Dimension(MENU_WIDTH, 0));
 		setBackground(MENU_COLOR);
 		setOpaque(true);
 		CompoundBorder menuBorder = new CompoundBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.black),
@@ -125,6 +128,7 @@ public class MenuPanel extends JPanel {
 			public void actionPerformed(ActionEvent event) {
 				JButton btn = (JButton)event.getSource();
 				ButtonStyler.setNavButtonSelectedStyle(btn);
+				ButtonStyler.setNavButtonUnselectedStyle(prenotazioniBtn);
 			}
 		}
 		ActionListener listener = new ClickListener();
@@ -136,6 +140,15 @@ public class MenuPanel extends JPanel {
 		prenotazioniBtn = new JButton("Carrello", new ImageIcon("image/buttonIcon/carrello.png"));
 		ButtonStyler.setNavButtonStyle(prenotazioniBtn);
 		prenotazioniBtn.setAlignmentX(LEFT_ALIGNMENT);
+		class ClickListener2 implements ActionListener {
+			public void actionPerformed(ActionEvent event) {
+				JButton btn = (JButton)event.getSource();
+				ButtonStyler.setNavButtonSelectedStyle(btn);
+				ButtonStyler.setNavButtonUnselectedStyle(programmazioneBtn);
+			}
+		}
+		ActionListener listener = new ClickListener2();
+		prenotazioniBtn.addActionListener(listener);
 		return prenotazioniBtn;
 	}
 	
@@ -144,9 +157,9 @@ public class MenuPanel extends JPanel {
 		JPanel switchPanel = new JPanel();
 		//Stile e layout
 		switchPanel.setLayout(new GridLayout(1,2));
-		switchPanel.setMinimumSize(new Dimension(221, 50));
-		switchPanel.setMaximumSize(new Dimension(221, 50));
-		switchPanel.setPreferredSize(new Dimension(221, 50));
+		switchPanel.setMinimumSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
+		switchPanel.setMaximumSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
+		switchPanel.setPreferredSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
 		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,17,0,0));
 		switchPanel.setAlignmentX(LEFT_ALIGNMENT);
 		switchPanel.setOpaque(false);

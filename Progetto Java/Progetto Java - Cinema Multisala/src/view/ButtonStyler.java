@@ -11,13 +11,13 @@ import javax.swing.SwingConstants;
 import model.ResourceLoader;
 
 public class ButtonStyler {
-	
+
 	public static void setNavButtonStyle(JButton btn) {
 		btn.setForeground(Color.white);
 		btn.setBorderPainted(false);
 		btn.setOpaque(false);
 		btn.setFont(ResourceLoader.BtnSelFont);
-		btn.setMaximumSize(new Dimension(221, 45));
+		btn.setMaximumSize(new Dimension(MenuPanel.MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
 		btn.setHorizontalAlignment(SwingConstants.LEADING);
 		btn.setIconTextGap(12);
 		btn.setBorder(BorderFactory.createEmptyBorder(0,22,0,0));
@@ -27,28 +27,38 @@ public class ButtonStyler {
 		btn.setOpaque(true);
 		//btn.setBackground(new Color(77,155,247));
 		btn.setBackground(new Color(75,75,75));
+		btn.repaint();
 	}
-	
+
+	public static void setNavButtonUnselectedStyle(JButton btn) {
+		btn.setOpaque(false);
+		btn.repaint();
+	}
+
 	public static void setSwitchButtonStyle(JRadioButton btn) {
 		//btn.setForeground(Color.white);
 		//btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setIconTextGap(0);
 		btn.setHorizontalAlignment(SwingConstants.LEFT);
-		
+
 	}
 	/*
 	public static void setPrenotaButtonStyle(JButton btn) {
 		btn.setForeground(Color.white);
 		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBackground(new Color(77,155,247));
-		
+
 	}
-	*/
-	public static void setIconButtonStyle(JButton btn) {
+	 */
+	public static void setCallToActionButtonStyle(JButton btn) {
+		btn.setForeground(Color.white);
+		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBorderPainted(false);
 		btn.setOpaque(false);
 		btn.setIconTextGap(0);
 		btn.setHorizontalAlignment(SwingConstants.LEFT);
+		btn.setHorizontalTextPosition(JButton.CENTER);
+		btn.setVerticalTextPosition(JButton.CENTER);
 		btn.setBorder(BorderFactory.createEmptyBorder());
 	}
 }

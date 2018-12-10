@@ -67,14 +67,14 @@ public class ListEntry extends JLayeredPane {
 		TextStyler.setDataStyle(giornoLbl);
 		giornoLbl.setBounds(PANEL_WIDTH - 50, 45, GIORNO_WIDTH, GIORNO_HEIGHT);
 		//Label orario
-		String orario = "INIZIA ALLE: " + spet.getData().getOra() + ":" + spet.getData().getMinuto();
+		String orario = "INIZIA ALLE " + spet.getData().getOra() + ":" + spet.getData().getMinuto();
 		String sala = "SALA " + spet.getSala().getNome();
-		JLabel infoLbl = new JLabel(orario + ", " + sala);
+		JLabel infoLbl = new JLabel(orario + " • " + sala);
 		TextStyler.setInfoStyle(infoLbl);
 		infoLbl.setBounds(32, 390, INFO_WIDTH, INFO_HEIGHT);
 		//Tasto prenota
-		JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenota.png"));
-		ButtonStyler.setIconButtonStyle(prenotaBtn);
+		JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenotaBtn.png"));
+		ButtonStyler.setCallToActionButtonStyle(prenotaBtn);
 		prenotaBtn.setBounds(PANEL_WIDTH - PRENOTABTN_WIDTH - 25, PANEL_HEIGHT - PRENOTABTN_HEIGHT - 25, PRENOTABTN_WIDTH, PRENOTABTN_HEIGHT);
 		//Aggiunge i components al panel dell'entry
 		add(prenotaBtn,1);
