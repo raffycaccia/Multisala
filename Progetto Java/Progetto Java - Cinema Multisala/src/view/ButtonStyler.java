@@ -11,10 +11,13 @@ import javax.swing.SwingConstants;
 import model.ResourceLoader;
 
 public class ButtonStyler {
+	
+	private static final Color NAVBTNSELCOL = new Color(75,75,75);
 
 	public static void setNavButtonStyle(JButton btn) {
 		btn.setForeground(Color.white);
 		btn.setBorderPainted(false);
+		btn.setFocusPainted(false);
 		btn.setOpaque(true);
 		btn.setBackground(MenuPanel.MENU_COLOR);
 		btn.setFont(ResourceLoader.BtnSelFont);
@@ -27,7 +30,7 @@ public class ButtonStyler {
 	public static void setNavButtonSelectedStyle(JButton btn) {
 		btn.setOpaque(true);
 		//btn.setBackground(new Color(77,155,247));
-		btn.setBackground(new Color(75,75,75));
+		btn.setBackground(NAVBTNSELCOL);
 		btn.repaint();
 	}
 
@@ -55,8 +58,9 @@ public class ButtonStyler {
 		btn.setForeground(Color.white);
 		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBorderPainted(false);
+		btn.setFocusPainted(false);
 		btn.setBackground(bgColor);
-		//btn.setOpaque(false);
+		btn.setOpaque(false);
 		btn.setIconTextGap(0);
 		btn.setHorizontalAlignment(SwingConstants.LEFT);
 		btn.setHorizontalTextPosition(JButton.CENTER);
