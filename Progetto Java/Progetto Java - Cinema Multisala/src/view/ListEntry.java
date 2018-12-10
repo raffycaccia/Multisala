@@ -78,6 +78,7 @@ public class ListEntry extends JLayeredPane {
 		infoLbl.setBounds(32, 390, INFO_WIDTH, INFO_HEIGHT);
 		//Tasto prenota
 		JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenotaBtn.png"));
+		prenotaBtn.setPressedIcon(new ImageIcon("image/buttonIcon/prenotaBtnPressed.png"));
 		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, BGCOLOR);
 		prenotaBtn.setBounds(PANEL_WIDTH - PRENOTABTN_WIDTH - 25, PANEL_HEIGHT - PRENOTABTN_HEIGHT - 25, PRENOTABTN_WIDTH, PRENOTABTN_HEIGHT);
 		//Aggiunge i components al panel dell'entry

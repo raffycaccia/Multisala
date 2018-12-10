@@ -50,5 +50,11 @@ public class TextStyler {
 		lbl.setForeground(new Color(17, 17, 17));
 		lbl.setOpaque(false);
 	}
+	
+	public static void setFilterTypeStyle(JLabel lbl) {
+		lbl.setFont(ResourceLoader.TitleFont.deriveFont(11f));
+		lbl.setForeground(new Color(124,124,125));
+		lbl.setOpaque(false);
+	}
 
 }

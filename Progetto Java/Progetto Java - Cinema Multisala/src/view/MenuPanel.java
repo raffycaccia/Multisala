@@ -163,6 +163,7 @@ public class MenuPanel extends JPanel {
 		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,17,0,0));
 		switchPanel.setAlignmentX(LEFT_ALIGNMENT);
 		switchPanel.setBackground(MENU_COLOR);
+		switchPanel.setOpaque(false);
 		//Crea tasti
 		JRadioButton clienteBtn = new JRadioButton();
 		JRadioButton gestoreBtn = new JRadioButton();

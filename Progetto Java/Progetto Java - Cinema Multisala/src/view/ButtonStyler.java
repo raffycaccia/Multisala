@@ -18,6 +18,8 @@ public class ButtonStyler {
 		btn.setForeground(Color.white);
 		btn.setBorderPainted(false);
 		btn.setFocusPainted(false);
+		btn.setFocusable(false);
+		btn.setContentAreaFilled(false);
 		btn.setOpaque(true);
 		btn.setBackground(MenuPanel.MENU_COLOR);
 		btn.setFont(ResourceLoader.BtnSelFont);
@@ -59,6 +61,8 @@ public class ButtonStyler {
 		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBorderPainted(false);
 		btn.setFocusPainted(false);
+		btn.setContentAreaFilled(false);
+		btn.setFocusable(false);
 		btn.setBackground(bgColor);
 		btn.setOpaque(false);
 		btn.setIconTextGap(0);
