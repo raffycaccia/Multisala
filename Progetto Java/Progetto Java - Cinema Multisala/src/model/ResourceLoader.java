@@ -3,8 +3,8 @@ package model;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Image;
-import java.awt.image.BaseMultiResolutionImage;
-import java.awt.image.MultiResolutionImage;
+//import java.awt.image.BaseMultiResolutionImage;
+//import java.awt.image.MultiResolutionImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class ResourceLoader {
 	public static Font DataFont;
 	public static Font BtnFont;
 	public static Font BtnSelFont;
-	public static MultiResolutionImage clienteBtnIcon;
+	//public static MultiResolutionImage clienteBtnIcon;
 	
 	/* Momentaneamente opzionale
 	public ResourceLoader() {
@@ -46,7 +46,7 @@ public class ResourceLoader {
 			e.printStackTrace();
 		}
 	}
-	
+	/*
 	public static void loadButtonsIcon() throws IOException {
 		ArrayList<Image> imgList = new ArrayList<Image>();
 		imgList.add(ImageIO.read(new File("Cliente.png")));
@@ -54,4 +54,5 @@ public class ResourceLoader {
 		imgList.add(ImageIO.read(new File("Cliente@3x.png")));
 		clienteBtnIcon = new BaseMultiResolutionImage(imgList.toArray(new Image[0]));
 	}
+	*/
 }
