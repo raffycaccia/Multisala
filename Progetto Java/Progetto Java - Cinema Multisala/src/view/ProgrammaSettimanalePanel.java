@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -23,9 +25,16 @@ import model.Spettacolo;
 public class ProgrammaSettimanalePanel extends JPanel {
 
 	//private static final int PANEL_SIZE = 400;
+	private JComboBox<String> selectSala;
+	private ArrayList<Spettacolo> arrSpettacoli;
+	private ArrayList<Sala> arrSale;
+	private JPanel operaList;
 
 	public ProgrammaSettimanalePanel(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
 
+		this.arrSpettacoli = arrSpettacoli;
+		this.arrSale = arrSale;
+		
 		//Stile e layout pannello
 		setBackground(Color.white);
 		setLayout(new BorderLayout());
@@ -41,7 +50,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 			//Distanzia la lista se non c'é il subheader
 			add(Box.createVerticalStrut(40), BorderLayout.CENTER);
 		}
-		createListPanel(arrSpettacoli, arrSale);
+		createListPanel(arrSpettacoli);
 
 	}
 
@@ -68,7 +77,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		filtroSala.add(tipoFiltroLbl);
 
 		//Crea selettore sala
-		JComboBox<String> selectSala = new JComboBox<String>();
+		selectSala = new JComboBox<String>();
 		selectSala.addItem("Tutte le sale");
 		for (Sala s : arrSale) {
 			selectSala.addItem(s.getNome());
@@ -77,9 +86,44 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Dimensione selettore
 		selectSala.setPreferredSize(new Dimension(150,30));
 
+		
+		class ChoiceListener implements ActionListener {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				visualizzaListaSala();
+			}
+			
+		}
+		
+		ActionListener listener = new ChoiceListener();
+		selectSala.addActionListener(listener);
 		filtroSala.add(selectSala);
 
 		return filtroSala;
+	}
+	
+	private void visualizzaListaSala() {
+		String salaScelta = (String) selectSala.getSelectedItem();
+		boolean isPresent = false;
+		for (Sala s : arrSale) {
+			if (s.getNome().equals(salaScelta)) {
+				isPresent = true;
+			}
+		}
+		if (!isPresent) {
+			this.remove(operaList);
+			createListPanel(arrSpettacoli);
+			return;
+		}
+		ArrayList<Spettacolo> arrFiltrato = new ArrayList<Spettacolo>();
+		for (Spettacolo spet : arrSpettacoli) {
+			if (spet.getSala().getNome().equals(salaScelta)) {
+				arrFiltrato.add(spet);
+			}
+		}
+		this.remove(operaList);
+		createListPanel(arrFiltrato);
 	}
 
 	private JPanel addSpettacoliFilterPanel() {
@@ -150,10 +194,11 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		return subHeader;
 	}
 
-	private void createListPanel(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
+	private void createListPanel(ArrayList<Spettacolo> arrSpettacoli) {
 		//Se ci sono spettacoli crea il pannello con la lista
 		if ((arrSpettacoli != null) && arrSpettacoli.size() > 0) {
-			add(new OperaListPanel(arrSpettacoli), BorderLayout.SOUTH);
+			operaList = new OperaListPanel(arrSpettacoli);
+			add(operaList, BorderLayout.SOUTH);
 		} else {
 			JLabel noSpettacoliLbl = new JLabel("Non ci sono spettacoli per questa settimana.");
 			add(noSpettacoliLbl);
