@@ -15,6 +15,7 @@ public class ButtonStyler {
 	
 	private static final Color NAVBTNSELCOL = new Color(75,75,75);
 	public static final Color CTABLUECOL = new Color(8,132,255);
+	public static final Color CTABLUECOLPRESSED = new Color(6,112,218);
 
 	public static void setNavButtonStyle(JButton btn) {
 		btn.setForeground(Color.white);
@@ -62,9 +63,9 @@ public class ButtonStyler {
 		btn.setForeground(Color.white);
 		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBorderPainted(false);
-		//btn.setFocusPainted(false);
+		btn.setFocusPainted(false);
 		btn.setContentAreaFilled(false);
-		//btn.setFocusable(false);
+		btn.setFocusable(false);
 		btn.setBackground(bgColor);
 		btn.setOpaque(false);
 		btn.setIconTextGap(0);

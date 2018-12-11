@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseListener;
 import java.time.Month;
 import java.time.format.TextStyle;
 
@@ -11,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextArea;
 
+import controller.PrenotaListener;
 import model.Spettacolo;
 
 @SuppressWarnings("serial")
@@ -83,7 +85,8 @@ public class ListEntry extends JLayeredPane {
 		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, BGCOLOR);
 		RettangoloArrotondato formaTastoPrenota = new RettangoloArrotondato(0,0, PRENOTABTN_WIDTH,PRENOTABTN_HEIGHT, PRENOTABTN_HEIGHT, false, ButtonStyler.CTABLUECOL);
 		formaTastoPrenota.setBounds(prenotaBtn.getBounds());
-		
+		MouseListener prenotaListener = new PrenotaListener(formaTastoPrenota);
+		prenotaBtn.addMouseListener(prenotaListener);
 		//Aggiunge i components al panel dell'entry
 		add(prenotaBtn,1);
 		add(formaTastoPrenota,2);

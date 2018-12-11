@@ -12,7 +12,6 @@ import javax.swing.JComponent;
 @SuppressWarnings("serial")
 public class RettangoloArrotondato extends JComponent {
 	
-	private Color bgColor = Color.white;
 	private int x;
 	private int y;
 	private int width;
@@ -57,7 +56,7 @@ public class RettangoloArrotondato extends JComponent {
     }
 	
 	public void setFillColor(Color bgColor){
-		this.bgColor = bgColor;
+		this.color = bgColor;
 		repaint();
 	}
 	
