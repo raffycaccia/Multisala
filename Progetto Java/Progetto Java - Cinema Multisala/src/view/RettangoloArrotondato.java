@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.RenderingHints;
 import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.JComponent;
@@ -19,6 +20,7 @@ public class RettangoloArrotondato extends JComponent {
 	private int radius;
 	private boolean soloBordo;
 	private Color color;
+	
 	
 	public RettangoloArrotondato(int x, int y, int width, int height, int radius, boolean soloBordo, Color color) {
 		this.x = x;
@@ -46,6 +48,10 @@ public class RettangoloArrotondato extends JComponent {
 
         
         g2.setColor(color);
+        RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        //rh.add(new RenderingHints(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB));
+
+        g2.setRenderingHints(rh);
         
         if (soloBordo) {
         	g2.drawRoundRect(x, y, width, height, radius, radius);
