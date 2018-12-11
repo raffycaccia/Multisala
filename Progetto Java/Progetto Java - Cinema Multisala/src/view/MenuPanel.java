@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,14 +11,17 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
 
+import model.ResourceLoader;
 import model.Utente;
 
 @SuppressWarnings("serial")
@@ -28,10 +32,13 @@ public class MenuPanel extends JPanel {
 	private JButton prenotazioniBtn;
 	private JPanel clienteMenu;
 	private JPanel gestoreMenu;
+	private JRadioButton clienteBtn;
+	private JRadioButton gestoreBtn;
 	
 	public final static Color MENU_COLOR = new Color(45,46,48);
-	public final static int MENU_WIDTH = 221;
+	public final static int MENU_WIDTH = 240;
 	public final static int BUTTON_HEIGHT = 45;
+	public final static int SWITCH_BUTTON_HEIGHT = 38;
 	
 	public MenuPanel() {
 		
@@ -54,6 +61,7 @@ public class MenuPanel extends JPanel {
 		createLogo();
 		add(Box.createVerticalStrut(80));
 		createUtenteSwitch();
+		add(Box.createVerticalStrut(15));
 		createClienteMenu();
 		createGestoreMenu();
 	}
@@ -99,12 +107,17 @@ public class MenuPanel extends JPanel {
 		status = Utente.CLIENTE;
 		clienteMenu.setVisible(true);
 		//gestoreMenu.setVisible(false);
+		ButtonStyler.setSwitchButtonSelectedStyle(clienteBtn);
+		ButtonStyler.setSwitchButtonUnselectedStyle(gestoreBtn);
+		
 	}
 	
 	private void setGestoreMenu() {
 		status = Utente.GESTORE;
 		gestoreMenu.setVisible(true);
 		clienteMenu.setVisible(false);
+		ButtonStyler.setSwitchButtonSelectedStyle(gestoreBtn);
+		ButtonStyler.setSwitchButtonUnselectedStyle(clienteBtn);
 	}
 	
 	private void setStyle() {
@@ -154,27 +167,32 @@ public class MenuPanel extends JPanel {
 	
 	private void createUtenteSwitch() {
 		//Crea pannello
-		JPanel switchPanel = new JPanel();
+		JLayeredPane switchPanel = new JLayeredPane();
 		//Stile e layout
-		switchPanel.setLayout(new GridLayout(1,2));
-		switchPanel.setMinimumSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
-		switchPanel.setMaximumSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
-		switchPanel.setPreferredSize(new Dimension(MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
+		//switchPanel.setLayout(new GridLayout(1,2));
+		switchPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		switchPanel.setMinimumSize(new Dimension(MENU_WIDTH, SWITCH_BUTTON_HEIGHT));
+		switchPanel.setMaximumSize(new Dimension(MENU_WIDTH, SWITCH_BUTTON_HEIGHT));
+		switchPanel.setPreferredSize(new Dimension(MENU_WIDTH, SWITCH_BUTTON_HEIGHT));
 		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,17,0,0));
 		switchPanel.setAlignmentX(LEFT_ALIGNMENT);
 		switchPanel.setBackground(MENU_COLOR);
 		switchPanel.setOpaque(false);
 		//Crea tasti
-		JRadioButton clienteBtn = new JRadioButton();
-		JRadioButton gestoreBtn = new JRadioButton();
+		clienteBtn = new JRadioButton("CLIENTE");
+		gestoreBtn = new JRadioButton("GESTORE");
 		//Imposta stile tasti
 		ButtonStyler.setSwitchButtonStyle(clienteBtn);
 		ButtonStyler.setSwitchButtonStyle(gestoreBtn);
-		ImageIcon icon = new ImageIcon("image/buttonIcon/cliente.png");
-		clienteBtn.setIcon(icon);
-		clienteBtn.setSelectedIcon(new ImageIcon("image/buttonIcon/clienteSel.png"));
-		gestoreBtn.setIcon(new ImageIcon("image/buttonIcon/gestore.png"));
-		gestoreBtn.setSelectedIcon(new ImageIcon("image/buttonIcon/gestoreSel.png"));
+
+		//clienteBtn.setMinimumSize(new Dimension(80, SWITCH_BUTTON_HEIGHT));
+		//clienteBtn.setMaximumSize(new Dimension(80, SWITCH_BUTTON_HEIGHT));
+		clienteBtn.setPreferredSize(new Dimension(95, SWITCH_BUTTON_HEIGHT - 10));
+
+		//gestoreBtn.setMinimumSize(new Dimension(MENU_WIDTH/2, SWITCH_BUTTON_HEIGHT));
+		//.setMaximumSize(new Dimension(MENU_WIDTH/2, SWITCH_BUTTON_HEIGHT));
+		gestoreBtn.setPreferredSize(new Dimension(95, SWITCH_BUTTON_HEIGHT - 10));
+		
 		//Raggruppa tasti
 		ButtonGroup utenteSwitch = new ButtonGroup();
 		utenteSwitch.add(gestoreBtn);

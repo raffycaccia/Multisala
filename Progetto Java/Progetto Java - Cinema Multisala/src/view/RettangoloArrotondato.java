@@ -50,7 +50,7 @@ public class RettangoloArrotondato extends JComponent {
         g2.setColor(color);
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         //rh.add(new RenderingHints(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB));
-
+        //rh.add(new RenderingHints(RenderingHints.KEY_RESOLUTION_VARIANT, RenderingHints.VALUE_RESOLUTION_VARIANT_DPI_FIT));
         g2.setRenderingHints(rh);
         
         if (soloBordo) {
