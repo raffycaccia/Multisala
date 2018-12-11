@@ -7,7 +7,6 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalField;
 import java.util.ArrayList;
 
 import javax.swing.Box;
@@ -16,7 +15,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import model.Data;
@@ -150,7 +148,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		//Crea checkbox per visualizzare solo le prossime proiezioni
 		visualizzaProssimi = new JCheckBox("Solo prossimi spettacoli".toUpperCase());
 		//visualizzaProssimi.setForeground(new Color(1,122,255));
-		visualizzaProssimi.setForeground(TextStyler.TITLE_COLOR);
+		visualizzaProssimi.setForeground(Tema.CHECKBOX_COLOR);
 		visualizzaProssimi.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		visualizzaProssimi.setPreferredSize(new Dimension(300,30));
 		visualizzaProssimi.setOpaque(false);

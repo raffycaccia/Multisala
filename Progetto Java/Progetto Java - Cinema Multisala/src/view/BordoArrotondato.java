@@ -7,8 +7,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.RenderingHints;
-import java.awt.Shape;
-import java.awt.Stroke;
 
 import javax.swing.border.Border;
 

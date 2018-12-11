@@ -1,6 +1,5 @@
 package controller;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -12,6 +11,7 @@ import model.Sala;
 import model.Spettacolo;
 import view.MainFrame;
 import view.Tema;
+import view.Tema.Stile;
 
 public class MainFrameController {
 
@@ -47,7 +47,7 @@ public class MainFrameController {
 	}
 	
 	private static void setup() {
-		new Tema(0);
+		new Tema(Stile.Combinato);
 	}
 	
 	

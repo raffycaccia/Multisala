@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.Image;
-
 import javax.swing.ImageIcon;
 
 //TODO rivedere descrizione interfaccia
