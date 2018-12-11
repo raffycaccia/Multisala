@@ -5,6 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JLayeredPane;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 
@@ -13,6 +14,7 @@ import model.ResourceLoader;
 public class ButtonStyler {
 	
 	private static final Color NAVBTNSELCOL = new Color(75,75,75);
+	public static final Color CTABLUECOL = new Color(8,132,255);
 
 	public static void setNavButtonStyle(JButton btn) {
 		btn.setForeground(Color.white);
@@ -60,13 +62,12 @@ public class ButtonStyler {
 		btn.setForeground(Color.white);
 		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
 		btn.setBorderPainted(false);
-		btn.setFocusPainted(false);
+		//btn.setFocusPainted(false);
 		btn.setContentAreaFilled(false);
-		btn.setFocusable(false);
+		//btn.setFocusable(false);
 		btn.setBackground(bgColor);
 		btn.setOpaque(false);
 		btn.setIconTextGap(0);
-		btn.setHorizontalAlignment(SwingConstants.LEFT);
 		btn.setHorizontalTextPosition(JButton.CENTER);
 		btn.setVerticalTextPosition(JButton.CENTER);
 		btn.setBorder(BorderFactory.createEmptyBorder());

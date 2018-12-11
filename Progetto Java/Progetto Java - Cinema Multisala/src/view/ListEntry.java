@@ -46,8 +46,7 @@ public class ListEntry extends JLayeredPane {
 		//Setta le dimensioni dell'entry
 		setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
 		//Crea bordo
-		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato();
-		rettangoloDecorativo.setFillColor(BGCOLOR);
+		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato(8, 8, PANEL_WIDTH - 10, PANEL_HEIGHT - 10, 50, false, BGCOLOR);
 		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT);
 		//Label titolo
 		JLabel titolo = new JLabel(spet.getOpera().getTitolo());
@@ -77,19 +76,24 @@ public class ListEntry extends JLayeredPane {
 		TextStyler.setInfoStyle(infoLbl);
 		infoLbl.setBounds(32, 390, INFO_WIDTH, INFO_HEIGHT);
 		//Tasto prenota
-		JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenotaBtn.png"));
-		prenotaBtn.setPressedIcon(new ImageIcon("image/buttonIcon/prenotaBtnPressed.png"));
-		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, BGCOLOR);
+		JButton prenotaBtn = new JButton("PRENOTA");
+		//JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenotaBtn.png"));
+		//prenotaBtn.setPressedIcon(new ImageIcon("image/buttonIcon/prenotaBtnPressed.png"));
 		prenotaBtn.setBounds(PANEL_WIDTH - PRENOTABTN_WIDTH - 25, PANEL_HEIGHT - PRENOTABTN_HEIGHT - 25, PRENOTABTN_WIDTH, PRENOTABTN_HEIGHT);
+		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, BGCOLOR);
+		RettangoloArrotondato formaTastoPrenota = new RettangoloArrotondato(0,0, PRENOTABTN_WIDTH,PRENOTABTN_HEIGHT, PRENOTABTN_HEIGHT, false, ButtonStyler.CTABLUECOL);
+		formaTastoPrenota.setBounds(prenotaBtn.getBounds());
+		
 		//Aggiunge i components al panel dell'entry
 		add(prenotaBtn,1);
-		add(titolo, 2);
-		add(desc, 3);
-		add(durata, 4);
-		add(meseLbl, 5);
-		add(giornoLbl,6);
-		add(infoLbl, 7);
-		add(rettangoloDecorativo, 8);
+		add(formaTastoPrenota,2);
+		add(titolo, 3);
+		add(desc, 4);
+		add(durata, 5);
+		add(meseLbl, 6);
+		add(giornoLbl,7);
+		add(infoLbl, 8);
+		add(rettangoloDecorativo, 9);
 	}
 
 }
