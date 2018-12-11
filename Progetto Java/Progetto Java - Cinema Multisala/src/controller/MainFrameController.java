@@ -11,6 +11,7 @@ import model.Film;
 import model.Sala;
 import model.Spettacolo;
 import view.MainFrame;
+import view.Tema;
 
 public class MainFrameController {
 
@@ -38,9 +39,15 @@ public class MainFrameController {
 		arrSale.add(salaA);
 		arrSale.add(salaB);
 		
+		setup();
+		
 		JFrame frame = new MainFrame(arrSpettacoli, arrSale);
 		//JFrame frame = new MainFrame(null, null);
 		frame.setVisible(true);
+	}
+	
+	private static void setup() {
+		new Tema(0);
 	}
 	
 	

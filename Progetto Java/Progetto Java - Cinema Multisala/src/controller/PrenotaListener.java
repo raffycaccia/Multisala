@@ -5,6 +5,7 @@ import java.awt.event.MouseListener;
 
 import view.ButtonStyler;
 import view.RettangoloArrotondato;
+import view.Tema;
 
 public class PrenotaListener implements MouseListener {
 	
@@ -22,14 +23,14 @@ public class PrenotaListener implements MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		btnShape.setFillColor(ButtonStyler.CTABLUECOLPRESSED);
+		btnShape.setFillColor(Tema.CALL_TO_ACTION_PRESSED_BLUE_COLOR);
 
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		btnShape.setFillColor(ButtonStyler.CTABLUECOL);
+		btnShape.setFillColor(Tema.CALL_TO_ACTION_BLUE_COLOR);
 
 	}
 

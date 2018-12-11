@@ -35,7 +35,6 @@ public class MenuPanel extends JPanel {
 	private JRadioButton clienteBtn;
 	private JRadioButton gestoreBtn;
 	
-	public final static Color MENU_COLOR = new Color(45,46,48);
 	public final static int MENU_WIDTH = 240;
 	public final static int BUTTON_HEIGHT = 45;
 	public final static int SWITCH_BUTTON_HEIGHT = 38;
@@ -80,7 +79,7 @@ public class MenuPanel extends JPanel {
 		
 		clienteMenu.setLayout(new BoxLayout(clienteMenu, BoxLayout.Y_AXIS));
 		clienteMenu.setPreferredSize(new Dimension(MENU_WIDTH, 0));
-		clienteMenu.setBackground(MENU_COLOR);
+		clienteMenu.setBackground(Tema.MENU_COLOR);
 		clienteMenu.setOpaque(true);
 		
 		clienteMenu.add(createProgrammaButton());
@@ -94,7 +93,7 @@ public class MenuPanel extends JPanel {
 		
 		gestoreMenu.setLayout(new BoxLayout(gestoreMenu, BoxLayout.Y_AXIS));
 		gestoreMenu.setPreferredSize(new Dimension(MENU_WIDTH, 0));
-		gestoreMenu.setBackground(MENU_COLOR);
+		gestoreMenu.setBackground(Tema.MENU_COLOR);
 		gestoreMenu.setOpaque(true);
 		
 		//gestoreMenu.add(createProgrammaButton());
@@ -123,7 +122,7 @@ public class MenuPanel extends JPanel {
 	private void setStyle() {
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setPreferredSize(new Dimension(MENU_WIDTH, 0));
-		setBackground(MENU_COLOR);
+		setBackground(Tema.MENU_COLOR);
 		setOpaque(true);
 		CompoundBorder menuBorder = new CompoundBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.black),
 						BorderFactory.createMatteBorder(1, 1, 1, 0, new Color(83,84,85)));
@@ -176,7 +175,7 @@ public class MenuPanel extends JPanel {
 		switchPanel.setPreferredSize(new Dimension(MENU_WIDTH, SWITCH_BUTTON_HEIGHT));
 		switchPanel.setBorder(BorderFactory.createEmptyBorder(0,17,0,0));
 		switchPanel.setAlignmentX(LEFT_ALIGNMENT);
-		switchPanel.setBackground(MENU_COLOR);
+		switchPanel.setBackground(Tema.MENU_COLOR);
 		switchPanel.setOpaque(false);
 		//Crea tasti
 		clienteBtn = new JRadioButton("CLIENTE");

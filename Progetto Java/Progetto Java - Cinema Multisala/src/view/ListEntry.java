@@ -47,13 +47,13 @@ public class ListEntry extends JLayeredPane {
 	public static final int COVER_HEIGHT = 300;
 	public static final int COVER_WIDTH = PANEL_WIDTH - 100;
 	
-	public static final Color BGCOLOR = new Color(250,250,250);
+	
 	
 	public ListEntry(Spettacolo spet) {
 		//Setta le dimensioni dell'entry
 		setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
 		//Crea bordo
-		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato(8, 8, PANEL_WIDTH - 10, PANEL_HEIGHT - 10, 50, false, BGCOLOR);
+		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato(8, 8, PANEL_WIDTH - 10, PANEL_HEIGHT - 10, 50, false, Tema.ENTRY_BACKGROUND_COLOR);
 		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT);
 		//Label titolo
 		JLabel titolo = new JLabel(spet.getOpera().getTitolo());
@@ -79,7 +79,8 @@ public class ListEntry extends JLayeredPane {
 		//Label orario
 		String orario = "INIZIA ALLE " + spet.getData().getOraString() + ":" + spet.getData().getMinutoString();
 		String sala = "SALA " + spet.getSala().getNome();
-		JLabel infoLbl = new JLabel(orario + " • " + sala);
+		//JLabel infoLbl = new JLabel(orario + " • " + sala);
+		JLabel infoLbl = new JLabel(orario + " - " + sala);
 		TextStyler.setInfoStyle(infoLbl);
 		infoLbl.setBounds(32, 390, INFO_WIDTH, INFO_HEIGHT);
 		//Tasto prenota
@@ -87,8 +88,8 @@ public class ListEntry extends JLayeredPane {
 		//JButton prenotaBtn = new JButton("PRENOTA", new ImageIcon("image/buttonIcon/prenotaBtn.png"));
 		//prenotaBtn.setPressedIcon(new ImageIcon("image/buttonIcon/prenotaBtnPressed.png"));
 		prenotaBtn.setBounds(PANEL_WIDTH - PRENOTABTN_WIDTH - 25, PANEL_HEIGHT - PRENOTABTN_HEIGHT - 25, PRENOTABTN_WIDTH, PRENOTABTN_HEIGHT);
-		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, BGCOLOR);
-		RettangoloArrotondato formaTastoPrenota = new RettangoloArrotondato(0,0, PRENOTABTN_WIDTH,PRENOTABTN_HEIGHT, PRENOTABTN_HEIGHT, false, ButtonStyler.CTABLUECOL);
+		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, Tema.ENTRY_BACKGROUND_COLOR);
+		RettangoloArrotondato formaTastoPrenota = new RettangoloArrotondato(0,0, PRENOTABTN_WIDTH,PRENOTABTN_HEIGHT, PRENOTABTN_HEIGHT, false, Tema.CALL_TO_ACTION_BLUE_COLOR);
 		formaTastoPrenota.setBounds(prenotaBtn.getBounds());
 		MouseListener prenotaListener = new PrenotaListener(formaTastoPrenota);
 		prenotaBtn.addMouseListener(prenotaListener);
