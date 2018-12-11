@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.MouseListener;
 import java.time.Month;
 import java.time.format.TextStyle;
@@ -11,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 import controller.PrenotaListener;
 import model.Spettacolo;
@@ -41,6 +43,9 @@ public class ListEntry extends JLayeredPane {
 	
 	public static final int PRENOTABTN_WIDTH = 88;
 	public static final int PRENOTABTN_HEIGHT = 30;
+
+	public static final int COVER_HEIGHT = 300;
+	public static final int COVER_WIDTH = PANEL_WIDTH - 100;
 	
 	public static final Color BGCOLOR = new Color(250,250,250);
 	
@@ -72,7 +77,7 @@ public class ListEntry extends JLayeredPane {
 		TextStyler.setDataStyle(giornoLbl);
 		giornoLbl.setBounds(PANEL_WIDTH - 50, 45, GIORNO_WIDTH, GIORNO_HEIGHT);
 		//Label orario
-		String orario = "INIZIA ALLE " + spet.getData().getOra() + ":" + spet.getData().getMinuto();
+		String orario = "INIZIA ALLE " + spet.getData().getOraString() + ":" + spet.getData().getMinutoString();
 		String sala = "SALA " + spet.getSala().getNome();
 		JLabel infoLbl = new JLabel(orario + " • " + sala);
 		TextStyler.setInfoStyle(infoLbl);
@@ -87,6 +92,16 @@ public class ListEntry extends JLayeredPane {
 		formaTastoPrenota.setBounds(prenotaBtn.getBounds());
 		MouseListener prenotaListener = new PrenotaListener(formaTastoPrenota);
 		prenotaBtn.addMouseListener(prenotaListener);
+		
+		//Cover prova
+		ImageIcon copertina = spet.getOpera().getCopertina();
+		if (copertina != null) {
+			JLabel cover = new JLabel(new ImageIcon(copertina.getImage().getScaledInstance(-1, COVER_HEIGHT, Image.SCALE_SMOOTH)));
+			cover.setBounds(32, 90, COVER_WIDTH, COVER_HEIGHT);
+			cover.setHorizontalAlignment(SwingConstants.LEFT);
+			add(cover, 9);
+		}
+		
 		//Aggiunge i components al panel dell'entry
 		add(prenotaBtn,1);
 		add(formaTastoPrenota,2);
@@ -96,7 +111,8 @@ public class ListEntry extends JLayeredPane {
 		add(meseLbl, 6);
 		add(giornoLbl,7);
 		add(infoLbl, 8);
-		add(rettangoloDecorativo, 9);
+		
+		add(rettangoloDecorativo, 10);
 	}
 
 }

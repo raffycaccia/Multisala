@@ -2,6 +2,8 @@ package model;
 
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 //TODO rivedere descrizione interfaccia
 
 /**
@@ -28,7 +30,7 @@ public interface Opera extends Cloneable{
 	 */
 	int getDurata();
 	
-	Image getCopertina();
+	ImageIcon getCopertina();
 
 	Opera clone();
 }

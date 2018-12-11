@@ -2,9 +2,13 @@ package model;
 
 import java.awt.Image;
 
+import javax.swing.ImageIcon;
+
 public class Film implements Opera{
 	String titolo, desc;
 	int durata; //espressa in minuti
+	
+	private ImageIcon cover = null;
 	
 	/**
 	 * Costruttore, inizializza le variabili del Film
@@ -16,6 +20,13 @@ public class Film implements Opera{
 		this.titolo=titolo;
 		this.desc=desc;
 		this.durata=durata;
+	}
+	
+	public Film(String titolo, String desc, int durata, ImageIcon cover){
+		this.titolo=titolo;
+		this.desc=desc;
+		this.durata=durata;
+		this.cover = cover;
 	}
 	
 	//metodi di get
@@ -102,10 +113,8 @@ public class Film implements Opera{
 	
 	}
 
-	@Override
-	public Image getCopertina() {
-		// TODO Auto-generated method stub
-		return null;
+	public ImageIcon getCopertina() {
+		return cover;
 	}
 	
 }

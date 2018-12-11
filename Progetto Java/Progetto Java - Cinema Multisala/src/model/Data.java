@@ -68,6 +68,7 @@ public class Data {
 		return giorno;
 	}
 
+
 	/**
 	 * @return l'ora
 	 */
@@ -86,6 +87,39 @@ public class Data {
 	 * @return i minuti
 	 */
 	public int getMinuto() {
+		return minuto;
+	}
+
+	/**
+	 * @return l'ora
+	 */
+	public String getOraString() {
+		String ora = Integer.toString(this.ora);
+		if (this.ora < 10) {
+			ora = ("0" + this.ora);
+		}
+		return ora;
+	}
+
+	/**
+	 * @return il mese
+	 */
+	public String getMeseString() {
+		String mese = Integer.toString(this.mese);
+		if (this.mese < 10) {
+			mese = ("0" + this.mese);
+		}
+		return mese;
+	}
+	
+	/**
+	 * @return i minuti
+	 */
+	public String getMinutoString() {
+		String minuto = Integer.toString(this.minuto);
+		if (this.minuto < 10) {
+			minuto = ("0" + this.minuto);
+		}
 		return minuto;
 	}
 

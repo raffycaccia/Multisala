@@ -155,6 +155,9 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		visualizzaProssimi.setPreferredSize(new Dimension(300,30));
 		visualizzaProssimi.setOpaque(false);
 		visualizzaProssimi.setAlignmentX(LEFT_ALIGNMENT);
+		visualizzaProssimi.setBorderPainted(false);
+		visualizzaProssimi.setFocusPainted(false);
+		visualizzaProssimi.setFocusable(false);
 		//Aggiunge la checkbox al subheader
 		filtroSpettacoli.add(visualizzaProssimi, BorderLayout.CENTER);
 		//Crea selettore filtri
