@@ -24,6 +24,7 @@ public class Tema {
 			NAVIGATION_HEADER_COLOR = new Color(17, 17, 17);
 			FILTER_TYPE_BUTTON_COLOR = new Color(124,124,125);
 			CHECKBOX_COLOR = new Color(39, 39, 39);
+			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
 			break;
 		case Chiaro:
 			NAVIGATION_BUTTON_SELECTED_COLOR = new Color(75,75,75);
@@ -40,6 +41,7 @@ public class Tema {
 			NAVIGATION_HEADER_COLOR = new Color(17, 17, 17);
 			FILTER_TYPE_BUTTON_COLOR = new Color(124,124,125);
 			CHECKBOX_COLOR = new Color(39, 39, 39);
+			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
 			break;
 		case Scuro:
 			NAVIGATION_BUTTON_SELECTED_COLOR = new Color(75,75,75);
@@ -56,6 +58,7 @@ public class Tema {
 			NAVIGATION_HEADER_COLOR = new Color(17, 17, 17);
 			FILTER_TYPE_BUTTON_COLOR = new Color(124,124,125);
 			CHECKBOX_COLOR = new Color(39, 39, 39);
+			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
 			break;
 		}
 	}
@@ -74,4 +77,5 @@ public class Tema {
 	public static Color NAVIGATION_HEADER_COLOR;
 	public static Color FILTER_TYPE_BUTTON_COLOR;
 	public static Color CHECKBOX_COLOR;
+	public static Color RIGHT_PANEL_BACKGROUND_COLOR;
 }

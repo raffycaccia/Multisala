@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 
 import model.ResourceLoader;
 
@@ -12,12 +13,14 @@ public class TextStyler {
 		lbl.setFont(ResourceLoader.TitleFont);
 		lbl.setForeground(Tema.TITLE_COLOR);
 		lbl.setOpaque(false);
+		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 	
 	public static void setDescriptionStyle(JLabel lbl) {
 		lbl.setFont(ResourceLoader.DescFont);
 		lbl.setForeground(Tema.DESCRIPTION_COLOR);
 		lbl.setOpaque(false);
+		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 	
 	public static void setDescriptionStyle(JTextArea txtArea) {
@@ -34,24 +37,28 @@ public class TextStyler {
 		lbl.setFont(ResourceLoader.TitleFont.deriveFont(18f));
 		lbl.setForeground(Tema.INFO_COLOR);
 		lbl.setOpaque(false);
+		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 	
 	public static void setDataStyle(JLabel lbl) {
 		lbl.setFont(ResourceLoader.TitleFont.deriveFont(18f));
 		lbl.setForeground(Tema.DATA_COLOR);
 		lbl.setOpaque(false);
+		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 	
 	public static void setNavHeaderStyle(JLabel lbl) {
 		lbl.setFont(ResourceLoader.TitleFont.deriveFont(45f));
 		lbl.setForeground(Tema.NAVIGATION_HEADER_COLOR);
 		lbl.setOpaque(false);
+		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 	
 	public static void setFilterTypeStyle(JLabel lbl) {
 		lbl.setFont(ResourceLoader.TitleFont.deriveFont(11f));
 		lbl.setForeground(Tema.FILTER_TYPE_BUTTON_COLOR);
 		lbl.setOpaque(false);
+		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 
 }

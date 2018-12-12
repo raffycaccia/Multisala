@@ -14,7 +14,7 @@ public class Data {
 	
 	public Data(int anno, int mese, int giorno, int ora, int minuto) {
 		data = new GregorianCalendar();
-		
+		//data.setFirstDayOfWeek(Calendar.MONDAY);
 		//TODO gestire eccezioni
 		setAnno(anno);
 		setMese(mese);
@@ -140,7 +140,10 @@ public class Data {
 	    int y = Integer.parseInt(year), m = Integer.parseInt(month), d = Integer.parseInt(day);
 	    return java.time.format.DateTimeFormatter.ofPattern("EEEE").format(LocalDate.of(y, m, d));
 	}
-
 	
+	public int getGiornoDellaSettimana() {
+		System.out.println(data.get(Calendar.DAY_OF_WEEK));
+		return data.get(Calendar.DAY_OF_WEEK);
+	}
 
 }

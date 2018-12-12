@@ -28,7 +28,8 @@ public class ListEntry extends JLayeredPane {
 	public static final int MESE_WIDTH = 100;
 	public static final int MESE_HEIGHT = 30;
 	
-	public static final int TITLE_WIDTH = PANEL_WIDTH - MESE_WIDTH - 30;
+	//public static final int TITLE_WIDTH = PANEL_WIDTH - MESE_WIDTH - 30;
+	public static final int TITLE_WIDTH = PANEL_WIDTH - 60;
 	public static final int TITLE_HEIGHT = 30;
 	
 	public static final int DURATA_WIDTH = 100;
@@ -51,6 +52,7 @@ public class ListEntry extends JLayeredPane {
 	public ListEntry(Spettacolo spet) {
 		//Setta le dimensioni dell'entry
 		setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
+		setAlignmentX(LEFT_ALIGNMENT);
 		//Crea bordo
 		RettangoloArrotondato rettangoloDecorativo = new RettangoloArrotondato(8, 8, PANEL_WIDTH - 10, PANEL_HEIGHT - 10, 50, false, Tema.ENTRY_BACKGROUND_COLOR);
 		rettangoloDecorativo.setBounds(0,0,PANEL_WIDTH,PANEL_HEIGHT);
@@ -66,6 +68,7 @@ public class ListEntry extends JLayeredPane {
 		JLabel durata = new JLabel(spet.getOpera().getDurata() + " MINUTI");
 		TextStyler.setDescriptionStyle(durata);
 		durata.setBounds(32, 410, DURATA_WIDTH, DURATA_HEIGHT);
+		/*
 		//Label mese
 		String mese = (Month.of(spet.getData().getMese()).getDisplayName(TextStyle.SHORT, getLocale()).toUpperCase());
 		JLabel meseLbl = new JLabel(mese);
@@ -75,6 +78,7 @@ public class ListEntry extends JLayeredPane {
 		JLabel giornoLbl = new JLabel(spet.getData().getGiorno() + "");
 		TextStyler.setDataStyle(giornoLbl);
 		giornoLbl.setBounds(PANEL_WIDTH - 50, 45, GIORNO_WIDTH, GIORNO_HEIGHT);
+		*/
 		//Label orario
 		String orario = "INIZIA ALLE " + spet.getData().getOraString() + ":" + spet.getData().getMinutoString();
 		String sala = "SALA " + spet.getSala().getNome();
@@ -108,8 +112,8 @@ public class ListEntry extends JLayeredPane {
 		add(titolo, 3);
 		add(desc, 4);
 		add(durata, 5);
-		add(meseLbl, 6);
-		add(giornoLbl,7);
+		//add(meseLbl, 6);
+		//add(giornoLbl,7);
 		add(infoLbl, 8);
 		
 		add(rettangoloDecorativo, 10);
