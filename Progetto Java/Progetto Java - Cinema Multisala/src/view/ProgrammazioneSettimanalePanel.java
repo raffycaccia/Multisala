@@ -6,11 +6,15 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.temporal.TemporalAccessor;
+import java.time.temporal.TemporalField;
 import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -23,7 +27,7 @@ import model.Sala;
 import model.Spettacolo;
 
 @SuppressWarnings("serial")
-public class ProgrammaSettimanalePanel extends JPanel {
+public class ProgrammazioneSettimanalePanel extends JPanel {
 
 	//private static final int PANEL_SIZE = 400;
 	private JComboBox<String> selectSala;
@@ -32,8 +36,9 @@ public class ProgrammaSettimanalePanel extends JPanel {
 	private JPanel operaList;
 	private JComboBox<String> ordine;
 	private JCheckBox visualizzaProssimi;
+	//private JButton switchVista;
 
-	public ProgrammaSettimanalePanel(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
+	public ProgrammazioneSettimanalePanel(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
 
 		this.arrSpettacoli = arrSpettacoli;
 		this.arrSale = arrSale;
@@ -44,7 +49,7 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		setBorder(new EmptyBorder(32, 32, 32, 32));
 
 		//Crea header, subheader e lista
-		add(createHeader(), BorderLayout.NORTH);
+		createHeader();
 		//Se esistono sale crea filtro sala e il subheader
 		if ((arrSale != null) && arrSale.size() > 0) {
 			//Crea subheader
@@ -57,16 +62,49 @@ public class ProgrammaSettimanalePanel extends JPanel {
 
 	}
 
-	private JLabel createHeader() {
+	private void createHeader() {
 		//Header label
 		JLabel headerLbl = new JLabel("Programma Settimanale");
 		TextStyler.setNavHeaderStyle(headerLbl);
 		headerLbl.setBorder(new EmptyBorder(0,8,0,0));
 		headerLbl.setAlignmentX(LEFT_ALIGNMENT);
-		return headerLbl;
+		add (headerLbl, BorderLayout.NORTH);
 
 	}
+	/*
+	private JButton addSwitchVista() {
+		switchVista = new JButton("Vedi tutto");
+		class ClickListener implements ActionListener {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(switchVista.getText().compareTo("Vedi tutto") == 0) {
+					switchVista.setText("Vedi questa settimana");
+				} else {
+					switchVista.setText("Vedi tutto");
+					ArrayList<Spettacolo> spettacoliSettimanaCorrente = new ArrayList<Spettacolo>();
+					for (Spettacolo s : arrSpettacoli) {
+						Data data = s.getData();
+						int anno = (data.getAnno() - LocalDateTime.now().getYear()) * 525600; //MOLTIPLICO PER I minuti in un anno
+						int mese = (data.getMese() - LocalDateTime.now().getMonthValue()) * 44640; //moltiplico prt i minuti in un mese
+						int giorno = (data.getGiorno() - LocalDateTime.now().getDayOfMonth()) * 1440;
+						int ora = (data.getOra() - LocalDateTime.now().getHour()) * 60;
+						int minuto = data.getMinuto() - LocalDateTime.now().getMinute();
+						if ((anno + mese + giorno + ora + minuto) > 0) {
+							prossimiSpettacoli.add(s);
+						}
+					}
+					this.remove(operaList);
+					createListPanel(prossimiSpettacoli);
+				}
+			}
+			
+		}
+		ActionListener listener = new ClickListener();
+		switchVista.addActionListener(listener);
+		return switchVista;
+	}
+*/
 	private JPanel addSalaFilterPanel(ArrayList<Sala> arrSale) {
 		JPanel filtroSala = new JPanel();
 		//Stile e layout pannello
@@ -214,6 +252,8 @@ public class ProgrammaSettimanalePanel extends JPanel {
 		subHeader.setAlignmentX(LEFT_ALIGNMENT);
 		//Distanzia il subheader dall'header
 		//subHeader.add(Box.createVerticalStrut(40));
+		
+		//subHeader.add(addSwitchVista());
 
 		subHeader.add(addSalaFilterPanel(arrSale));
 

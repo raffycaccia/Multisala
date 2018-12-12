@@ -9,18 +9,22 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-
+import model.DatabaseLoader;
 import model.ResourceLoader;
 import model.Sala;
 import model.Spettacolo;
+import view.Tema.Stile;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
-	
-	public MainFrame(ArrayList<Spettacolo> arrSpettacoli, ArrayList<Sala> arrSale) {
-		//Carica i custom font
-		ResourceLoader.loadFonts();
+
+	public MainFrame() {
+
+		setup();
 		
+		ArrayList<Spettacolo> arrSpettacoli = DatabaseLoader.caricaSpettacoli();
+		ArrayList<Sala> arrSale = DatabaseLoader.caricaSale();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//Stile e Layout frame
 		setTitle("Progetto: Cinema Multisala");
@@ -28,7 +32,7 @@ public class MainFrame extends JFrame {
 		setSize(1400, 900);
 		setBackground(Color.white);
 		//Creo pannello menu e programmazione
-		JPanel progSet = new ProgrammaSettimanalePanel(arrSpettacoli, arrSale);
+		JPanel progSet = new ProgrammazioneSettimanalePanel(arrSpettacoli, arrSale);
 		MenuPanel navMenu = new MenuPanel();
 		//Aggiungo pannelli al frame
 		add(navMenu, BorderLayout.WEST);
@@ -45,5 +49,12 @@ public class MainFrame extends JFrame {
 
 	}
 
-	
+	private void setup() {
+		//Carica i custom font
+		ResourceLoader.loadFonts();
+		//Imposta il Tema
+		new Tema(Stile.Combinato);
+	}
+
+
 }
