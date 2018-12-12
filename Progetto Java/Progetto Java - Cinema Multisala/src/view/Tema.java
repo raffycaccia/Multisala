@@ -21,10 +21,11 @@ public class Tema {
 			DESCRIPTION_COLOR = new Color(124,124,125);
 			INFO_COLOR = new Color(48,48,48);
 			DATA_COLOR = new Color(124,124,125);
-			NAVIGATION_HEADER_COLOR = new Color(17, 17, 17);
-			FILTER_TYPE_BUTTON_COLOR = new Color(124,124,125);
+			NAVIGATION_HEADER_COLOR = new Color(39, 39, 39);
+			FILTER_TYPE_BUTTON_COLOR = new Color(6,112,218);//new Color(124,124,125);
 			CHECKBOX_COLOR = new Color(39, 39, 39);
 			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
+			DIVISORE_COLOR = new Color(230,230,230);
 			break;
 		case Chiaro:
 			NAVIGATION_BUTTON_SELECTED_COLOR = new Color(75,75,75);
@@ -42,6 +43,7 @@ public class Tema {
 			FILTER_TYPE_BUTTON_COLOR = new Color(124,124,125);
 			CHECKBOX_COLOR = new Color(39, 39, 39);
 			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
+			DIVISORE_COLOR = new Color(230,230,230);
 			break;
 		case Scuro:
 			NAVIGATION_BUTTON_SELECTED_COLOR = new Color(75,75,75);
@@ -59,6 +61,7 @@ public class Tema {
 			FILTER_TYPE_BUTTON_COLOR = new Color(124,124,125);
 			CHECKBOX_COLOR = new Color(39, 39, 39);
 			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
+			DIVISORE_COLOR = new Color(230,230,230);
 			break;
 		}
 	}
@@ -78,4 +81,5 @@ public class Tema {
 	public static Color FILTER_TYPE_BUTTON_COLOR;
 	public static Color CHECKBOX_COLOR;
 	public static Color RIGHT_PANEL_BACKGROUND_COLOR;
+	public static Color DIVISORE_COLOR;
 }

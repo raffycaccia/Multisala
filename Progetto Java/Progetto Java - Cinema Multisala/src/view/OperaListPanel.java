@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -48,6 +49,7 @@ public class OperaListPanel extends JPanel {
 			 */
 
 			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+			//setAlignmentX(LEFT_ALIGNMENT);
 
 			//crea un pannello per ogni giorno
 
@@ -112,8 +114,8 @@ public class OperaListPanel extends JPanel {
 		
 
 		String month = today.getMonth().getDisplayName(TextStyle.FULL, Locale.ITALY);
-		monthLbl[indiceLabel] = new JLabel(dayNumber + " " + month.substring(0,1).toUpperCase() + month.substring(1).toLowerCase());
-		TextStyler.setFilterTypeStyle(monthLbl[indiceLabel]);
+		monthLbl[indiceLabel] = new JLabel(dayNumber + " " + month.toUpperCase());
+		TextStyler.setDataStyle(monthLbl[indiceLabel]);
 		
 		add(dayLbl[indiceLabel]);
 		add(monthLbl[indiceLabel]);
@@ -122,6 +124,7 @@ public class OperaListPanel extends JPanel {
 	public void createDayListPanel(int dayIndex, int dayNumber) {
 		dayPanels[dayIndex] = new JPanel();
 		dayPanels[dayIndex].setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
+		dayPanels[dayIndex].setAlignmentX(LEFT_ALIGNMENT);
 
 		dayPanels[dayIndex].setLayout(new FlowLayout(FlowLayout.LEFT, 16, 20));
 
@@ -130,6 +133,7 @@ public class OperaListPanel extends JPanel {
 		//maxWidth.height = arrSpettacoli.size() * (ListEntry.PANEL_HEIGHT + 20);
 		//setPreferredSize(maxWidth);
 
+		add(Box.createVerticalStrut(40));
 		addDayDivisor(dayIndex + 1, dayNumber);
 		add(dayPanels[dayIndex]);
 	}

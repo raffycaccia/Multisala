@@ -70,7 +70,7 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		headerLbl.setBorder(new EmptyBorder(0,8,0,0));
 		headerLbl.setAlignmentX(LEFT_ALIGNMENT);
 		add (headerLbl, BorderLayout.NORTH);
-
+		addDivisore(3000);
 	}
 	/*
 	private JButton addSwitchVista() {
@@ -266,7 +266,7 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		
 		//Aggiunge subheader al pannello della programmazione
 		add(subHeader);
-		add(Box.createVerticalStrut(60));
+		//add(Box.createVerticalStrut(60));
 
 	}
 
@@ -275,5 +275,9 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		add(operaList, BorderLayout.SOUTH);
 	}
 
+	private void addDivisore(int lunghezza) {
+		LineaDivisore l = new LineaDivisore(lunghezza);
+		add(l);
+	}
 }
 

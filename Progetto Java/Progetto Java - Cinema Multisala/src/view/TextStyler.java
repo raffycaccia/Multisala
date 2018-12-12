@@ -41,14 +41,14 @@ public class TextStyler {
 	}
 	
 	public static void setDataStyle(JLabel lbl) {
-		lbl.setFont(ResourceLoader.TitleFont.deriveFont(18f));
+		lbl.setFont(ResourceLoader.TitleFont.deriveFont(11f));
 		lbl.setForeground(Tema.DATA_COLOR);
 		lbl.setOpaque(false);
 		lbl.setHorizontalAlignment(SwingConstants.LEFT);
 	}
 	
 	public static void setNavHeaderStyle(JLabel lbl) {
-		lbl.setFont(ResourceLoader.TitleFont.deriveFont(45f));
+		lbl.setFont(ResourceLoader.TitleFont.deriveFont(38f));
 		lbl.setForeground(Tema.NAVIGATION_HEADER_COLOR);
 		lbl.setOpaque(false);
 		lbl.setHorizontalAlignment(SwingConstants.LEFT);
