@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Cursor;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -57,7 +58,7 @@ public class ButtonStyler {
 		btn.setHorizontalTextPosition(JButton.CENTER);
 		btn.setVerticalTextPosition(JButton.CENTER);
 		btn.setBorder(new BordoArrotondato(17, Tema.SWITCHER_BUTTON_SELECTED_COLOR));
-		btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	}
 
 	public static void setSwitchButtonSelectedStyle(JRadioButton btn) {
@@ -85,6 +86,6 @@ public class ButtonStyler {
 		btn.setHorizontalTextPosition(JButton.CENTER);
 		btn.setVerticalTextPosition(JButton.CENTER);
 		btn.setBorder(BorderFactory.createEmptyBorder());
-		btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+		btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	}
 }
