@@ -69,10 +69,16 @@ public class CarrelloPanel extends JPanel{
 	 * Metodo che rimuove una poltrona al carrello
 	 * 	qui va fatta anche la ricercaa!!
 	 */
-	public void removePostoCarrello() {
-		//TODO RAFFY PARLA A TE STESSO _ RICORDATI DI FARE STO CICLO
+	public void removePostoCarrello(Posto posto) {
+		for(int i=0;i<poltrone.size();i++) {
+			if(poltrone.get(i).posto.getId() == posto.getId()) {
+				poltrone.remove(i);
+			}
+		}
+		
 		refresh();
 		this.revalidate();
+		this.repaint();
 	}
 	
 	
@@ -80,7 +86,9 @@ public class CarrelloPanel extends JPanel{
 		ActionListener evento = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "PROVA EVENTO");
+				
+				
+				
 			}
 				
 			};

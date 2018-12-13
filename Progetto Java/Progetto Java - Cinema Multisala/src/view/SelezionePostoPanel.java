@@ -55,6 +55,7 @@ public class SelezionePostoPanel extends JPanel {
         JPanel hall= new JPanel(new BorderLayout(20, 30));
         
 		/*
+		 * TODO
 		 * qui va aggiunto il
 		 * metodo del controller che carica i posti nei vari array list
 		 */
@@ -130,13 +131,15 @@ public class SelezionePostoPanel extends JPanel {
 				if (posto.isIndisponibile() == true || posto.isVenduto() == true || posto.isPrenotato() == true) {
 					throw new PostoIndisponibileException();
 				}else {
-					System.out.println("cxiao");
-					/*
-					 * TODO RAFFY PARLA A TE STESSO _ RICORDATI CHE QUA VANNO ANCORA GESTITI TUTTI I POSTI
-					 * VANNO GESTITE LE SELEZIONI E L'AGGIORNAMENTO DOPO OGNI ACQUISTO
-					 */
 					
-					cart.addPostoCarrello(posto);
+					if(posto.isSelected()) {
+						posto.setSelected(false);
+						cart.removePostoCarrello(posto);
+					}else {
+						posto.setSelected(true);
+						cart.addPostoCarrello(posto);
+					}
+					
 				}
 			}
 		};

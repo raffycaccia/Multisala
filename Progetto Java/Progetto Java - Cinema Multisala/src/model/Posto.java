@@ -7,7 +7,7 @@ import javax.swing.JButton;
 public class Posto extends JButton{
 	//TODO si devono rifare tutti i commenti
 	int id;
-	private boolean disponibile,indisponibile,prenotato,venduto;
+	private boolean disponibile,indisponibile,prenotato,venduto,selezionato;
 
 	public Posto(int id){
 		this.id=id;
@@ -51,6 +51,14 @@ public class Posto extends JButton{
 	 */
 	public int getId() {
 		return id;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isSelected() {
+		return selezionato;
 	}
 
 	/**
@@ -118,6 +126,10 @@ public class Posto extends JButton{
 	 */
 	public void setVenduto(boolean vend) {
 		this.venduto=vend;
+	}
+	
+	public void setSelected(boolean sel) {
+		this.selezionato=sel;
 	}
 	
 	public void setimage(ImageIcon img) {
