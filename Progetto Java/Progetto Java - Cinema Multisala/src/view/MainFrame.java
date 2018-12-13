@@ -66,8 +66,13 @@ public class MainFrame extends JFrame {
 		revalidate();
 		//pannelloDestro.revalidate();
 		System.out.println(pannelloDestro.equals(null));
+		ArrayList<Spettacolo> arrSpettacoli = DatabaseLoader.caricaSpettacoli();
+		pannelloDestro = new SelezionePostoPanel(arrSpettacoli.get(1));
+		pannelloDestro.setVisible(true);
+		pannelloDestro.revalidate();
+		pannelloDestro.repaint();
 		//pannelloDestro.add(new SelezionePostoPanel(spet));
-		//revalidate();
+		revalidate();
 	}
 
 
