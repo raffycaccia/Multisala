@@ -18,6 +18,7 @@ public class PrenotaListener implements MouseListener {
 	
 	public PrenotaListener(RettangoloArrotondato btnShape, Spettacolo spet) {
 		this.btnShape = btnShape;
+		this.spet = spet;
 	}
 
 	@Override
