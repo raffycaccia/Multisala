@@ -16,9 +16,11 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.CompoundBorder;
 
+import model.ResourceLoader;
 import model.Utente;
 
 @SuppressWarnings("serial")
@@ -63,6 +65,17 @@ public class MenuPanel extends JPanel {
 	}
 	
 	public void createLogo() {
+		JTextArea nomeProgetto = new JTextArea("CINEMA\nMULTISALA");
+		nomeProgetto.setMaximumSize(new Dimension(MENU_WIDTH, 200));
+		nomeProgetto.setFont(ResourceLoader.BlackFont.deriveFont(32f));
+		nomeProgetto.setForeground(Tema.LOGO_COLOR);
+		nomeProgetto.setAlignmentX(LEFT_ALIGNMENT);
+		nomeProgetto.setOpaque(false);
+		nomeProgetto.setLineWrap(true);
+		nomeProgetto.setWrapStyleWord(true);
+		nomeProgetto.setEditable(false);
+		nomeProgetto.setFocusable(false);
+		add(nomeProgetto);
 		ImageIcon logoIcon = new ImageIcon("image/Logo.png");
 		JLabel logo = new JLabel(logoIcon);
 		logo.setBorder(BorderFactory.createEmptyBorder(0,22,0,0));

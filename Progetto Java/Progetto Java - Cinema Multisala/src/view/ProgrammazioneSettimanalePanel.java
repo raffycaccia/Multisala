@@ -44,7 +44,7 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		this.arrSale = arrSale;
 
 		//Stile e layout pannello
-		setBackground(Color.white);
+		setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
 		//setLayout(new BorderLayout());
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		setBorder(new EmptyBorder(32, 32, 32, 32));
@@ -67,9 +67,10 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		//Header label
 		JLabel headerLbl = new JLabel("Programma Settimanale");
 		TextStyler.setNavHeaderStyle(headerLbl);
-		headerLbl.setBorder(new EmptyBorder(0,8,0,0));
+		//headerLbl.setBorder(new EmptyBorder(0,8,0,0));
 		headerLbl.setAlignmentX(LEFT_ALIGNMENT);
 		add (headerLbl, BorderLayout.NORTH);
+		add(Box.createVerticalStrut(5));
 		addDivisore(3000);
 	}
 	/*
@@ -190,7 +191,7 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		visualizzaProssimi = new JCheckBox("Solo prossimi spettacoli".toUpperCase());
 		//visualizzaProssimi.setForeground(new Color(1,122,255));
 		visualizzaProssimi.setForeground(Tema.CHECKBOX_COLOR);
-		visualizzaProssimi.setFont(ResourceLoader.TitleFont.deriveFont(13f));
+		visualizzaProssimi.setFont(ResourceLoader.HeavyFont.deriveFont(13f));
 		visualizzaProssimi.setPreferredSize(new Dimension(300,30));
 		visualizzaProssimi.setOpaque(false);
 		visualizzaProssimi.setAlignmentX(LEFT_ALIGNMENT);
@@ -254,7 +255,7 @@ public class ProgrammazioneSettimanalePanel extends JPanel {
 		subHeader.setBorder(new EmptyBorder(0,2,0,0));
 		subHeader.setAlignmentX(LEFT_ALIGNMENT);
 		//Distanzia il subheader dall'header
-		add(Box.createVerticalStrut(20));
+		add(Box.createVerticalStrut(3));
 
 		//subHeader.add(addSwitchVista());
 

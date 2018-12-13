@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 		//Carica i custom font
 		ResourceLoader.loadFonts();
 		//Imposta il Tema
-		new Tema(Stile.Combinato);
+		new Tema(Stile.Scuro);
 	}
 
 

@@ -22,7 +22,7 @@ public class ButtonStyler {
 		btn.setContentAreaFilled(false);
 		btn.setOpaque(true);
 		btn.setBackground(Tema.MENU_COLOR);
-		btn.setFont(ResourceLoader.BtnSelFont);
+		btn.setFont(ResourceLoader.MediumFont.deriveFont(19f));
 		btn.setMaximumSize(new Dimension(MenuPanel.MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
 		btn.setHorizontalAlignment(SwingConstants.LEADING);
 		btn.setIconTextGap(12);
@@ -44,7 +44,7 @@ public class ButtonStyler {
 	public static void setSwitchButtonStyle(JRadioButton btn) {
 		btn.setIcon(new ImageIcon(""));
 		btn.setForeground(Tema.SWITCHER_BUTTON_SELECTED_COLOR);
-		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
+		btn.setFont(ResourceLoader.HeavyFont.deriveFont(13f));
 		btn.setIconTextGap(0);
 		btn.setBorderPainted(true);
 		btn.setFocusPainted(false);
@@ -73,7 +73,7 @@ public class ButtonStyler {
 	
 	public static void setCallToActionButtonStyle(JButton btn, Color bgColor) {
 		btn.setForeground(Color.white);
-		btn.setFont(ResourceLoader.TitleFont.deriveFont(13f));
+		btn.setFont(ResourceLoader.HeavyFont.deriveFont(13f));
 		btn.setBorderPainted(false);
 		btn.setFocusPainted(false);
 		btn.setContentAreaFilled(false);
