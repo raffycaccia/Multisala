@@ -27,6 +27,11 @@ public class Tema {
 			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
 			DIVISORE_COLOR = new Color(230,230,230);
 			LOGO_COLOR = Color.white;
+			POSTO_DISPONIBILE_COLOR = new Color(82,183,72);
+			POSTO_NON_DISPONIBILE_COLOR = new Color(150,150,150);
+			POSTO_SELEZIONATO_COLOR = new Color(49,117,42);
+			POSTO_PRENOTATO_COLOR = new Color(90,200,250);
+			POSTO_VENDUTO_COLOR = new Color(255,67,49);
 			break;
 		case Chiaro:
 			NAVIGATION_BUTTON_SELECTED_COLOR = new Color(75,75,75);
@@ -46,6 +51,11 @@ public class Tema {
 			RIGHT_PANEL_BACKGROUND_COLOR = Color.white;
 			DIVISORE_COLOR = new Color(230,230,230);
 			LOGO_COLOR = Color.white;
+			POSTO_DISPONIBILE_COLOR = new Color(82,183,72);
+			POSTO_NON_DISPONIBILE_COLOR = new Color(150,150,150);
+			POSTO_SELEZIONATO_COLOR = new Color(49,117,42);
+			POSTO_PRENOTATO_COLOR = new Color(90,200,250);
+			POSTO_VENDUTO_COLOR = new Color(255,67,49);
 			break;
 		case Scuro:
 			NAVIGATION_BUTTON_SELECTED_COLOR = new Color(75,75,75);
@@ -65,6 +75,11 @@ public class Tema {
 			RIGHT_PANEL_BACKGROUND_COLOR = new Color(30,31,34);
 			DIVISORE_COLOR = new Color(52,53,55);
 			LOGO_COLOR = Color.white;
+			POSTO_DISPONIBILE_COLOR = new Color(82,183,72);
+			POSTO_NON_DISPONIBILE_COLOR = new Color(150,150,150);
+			POSTO_SELEZIONATO_COLOR = new Color(49,117,42);
+			POSTO_PRENOTATO_COLOR = new Color(90,200,250);
+			POSTO_VENDUTO_COLOR = new Color(255,67,49);
 			break;
 		}
 	}
@@ -86,4 +101,9 @@ public class Tema {
 	public static Color RIGHT_PANEL_BACKGROUND_COLOR;
 	public static Color DIVISORE_COLOR;
 	public static Color LOGO_COLOR;
+	public static Color POSTO_DISPONIBILE_COLOR;
+	public static Color POSTO_NON_DISPONIBILE_COLOR;
+	public static Color POSTO_SELEZIONATO_COLOR;
+	public static Color POSTO_PRENOTATO_COLOR;
+	public static Color POSTO_VENDUTO_COLOR;
 }
