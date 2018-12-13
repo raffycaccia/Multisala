@@ -88,4 +88,16 @@ public class ButtonStyler {
 		btn.setBorder(BorderFactory.createEmptyBorder());
 		btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
 	}
+	
+	public static void setPostoStyle(JButton btn) {
+		btn.setBorderPainted(false);
+		btn.setFocusPainted(false);
+		btn.setContentAreaFilled(false);
+		btn.setFocusable(false);
+		btn.setBackground(Tema.MENU_COLOR);
+		btn.setOpaque(false);
+		btn.setIconTextGap(0);
+		btn.setOpaque(false);
+	}
+	
 }
