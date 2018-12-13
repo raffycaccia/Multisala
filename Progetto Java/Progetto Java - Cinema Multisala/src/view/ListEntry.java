@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,7 @@ import java.time.format.TextStyle;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextArea;
@@ -111,7 +113,12 @@ public class ListEntry extends JLayeredPane {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				topFrame.setSelezionePostoPanel(spet);
+				//topFrame.setSelezionePostoPanel(spet);
+				//topFrame.add(new SelezionePostoPanel(spet));
+				JFrame f = new JFrame();
+				f.add(new SelezionePostoPanel(spet));
+				f.setSize(1400, 1000);
+				f.setVisible(true);
 			}
 
 			@Override
