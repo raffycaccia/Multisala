@@ -61,7 +61,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void setSelezionePostoPanel(Spettacolo spet) {
-		this.remove(pannelloDestro);
+		System.out.println("setto sel posto");
+		//this.remove(pannelloDestro);
 		pannelloDestro = new SelezionePostoPanel(spet);
 		//revalidate();
 	}

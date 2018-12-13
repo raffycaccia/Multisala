@@ -19,6 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import controller.PrenotaListener;
 import model.Spettacolo;
 
 @SuppressWarnings("serial")
@@ -100,59 +101,8 @@ public class ListEntry extends JLayeredPane {
 		RettangoloArrotondato formaTastoPrenota = new RettangoloArrotondato(0,0, PRENOTABTN_WIDTH,PRENOTABTN_HEIGHT, PRENOTABTN_HEIGHT, false, Tema.CALL_TO_ACTION_BLUE_COLOR);
 		formaTastoPrenota.setBounds(prenotaBtn.getBounds());
 
-		MainFrame topFrame = (MainFrame) SwingUtilities.getWindowAncestor(this);
-		//MainFrame topFrame = (MainFrame) SwingUtilities.getAncestorOfClass(MainFrame.class, this);
-		
-		class PrenotaListener implements MouseListener {
-
-			private RettangoloArrotondato btnShape;
-
-			public PrenotaListener(RettangoloArrotondato btnShape) {
-				this.btnShape = btnShape;
-			}
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//topFrame.setSelezionePostoPanel(spet);
-				//topFrame.add(new SelezionePostoPanel(spet));
-				JFrame f = new JFrame();
-				f.add(new SelezionePostoPanel(spet));
-				f.setSize(1400, 1000);
-				f.setVisible(true);
-			}
-
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				btnShape.setFillColor(Tema.CALL_TO_ACTION_PRESSED_BLUE_COLOR);
-
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				btnShape.setFillColor(Tema.CALL_TO_ACTION_BLUE_COLOR);
-
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-
-			}
-
-		}
-
-		MouseListener prenotaListener = new PrenotaListener(formaTastoPrenota);
+		MouseListener prenotaListener = new PrenotaListener(formaTastoPrenota, spet);
 		prenotaBtn.addMouseListener(prenotaListener);
-
-
 
 		//Cover prova
 		ImageIcon copertina = spet.getOpera().getCopertina();
