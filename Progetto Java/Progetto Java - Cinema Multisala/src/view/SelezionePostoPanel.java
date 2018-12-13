@@ -14,6 +14,7 @@ import model.Posto;
 import model.PostoIndisponibileException;
 import model.Sala;
 import model.Spettacolo;
+import view.Tema;
 
 @SuppressWarnings("serial")
 public class SelezionePostoPanel extends JPanel {
@@ -28,6 +29,8 @@ public class SelezionePostoPanel extends JPanel {
 
 
 	private void initGui(Spettacolo spettacolo) {
+		
+		this.setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
 
 		ImageIcon posto_disp = new ImageIcon("image/sala/seat_disponibile.png");
 		ImageIcon posto_ind = new ImageIcon("image/sala/seat_indisponibile.png");
@@ -45,15 +48,17 @@ public class SelezionePostoPanel extends JPanel {
          this.setLayout(new BorderLayout(20, 30)); 
 		
 		JPanel LayoutPosti = new JPanel(new GridLayout(sala.getRighe(), sala.getColonne(), 0, 1));
+		LayoutPosti.setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
 		
 		JPanel nord = new JPanel();
+		nord.setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
         JPanel center = new JPanel(new BorderLayout());
 		
         JLabel screen = new JLabel(schermo);
         nord.add(screen);
         
         JPanel hall= new JPanel(new BorderLayout(20, 30));
-        
+        hall.setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
 		/*
 		 * TODO
 		 * qui va aggiunto il

@@ -28,7 +28,10 @@ public class CarrelloPanel extends JPanel{
 		this.removeAll();
 		this.setLayout(new BorderLayout(20, 30)); 
 		
+		this.setBackground(Tema.RIGHT_PANEL_BACKGROUND_COLOR);
+		
 		cart_element.setLayout(new BoxLayout(cart_element, BoxLayout.Y_AXIS));
+		cart_element.setBackground(Tema.ENTRY_BACKGROUND_COLOR);
 		JLabel cartimage = new JLabel(new ImageIcon("image/carrello/immagine.png"));
 		JButton button_buy = new JButton(new ImageIcon("image/carrello/pulsante.png"));
 
@@ -51,10 +54,13 @@ public class CarrelloPanel extends JPanel{
 		
 		
 		cart_element.removeAll();
+		cart_element.setBackground(Tema.ENTRY_BACKGROUND_COLOR);
 		for(int i=0; i<poltrone.size();i++) {
 			cart_element.add(poltrone.get(i));
 		}
+		
 		this.revalidate();
+		this.repaint();
 	}
 	
 	/**
@@ -63,6 +69,9 @@ public class CarrelloPanel extends JPanel{
 	public void addPostoCarrello(Posto posto) {
 		poltrone.add(new PoltroneInCarrello(posto));
 		refresh();
+		
+		this.revalidate();
+		this.repaint();
 	}
 	
 	/**

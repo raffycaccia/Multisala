@@ -19,9 +19,11 @@ public class PoltroneInCarrello extends JPanel{
 	
 	private void initGui() {
 		this.setLayout(new BorderLayout());
+		this.setBackground(Tema.ENTRY_BACKGROUND_COLOR);
 		ImageIcon image = (ImageIcon) posto.getIcon();
 		JLabel pol_im = new JLabel(image);
 		JLabel text = new JLabel();
+		text.setForeground(Tema.TITLE_COLOR);
 		text.setText("  Pol. N:" + posto.getId());
 		
 		this.add(pol_im,BorderLayout.WEST);
