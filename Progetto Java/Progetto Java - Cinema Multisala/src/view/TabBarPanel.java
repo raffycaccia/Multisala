@@ -24,7 +24,7 @@ import model.ResourceLoader;
 import model.Utente;
 
 @SuppressWarnings("serial")
-public class MenuPanel extends JPanel {
+public class TabBarPanel extends JPanel {
 
 	private Utente status = Utente.CLIENTE;
 	private JButton programmazioneBtn;
@@ -38,7 +38,7 @@ public class MenuPanel extends JPanel {
 	public final static int BUTTON_HEIGHT = 45;
 	public final static int SWITCH_BUTTON_HEIGHT = 38;
 	
-	public MenuPanel() {
+	public TabBarPanel() {
 		
 		setStyle();
 		

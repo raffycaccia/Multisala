@@ -2,6 +2,9 @@ package view;
 
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.time.Month;
 import java.time.format.TextStyle;
@@ -12,43 +15,43 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
-import controller.PrenotaListener;
 import model.Spettacolo;
 
 @SuppressWarnings("serial")
 public class ListEntry extends JLayeredPane {
-	
+
 	public static final int PANEL_WIDTH = 400;
 	public static final int PANEL_HEIGHT = (int) ((PANEL_WIDTH) * 1.6f);
-	
+
 	public static final int DESC_WIDTH = PANEL_WIDTH - 80;
 	public static final int DESC_HEIGHT = 180;
-	
+
 	public static final int MESE_WIDTH = 100;
 	public static final int MESE_HEIGHT = 30;
-	
+
 	//public static final int TITLE_WIDTH = PANEL_WIDTH - MESE_WIDTH - 30;
 	public static final int TITLE_WIDTH = PANEL_WIDTH - 60;
 	public static final int TITLE_HEIGHT = 30;
-	
+
 	public static final int DURATA_WIDTH = 100;
 	public static final int DURATA_HEIGHT = 30;
-	
+
 	public static final int GIORNO_WIDTH = 100;
 	public static final int GIORNO_HEIGHT = 30;
-	
+
 	public static final int INFO_WIDTH = 400;
 	public static final int INFO_HEIGHT = 30;
-	
+
 	public static final int PRENOTABTN_WIDTH = 88;
 	public static final int PRENOTABTN_HEIGHT = 30;
 
 	public static final int COVER_HEIGHT = 300;
 	public static final int COVER_WIDTH = PANEL_WIDTH - 100;
-	
-	
-	
+
+
+
 	public ListEntry(Spettacolo spet) {
 		//Setta le dimensioni dell'entry
 		setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
@@ -78,7 +81,7 @@ public class ListEntry extends JLayeredPane {
 		JLabel giornoLbl = new JLabel(spet.getData().getGiorno() + "");
 		TextStyler.setDataStyle(giornoLbl);
 		giornoLbl.setBounds(PANEL_WIDTH - 50, 45, GIORNO_WIDTH, GIORNO_HEIGHT);
-		*/
+		 */
 		//Label orario
 		String orario = "INIZIA ALLE " + spet.getData().getOraString() + ":" + spet.getData().getMinutoString();
 		String sala = "SALA " + spet.getSala().getNome();
@@ -94,9 +97,56 @@ public class ListEntry extends JLayeredPane {
 		ButtonStyler.setCallToActionButtonStyle(prenotaBtn, Tema.ENTRY_BACKGROUND_COLOR);
 		RettangoloArrotondato formaTastoPrenota = new RettangoloArrotondato(0,0, PRENOTABTN_WIDTH,PRENOTABTN_HEIGHT, PRENOTABTN_HEIGHT, false, Tema.CALL_TO_ACTION_BLUE_COLOR);
 		formaTastoPrenota.setBounds(prenotaBtn.getBounds());
+
+		MainFrame topFrame = (MainFrame) SwingUtilities.getWindowAncestor(this);
+		//MainFrame topFrame = (MainFrame) SwingUtilities.getAncestorOfClass(MainFrame.class, this);
+		
+		class PrenotaListener implements MouseListener {
+
+			private RettangoloArrotondato btnShape;
+
+			public PrenotaListener(RettangoloArrotondato btnShape) {
+				this.btnShape = btnShape;
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				topFrame.setSelezionePostoPanel(spet);
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnShape.setFillColor(Tema.CALL_TO_ACTION_PRESSED_BLUE_COLOR);
+
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				btnShape.setFillColor(Tema.CALL_TO_ACTION_BLUE_COLOR);
+
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+		}
+
 		MouseListener prenotaListener = new PrenotaListener(formaTastoPrenota);
 		prenotaBtn.addMouseListener(prenotaListener);
-		
+
+
+
 		//Cover prova
 		ImageIcon copertina = spet.getOpera().getCopertina();
 		if (copertina != null) {
@@ -105,7 +155,7 @@ public class ListEntry extends JLayeredPane {
 			cover.setHorizontalAlignment(SwingConstants.LEFT);
 			add(cover, 9);
 		}
-		
+
 		//Aggiunge i components al panel dell'entry
 		add(prenotaBtn,1);
 		add(formaTastoPrenota,2);
@@ -115,7 +165,7 @@ public class ListEntry extends JLayeredPane {
 		//add(meseLbl, 6);
 		//add(giornoLbl,7);
 		add(infoLbl, 8);
-		
+
 		add(rettangoloDecorativo, 10);
 	}
 

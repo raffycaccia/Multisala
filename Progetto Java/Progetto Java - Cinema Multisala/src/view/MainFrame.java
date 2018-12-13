@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.sound.sampled.ReverbType;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -17,6 +18,8 @@ import view.Tema.Stile;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
+	
+	private JPanel pannelloDestro = null;
 
 	public MainFrame() {
 
@@ -32,14 +35,15 @@ public class MainFrame extends JFrame {
 		setSize(1400, 900);
 		setBackground(Color.white);
 		//Creo pannello menu e programmazione
-		JPanel progSet = new ProgrammazioneSettimanalePanel(arrSpettacoli, arrSale);
-		MenuPanel navMenu = new MenuPanel();
+		pannelloDestro = new ProgrammazioneSettimanalePanel(arrSpettacoli, arrSale);
+		TabBarPanel navMenu = new TabBarPanel();
 		//Aggiungo pannelli al frame
 		add(navMenu, BorderLayout.WEST);
-		add(progSet, BorderLayout.CENTER);
+		add(pannelloDestro, BorderLayout.CENTER);
+		//setSelezionePostoPanel(arrSpettacoli.get(1));
 		//Se ci sono spettacoli aggiungi scrollBar al pannello programmazione
 		if ((arrSpettacoli != null) && arrSpettacoli.size() > 0) {
-			JScrollPane scrollBar = new JScrollPane(progSet);
+			JScrollPane scrollBar = new JScrollPane(pannelloDestro);
 			scrollBar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 			scrollBar.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 			scrollBar.setBorder(BorderFactory.createEmptyBorder());
@@ -54,6 +58,12 @@ public class MainFrame extends JFrame {
 		ResourceLoader.loadFonts();
 		//Imposta il Tema
 		new Tema(Stile.Scuro);
+	}
+	
+	public void setSelezionePostoPanel(Spettacolo spet) {
+		this.remove(pannelloDestro);
+		pannelloDestro = new SelezionePostoPanel(spet);
+		//revalidate();
 	}
 
 

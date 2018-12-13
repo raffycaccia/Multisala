@@ -1,3 +1,4 @@
+/*
 package controller;
 
 import java.awt.event.MouseEvent;
@@ -16,7 +17,7 @@ public class PrenotaListener implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -46,3 +47,4 @@ public class PrenotaListener implements MouseListener {
 	}
 
 }
+*/

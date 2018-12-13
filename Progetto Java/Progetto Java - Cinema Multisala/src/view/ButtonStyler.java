@@ -23,7 +23,7 @@ public class ButtonStyler {
 		btn.setOpaque(true);
 		btn.setBackground(Tema.MENU_COLOR);
 		btn.setFont(ResourceLoader.MediumFont.deriveFont(19f));
-		btn.setMaximumSize(new Dimension(MenuPanel.MENU_WIDTH, MenuPanel.BUTTON_HEIGHT));
+		btn.setMaximumSize(new Dimension(TabBarPanel.MENU_WIDTH, TabBarPanel.BUTTON_HEIGHT));
 		btn.setHorizontalAlignment(SwingConstants.LEADING);
 		btn.setIconTextGap(12);
 		btn.setBorder(BorderFactory.createEmptyBorder(0,22,0,0));
